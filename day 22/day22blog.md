@@ -73,7 +73,7 @@ The first character of a variable name should be / must be
 
 # Image
 
-![10. day22 lesson 3 comp.png](/day%2022/Images/10.%20day22%20lesson%203%20comp.png)
+![10. day22 lesson 3 comp.png](/day%2022/images/10.%20day22%20lesson%203%20comp.png)
 
 # Conclusion
 - Printing to browser using document.write().

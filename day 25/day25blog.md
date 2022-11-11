@@ -25,7 +25,7 @@ Today #day25 of #100daysofcode, I have completed 2 lessons 9,10 and a program pr
 ## Conditional (Ternary) Operator
 - variable = (condition) ? value1: value2
 # Images:
-> ![9. day25 lesson 9,10 completed.png](/day25/images/9.%20day25%20lesson%209%2C10%20completed.png)
+> ![9. day25 lesson 9,10 completed.png](/day%2025/images/9.%20day25%20lesson%209%2C10%20completed.png)
 
 # Conclusion
 - Comparison operators
@@ -33,7 +33,7 @@ Today #day25 of #100daysofcode, I have completed 2 lessons 9,10 and a program pr
 - Conditional (Ternary) Operator
 
 # My Code: 
-> ![7. day25 prog prob.png](/day25/images/7.%20day25%20prog%20prob.png)
+> ![7. day25 prog prob.png](/day%2025/images/7.%20day25%20prog%20prob.png)
 
 # References [Sololearn ](https://www.sololearn.com/learning/1024)
 

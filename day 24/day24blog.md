@@ -58,6 +58,8 @@ Code: [Output](https://www.sololearn.com/compiler-playground/W075v1npyp2A)
 1. Arithmetic operators.
 2. Increment and decrement operators.
 3. Assignment operators.
+4. Quiz [[ClickHere](/day%2024/Images/)] 
+
 
 # References: [Sololearn ](https://www.sololearn.com/learning/1024)
 

@@ -39,8 +39,7 @@ Today #day28 of #100daysofcode, I have completed 2 lessons: 17,18 in module 3 an
 
 # Images:
 - ![6. day28 module 3-lesson17 completed.png](/day%2028/Images/6.%20day28%20module%203-lesson17%20completed.png)
-- 
-![11. day28 3.18 lesson completed.png](/day%2028/Images/11.%20day28%203.18%20lesson%20completed.png)
+- ![11. day28 3.18 lesson completed.png](/day%2028/Images/11.%20day28%203.18%20lesson%20completed.png)
 
 # Conclusion
 - The switch Statement

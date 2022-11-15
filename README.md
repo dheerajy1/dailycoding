@@ -8,3 +8,4 @@ In this repo I upload my daily coding content.
 - [Day26 Blog](/day%2026/day26blog.md)
 - [Day27 Blog](/day%2027/day27blog.md)
 - [Day28 Blog](/day%2028/day28blog.md)
+- [Day29 Blog](/day%2029/day29blog.md)

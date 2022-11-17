@@ -36,8 +36,7 @@ Today #day31 of #100daysofcode, I have completed 4.24 and 4.25 lessons & Two cod
 
 # Images
 - ![6. day31 4.24 lesson completed.png](/day%2031/Images/6.%20day31%204.24%20lesson%20completed.png)
-- 
-![11. day31 4.25 lesson completed.png](/day%2031/Images/11.%20day31%204.25%20lesson%20completed.png)
+- ![11. day31 4.25 lesson completed.png](/day%2031/Images/11.%20day31%204.25%20lesson%20completed.png)
 
 # Conclusion
 - JavaScript Functions

@@ -48,7 +48,7 @@ Today #day31 of #100daysofcode, I have completed 4.24 and 4.25 lessons & Two cod
 
 # My Code: 
 - ![4. day31 prog prob.png](/day%2031/Images/4.%20day31%20prog%20prob.png)
-- ![8. day31 quiz6.png](/day%2031/Images/8.%20day31%20quiz6.png)
+- ![8. day31 quiz6.png](/day%2031/Images/8.%20day31%20prog%20prob.png)
 
 # References [Sololearn ](https://www.sololearn.com/learning/1024)
 

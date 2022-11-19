@@ -12,4 +12,4 @@ In this repo I upload my daily coding content.
 - [Day30 Blog](/day%2030/day30blog.md)
 - [Day31 Blog](/day%2031/day31blog.md)
 - [Day32 Blog](/day%2032/day32blog.md)
-
+- [Day33 Blog](/day%2033/day33blog.md)

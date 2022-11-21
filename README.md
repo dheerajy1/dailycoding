@@ -14,3 +14,5 @@ In this repo I upload my daily coding content.
 - [Day32 Blog](/day%2032/day32blog.md)
 - [Day33 Blog](/day%2033/day33blog.md)
 - [Day34 Blog](/day%2034/day34blog.md)
+- [Day35 Blog](/day%2035/day35blog.md)
+

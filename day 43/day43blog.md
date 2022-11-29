@@ -48,7 +48,7 @@ Now, let’s create our HTML, which includes an image and the two navigation but
 -  event propagation
 - Capturing vs. Bubbling
 - Image Slider
-- quiz
+- quiz [[click](/day%2043/Images/)]
 - Image slider code project
 
 # My Code: 

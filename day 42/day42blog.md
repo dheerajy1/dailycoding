@@ -67,7 +67,7 @@ Note:
 - Event onload
 - Event onchange
 - Event Listeners
-- quiz
+- quiz [[click](/day%2042/Images/)]
 - code
 
 # My Code: 

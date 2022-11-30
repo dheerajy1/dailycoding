@@ -24,7 +24,7 @@ Note:
 # Conclusion
 
 - form validation
-- quiz
+- quiz quiz [[click](/day%2044/Images/)]
 - "Form and display input" code project
 
 # my code

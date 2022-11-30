@@ -12,7 +12,10 @@ Example:
 
 - the apple code will call the function set an interval of 0.5 seconds
 - write a function that will increment and add it to the CSS position left property attribute.
-pending code: [click](https://www.sololearn.com/compiler-playground/WVBU91MAo1TT)
+
+pending code: [[click](https://www.sololearn.com/compiler-playground/WVBU91MAo1TT)]
+
+Updated code: Moving box animation code project [[click](https://www.sololearn.com/compiler-playground/WVBU91MAo1TT)]
 
 # handling events
 
@@ -73,6 +76,9 @@ Note:
 # My Code: 
 - pending code
 ![3. day42 pending code.png](/day%2042/Images/3.%20day42%20pending%20code.png)
+- Updated code: 'Moving Box Animation' Code project
+  ![day42 Moving box animation.png](/day%2042/Images/day42%20Moving%20box%20animation.png)
+
 
 # References [Sololearn ](https://www.sololearn.com/learning/1024)
 

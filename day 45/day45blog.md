@@ -130,6 +130,10 @@ console.log(log)
 *   3 Ways of declaring a variable in ES6
     
 *   Template Literals in ES6
+
+* Quiz [[click](/day%2045/Images/)]
+
+* 'London is the capital of GB' code
     
 
 # My Code:

@@ -174,7 +174,7 @@ console.log(test(9)); //67
     
 *   Default Parameters in ES6
     
-*   Quiz
+*   Quiz [[click](/day%2046/Images/)]
     
 *   "Score 70 plus!" code
     

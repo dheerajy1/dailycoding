@@ -220,7 +220,7 @@ console.log(hobby); //playboy
     
 7.  Object Destructuring in ES6
     
-8.  Quiz
+8.  Quiz [[click](/day%2047/Images/)]
     
 9.  Workout harder! code project
     

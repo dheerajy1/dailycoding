@@ -30,6 +30,8 @@ In this repo I upload my daily coding content.
 - [Day48 Blog](/day%2048/day48blog.md)
 - [Day49 Blog](/day%2049/day49blog.md)
 - [Day50 Blog](/day%2050/day50blog.md)
+- [Day51 Blog](/day%2051/day51blog.md)
+
 
 
 

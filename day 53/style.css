@@ -1,0 +1,76 @@
+body{
+    background-color: aliceblue;
+}
+.computerChoice{
+   
+    width: 23%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.1%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+}
+.userChoice{
+    
+    width: 20%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+}
+.result{
+   
+    width: 20%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.5%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+}
+#Rock{
+    
+    width: 7%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+}
+#Paper{
+    
+    width: 7%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+
+}
+#Scissors{
+   
+    width: 7%;
+    height: 6%;
+    padding-left: 0.8%;
+    padding-top: 0.25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 30px 50px #0000002d;
+    transition: 0.5s;
+}

@@ -133,7 +133,7 @@ Today, we have successfully taken user input and generated computer choices and 
 
 # Code
 
-1.  Code: mathrandom[\[click\]](https://www.sololearn.com/compiler-playground/WtIs2EDSjut6)
+1.  Code: mathrandom [\[click\]](https://www.sololearn.com/compiler-playground/WtIs2EDSjut6)
     
 2.  Code: mapget [\[click\]](https://www.sololearn.com/compiler-playground/WJidyM9AFzJo)
     

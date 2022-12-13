@@ -1,11 +1,11 @@
 
 # Table of contents
-1. [Table of contents](#table-of-contents)
-2. [HTML](#html)
-3. [CSS](#css)
-4. [JavaScript](#javascript)
-5. [Take Shortcut here,](#take-shortcut-here)
-6. [Array find() Method](#array-find-method)
+
+1. [HTML](#html)
+2. [CSS](#css)
+3. [JavaScript](#javascript)
+4. [Take Shortcut here,](#take-shortcut-here)
+5. [Array find() Method](#array-find-method)
 
    i. [Code: Array find() Method \[click\]](#code-array-find-method-click)
 
@@ -13,27 +13,25 @@
 
    iii. [Code: functionreturn \[click\]](#code-functionreturn-click)
 
-7. [Understanding creating elements after a grid div element in JS](#understanding-creating-elements-after-a-grid-div-element-in-js)
+6. [Understanding creating elements after a grid div element in JS](#understanding-creating-elements-after-a-grid-div-element-in-js)
 
     iv. [Code: createdivafter \[click\]](#code-createdivafter-click)
 
-8. [Writing My Own Code,](#writing-my-own-code)
+7. [Writing My Own Code,](#writing-my-own-code)
 
-7. [Adding a feature to the Rock Paper Scissor Game,](#adding-a-feature-to-the-rock-paper-scissor-game)
-8. [Finally,](#finally)
-9. [Conclusion](#conclusion)
-10. [Code](#code)
-11. [Preview of the Game](#preview-of-the-game)
-12. [Source: Code with WebDevSimplified \[click\]](#source-code-with-webdevsimplified-click)
-13. [Author: Dheeraj.y](#author-dheerajy)
-14. [Connect with me:](#connect-with-me)
-
-
-
+8. [Adding a feature to the Rock Paper Scissor Game,](#adding-a-feature-to-the-rock-paper-scissor-game)
+9. [Finally,](#finally)
+10. [Conclusion](#conclusion)
+11. [Code](#code)
+12. [Preview of the Game](#preview-of-the-game)
+13. [Source: Code with WebDevSimplified \[click\]](#source-code-with-webdevsimplified-click)
+14. [Author: Dheeraj.y](#author-dheerajy)
+15. [Connect with me:](#connect-with-me)
 
 
 
 Today #Day57 of #100DaysOfCode, Completed coding and explaining the 'Rock Paper Scissors' code game project in JavaScript taught by [\[WebDevSimplified\]](https://www.youtube.com/@WebDevSimplified)
+
 
 Note:
 

@@ -112,46 +112,46 @@ Let's Move on to JS,
 
 10.  Before we move on, Let's add data attribute to buttons in HTML,
     
-    ```javascript
+    
     <button class="selection" data-selection="rock">✊</button>
     <button class="selection"data-selection="paper">🖐</button>
     <button class="selection"data-selection="scissor">✌️</button>
-    ```
+    
     
 
 11.  After that, Let's create a selection buttons const variable and pick all the data selection attributes using query selector,
     
-    ```javascript
+    
     const selectionButtons = document.querySelectorAll('[data-selection]')
-    ```
+    
     
 
 12.  Next, let's add an add event listener for each button and access our data attribute given to the element in JS using dataset object and keyname property here the keyname is selection
     
-    ```javascript
+    
     selectionButtons.forEach(selectionButton => {
         selectionButton.addEventListener('click', (e) => {
             const selectionName = selectionButton.dataset.selection
             makeSelection(selectionName)
         })
     });
-    ```
+    
     
 
 13.  Now, Let's Create a makeSelection function and call it the above code to append it to click and write console log to check whether it is working or not
     
-    ```javascript
+    
     function makeSelection(selection) {
       console.log(`You Clicked ${selection}`)
     }
-    ```
+    
     
 
 # Take Shortcut here,
 
 14.  Now, let's Define an array,
     
-    ```javascript
+    
     const SELECTION = [
         {
             name: 'rock',
@@ -169,109 +169,109 @@ Let's Move on to JS,
             beats: 'paper'
         }
     ]
-    ```
+    
     
 
 # Array find() Method
 
-```javascript
+
 let x = [1,2,3,4,5]
 
 console.log(x.find((num)=>num == 7)) //null
 console.log(x.find((num)=>num == 6)) //null
 console.log(x.find((num)=>num == 5)) // 5
-```
+
 
 ## Code: Array find() Method [\[click\]](https://www.sololearn.com/compiler-playground/WoAuwNHqURO0)
 
 15.  Then, Let's find the dataset key name in selection array using the array find a method,
     
-    ```javascript
+    
     const selection =  SELECTION.find(selection => selection.name == selectionName)
-    ```
+    
     
 16.  Next, Let's define computer selection,
     
-    ```javascript
+    
     function randomSelection(){
         const randomIndex = Math.floor(Math.random() * SELECTION.length)
         return SELECTION[randomIndex]
     }
-    ```
+    
     
 
 ## Function return
 
-```javascript
+
 let x = ['a','b','c','d','e']
 let str = (num,str)=>{
     return x[num] === str
 }
 console.log(str(0,'g')) //false
 console.log(str(0,'a')) //true
-```
+
 
 ## Code: functionreturn [\[click\]](https://www.sololearn.com/compiler-playground/WvEj4Qf37K3h)
 
 17.  After that, let's decide who the winner is based on the selection, the below code will return only true or false as I have demonstrated in the above link.
     
-    ```javascript
+    
     function isWinner(selection,opponentSelection){
         return selection.beats === opponentSelection.name
     }
-    ```
+    
     
 18.  Then, let's pass the selection and computer selection
     
-    ```javascript
+    
     const yourWinner = isWinner(selection,computerSelection)
     const computerWinner = isWinner(computerSelection,selection)
-    ```
+    
     
 19.  Now, let's define a function addselectionResult to display in HTML,
     
-    ```javascript
+    
     function addselectionResult(selection,winner){
     }
-    ```
+    
     
 
 20.  Then, let's call this addselectionResult function inside makeSelection function,
     
-    ```javascript
+    
     addselectionResult(computerSelection,computerWinner)
     addselectionResult(selection,yourWinner)
-    ```
+    
     
 21.  Then, add the following data attribute to computer div,
     
-    ```xml
+    
     <div data-final-column>
      Computer
      <span class="result-score">0</span>]
     </div>
-    ```
+    
     
 22.  After that, define a const variable to hold this data attribute
     
-    ```javascript
+    
     const finslColumn = document.querySelectorAll('[data-final-column]')
-    ```
+    
     
 23.  Now, add a div,
     
-    ```javascript
+    
     function addselectionResult(selection,winner){
     finalColumn.after(div)
     }
-    ```
+    
     
 
 ## Understanding creating elements after a grid div element in JS
 
 I will explain tomorrow how I visually want to explain what @WebDevSimplified said in his video at [\[click\]](https://youtu.be/1yS-JV4fWqY?t=1138), for now, I am adding only JavaScript Code that I wrote now,
 
-```javascript
+
 const button = document.querySelector('button')
 const box1 = document.querySelector('.box2')
 let i = 2
@@ -286,40 +286,40 @@ div.style.backgroundColor = color[Math.floor(Math.random() * color.length)]
 
 box1.after(div)
 }
-```
+
 
 ## Code: createdivafter [\[click\]](https://www.sololearn.com/compiler-playground/W1cQ5oh4MGq5)
 
 24.  Then, Let's create a div like the one which we commented in HTML,
     
-    ```javascript
+    
     const div = document.createElement('div')
         div.innerText = selection.emoji
         div.classList.add('result-selection')
         if(winner) div.classList.add('winner')
     finalColumn.after(div)
-    ```
+    
     
 25.  Now, Let's add score,
     
-    ```javascript
+    
     [<span class="result-score" data-your-score>0</span>]
-    ```
+    
     
 26.  After that, Let's create a const variable to hold these data attributes,
     
-    ```javascript
+    
     const computerScorespan = document.querySelector('[data-your-score]')
     const yourScorespan = document.querySelector('[data-computer-score]')
-    ```
+    
     
 27.  Now, Let's create a function to incrementScore,
     
-    ```javascript
+    
     function incrementScore(ScoreSpan){
     scoreSpan.innerText = parseInt(scoreSpan.innerText)+1
     }
-    ```
+    
     
 
 ## Writing My Own Code,

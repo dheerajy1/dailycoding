@@ -1,0 +1,77 @@
+* {
+  background-color: rgb(255, 255, 255);
+}
+
+div:has(button) {
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+
+button {
+  border-radius: 13px;
+  background-color: rgba(0, 0, 0, 0.959);
+  color: #ffffff;
+  width: 6em;
+  height: 3em;
+  transition: 0.8s ease;
+  box-shadow: 0 5px 20px #a4a1a1;
+}
+.main{
+display: flex;
+justify-content: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 0.9fr);
+  background-color: rgb(255, 255, 255);
+ /* float: left; */
+  /* margin-left: 45%;
+  margin-right: 30%; */
+  width: 10em;
+  border-radius: 15px;
+  transition: 0.6s ease;
+  box-shadow: 0 5px 20px #ccc;
+}
+.box1 {
+  background-color: #57f0bba4;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3em;
+  border-radius: 9px;
+  transition: 0.6s ease;
+  box-shadow: 0 5px 20px #ccc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+.box2 {
+  background-color: #e7a48c8a;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3em;
+  border-radius: 9px;
+  transition: 0.6s ease;
+  box-shadow: 0 5px 20px #ccc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+.box3 {
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3em;
+  border-radius: 9px;
+  transition: 0.6s ease;
+  box-shadow: 0 5px 20px #ccc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}

@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.6s ease;
+}
+
+header:has(h1) {
+  text-align: center;
+  margin-top: 2%;
+  font-family: monospace;
+}
+
+div.main-container {
+  margin-top: 2%;
+  /* border: 1px solid; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: azure; */
+}
+
+/* Daily-Backup */
+
+div#main-dailybackup {
+  display: grid;
+  grid-template-rows: 4 1fr;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  background-color: rgb(97, 217, 159);
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+div.container-daily-backup{
+  /* background-color: #7a7a7a; */
+  display: none;
+}
+
+div.container-daily-check-box{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* background-color: blue; */
+}
+div.daily-check-box {
+  position: relative;
+  /* background-color: #494949; */
+
+}
+
+
+/* Styling daily check box  */
+
+input[type = "checkbox"]#daily-check-box {
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #edb4b4;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+input:checked[type = "checkbox"]#daily-check-box {
+  background: #2c2c2ca8;
+}
+input[type = "checkbox"]#daily-check-box::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #494949;
+  transform: scale(1.1);
+  box-shadow: 1px 2px 11px #7a7a7a;
+}
+input:checked[type = 'checkbox']#daily-check-box::before{
+  left: 40px;
+  background: #393939cb;
+}
+
+div.container-daily-questions{
+  /* background-color: antiquewhite; */
+  /* display: none; */
+}
+div.content-daily-questions{
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: rgb(215, 250, 246);
+  box-shadow: 0 5px 20px #494949;
+}
+.p1{
+  margin: 2%;
+  font-family: monospace;
+}
+div.container-daily-calculate{
+  /* background-color: #edb4b4; */
+}
+#button-daily-calculate{
+margin: 2%;
+height: 2em;
+padding-left: 1%;
+padding-right: 1%;
+color: ghostwhite;
+background-color: black;
+border-radius: 8px;
+box-shadow: 0 5px 20px #494949;
+
+}
+
+div.container-daily-solutions{
+  /* background-color: #edebb4; */
+  /* display: none; */
+
+}
+div.content-daily-solutions{
+border: 1px solid;
+border-radius: 9px;
+margin: 2%;
+background-color: aliceblue;
+box-shadow: 0 5px 20px #494949;
+}
+.p2{
+  margin: 2%;
+  font-family: monospace;
+}
+
+
+/* Weekly-Backup */
+
+div#main-weeklybackup {
+  display: grid;
+  grid-template-rows: 4 1fr;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  background-color: rgb(97, 217, 217);
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+
+div.container-weekly-backup{
+  /* background-color: #7a7a7a; */
+  display: none;
+}
+div.container-weekly-check-box{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* background-color: blueviolet; */
+}
+div.weekly-check-box {
+  position: relative;
+  /* background-color: brown; */
+}
+
+/* Styling weekly check box  */
+input[type = "checkbox"]#weekly-check-box {
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #edebb4;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+input:checked[type = "checkbox"]#weekly-check-box {
+  background: #2c2c2ca8;
+}
+input[type = "checkbox"]#weekly-check-box::before {
+  position: absolute;
+  /* left: calc( 50% + 31px); */
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #494949;
+  transform: scale(1.1);
+  box-shadow: 1px 2px 11px #7a7a7a;
+}
+input:checked[type = 'checkbox']#weekly-check-box::before{
+  /* left: calc( 50% + 70px); */
+  left: 40px;
+  background: #393939cb;
+}
+
+div.container-weekly-questions{
+  /* background-color: antiquewhite; */
+  /* display: none; */
+}
+div.content-weekly-questions{
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: rgb(215, 250, 246);
+  box-shadow: 0 5px 20px #494949;
+}
+div.container-weekly-calculate{
+  /* background-color: #edb4b4; */
+}
+#button-weekly-calculate{
+margin: 2%;
+height: 2em;
+padding-left: 1%;
+padding-right: 1%;
+color: ghostwhite;
+background-color: black;
+border-radius: 8px;
+box-shadow: 0 5px 20px #494949;
+}
+div.container-weekly-solutions{
+  /* background-color: #edebb4; */
+  /* display: none; */
+}
+div.content-weekly-solutions{
+border: 1px solid;
+border-radius: 9px;
+margin: 2%;
+background-color: aliceblue;
+box-shadow: 0 5px 20px #494949;
+}
+/* .p2{
+  margin: 2%;
+  font-family: monospace;
+} */

@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.4s ease;
+}
+
+header:has(h1) {
+  text-align: center;
+  margin-top: 2%;
+  font-family: monospace;
+}
+
+.main-container {
+  margin-top: 2%;
+  /* border: 1px solid; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: azure; */
+}
+
+/* Daily-Backup */
+
+#main-dailybackup {
+  display: grid;
+  grid-template-rows: 4 1fr;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  background-color: rgb(97, 217, 159);
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+.container-daily-backup {
+  /* background-color: #7a7a7a; */
+   display: none; /*this 1  */
+}
+
+.container-daily-check-box {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* background-color: blue; */
+}
+.daily-check-box {
+  position: relative;
+  /* background-color: #494949; */
+}
+
+/* Styling daily check box  */
+
+input[type="checkbox"]#daily-check-box {
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #edb4b4;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+input:checked[type="checkbox"]#daily-check-box {
+  background: #2c2c2ca8;
+}
+input[type="checkbox"]#daily-check-box::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #494949;
+  transform: scale(1.1);
+  box-shadow: 1px 2px 11px #7a7a7a;
+}
+input:checked[type="checkbox"]#daily-check-box::before {
+  left: 40px;
+  background: #393939cb;
+}
+.container-daily-questions {
+  /* background-color: antiquewhite; */
+  /* display: none; */
+}
+.content-daily-questions {
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: rgb(215, 250, 246);
+  box-shadow: 0 5px 20px #494949;
+}
+.p1 {
+  margin: 2%;
+  font-family: monospace;
+}
+.container-daily-calculate {
+  /* background-color: #edb4b4; */
+}
+#button-daily-calculate {
+  margin: 2%;
+  height: 2em;
+  padding-left: 1%;
+  padding-right: 1%;
+  color: ghostwhite;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px #494949;
+}
+
+.container-daily-solutions {
+  /* background-color: #edebb4; */
+   display: none; /*this 2  */
+}
+.content-daily-solutions {
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: aliceblue;
+  box-shadow: 0 5px 20px #494949;
+}
+.p2 {
+  margin: 2%;
+  font-family: monospace;
+}
+
+/* Weekly-Backup */
+
+#main-weeklybackup {
+  display: grid;
+  grid-template-rows: 4 1fr;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  background-color: rgb(97, 217, 217);
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+
+.container-weekly-backup {
+  /* background-color: #7a7a7a; */
+  display: none;  /*this 3 */
+}
+.container-weekly-check-box {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* background-color: blueviolet; */
+}
+.weekly-check-box {
+  position: relative;
+  /* background-color: brown; */
+}
+
+/* Styling weekly check box  */
+input[type="checkbox"]#weekly-check-box {
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #edebb4;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #676666cc;
+}
+input:checked[type="checkbox"]#weekly-check-box {
+  background: #2c2c2ca8;
+}
+input[type="checkbox"]#weekly-check-box::before {
+  position: absolute;
+  /* left: calc( 50% + 31px); */
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #494949;
+  transform: scale(1.1);
+  box-shadow: 1px 2px 11px #7a7a7a;
+}
+input:checked[type="checkbox"]#weekly-check-box::before {
+  /* left: calc( 50% + 70px); */
+  left: 40px;
+  background: #393939cb;
+}
+
+.container-weekly-questions {
+  /* background-color: antiquewhite; */
+  /* display: none; */
+}
+.content-weekly-questions {
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: rgb(215, 250, 246);
+  box-shadow: 0 5px 20px #494949;
+}
+.p1div {
+  margin: 2%;
+  font-family: monospace;
+  /* background-color: floralwhite; */
+  display: inline-flex;
+}
+.container-weekly-calculate {
+  /* background-color: #edb4b4; */
+}
+#button-weekly-calculate {
+  margin: 2%;
+  height: 2em;
+  padding-left: 1%;
+  padding-right: 1%;
+  color: ghostwhite;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px #494949;
+}
+.container-weekly-solutions {
+  /* background-color: #edebb4; */
+  display: none;  /*this 4 */
+}
+.content-weekly-solutions {
+  border: 1px solid;
+  border-radius: 9px;
+  margin: 2%;
+  background-color: aliceblue;
+  box-shadow: 0 5px 20px #494949;
+}
+/* .p2{
+  margin: 2%;
+  font-family: monospace;
+} */
+
+.container-weekdays {
+  background-color: #edebb4b7;
+  position: absolute;
+  /* padding: 5px 5px 11px 5px; */
+  margin-top: 1px;
+  height: 134px;
+  border-radius: 7px;
+  border: 1px solid;
+  display: grid;
+  grid-template-rows: 4 1fr;
+  gap: 1%;
+  overflow: hidden;
+  visibility: hidden;
+  box-shadow: 0 5px 20px #494949;
+
+}
+.weekdays{
+  border-radius: 1px;
+  padding-left: 6px;
+  padding-top: 1px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.weekdays:hover{
+background-color: #ffffff;
+}
+.showblock{
+  display: block;
+}
+.shownone{
+  display: none;
+}
+.showvisibility{
+  visibility: visible;
+}
+.showhidden{
+  visibility: hidden;
+}
+.switchmaincontent{
+ display: block;
+  background-color: #ffffff;
+  
+  margin-left:30%;
+ 
+  padding-bottom: 2%;
+  width: 45%;
+
+}

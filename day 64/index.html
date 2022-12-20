@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js" defer></script>
+    <title>Backup calculator by Dheeraj</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Backup Strategy</h1>
+    </header>
+    <div class="main-container">
+
+        <!-- daily-backup -->
+
+        <div id="main-dailybackup">
+
+            <div class="container-daily-check-box">
+                <div class="daily-check-box">
+                    <input type="checkbox" name="daily-check-button" id="daily-check-box"> 
+                </div>
+                <div class="container-text-daily">
+                    <div class="text-daily">Daily Backup</div>
+                </div>
+            </div>
+
+            <div class="container-daily-backup">
+                <div class="container-daily-questions">
+                    <div class="content-daily-questions">
+                        <p class="p1">1. Every Day- Full Backup at <input type="time" name="full_backup" id="a"> ;
+                        </p>
+
+                        <p class="p1">2. Every <input type="number" name="diff_step" id="b" size="0.5" placeholder="Hours 1-12">
+                            Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1"> ;
+                        </p>
+
+                        <p class="p1">3. Every <input type="number" name="logstep" id="c" size="1" placeholder="Minutes 0-60"> Minutes Log
+                            Backups ;
+                        </p>
+
+                        <p class="p1">4. My Database is Corrupted at <input type="time" name="ques" id="d"> ;
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container-daily-calculate">
+                    <button id="button-daily-calculate">
+                        Calculate-daily
+                    </button>
+                </div>
+
+                <div class="container-daily-solutions">
+                    <div class="content-daily-solutions">
+                        <p class="p2" id="a1" name="One Recent Full Backup files"></p>
+
+                        <p class="p2" id="b2" name="One Differential Backup files"></p>
+
+                        <p class="p2" id="c1" name="Log Backup files"></p>
+
+                        <p class="p2" id="c2"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- weekly-backup -->
+
+        <div id="main-weeklybackup">
+
+            <div class="container-weekly-check-box">
+                <div class="weekly-check-box">
+                    <input type="checkbox" name="weekly-check-button" id="weekly-check-box">
+                </div>
+                <div class="container-text-weekly">
+                    <div class="text-weekly">Weekly Backup</div>
+                </div>
+            </div>
+
+            <div class="container-weekly-backup">
+                <div class="container-weekly-questions">
+                    <div class="content-weekly-questions">
+                        <p class="p1">1. Every Sunday, Full Backup at <input type="time" name="fullbackup" id="wa"> ;</p>
+
+                        <p class="p1">2. Every day, Differential Backup at <input type="time" name="diffbackup" id="wb"> ;
+                        </p>
+
+                        <p class="p1">3. Every <input type="number" name="logstep" id="wc" size="4" placeholder="Minutes 0-60"> Minutes Log
+                            Backups ;
+                        </p>
+
+                        <div class="p1div">
+                            <div class="q4">4. My Database is Corrupted on</div>
+                            <div class="main-dropdownbox">
+                                <input type="text"  name="weekday" size="8" id="wd" class="dropdownbox"
+                                placeholder=" Weekday" readonly> ,
+                                <div class="container-weekdays">
+                                    <p class="weekdays"> Sunday</p>
+                                    <p class="weekdays"> Monday</p>
+                                    <p class="weekdays"> Tuesday</p>
+                                    <p class="weekdays"> Wednesday</p>
+                                    <p class="weekdays"> Thursday</p>
+                                    <p class="weekdays"> Friday</p>
+                                    <p class="weekdays"> Saturday</p>
+                                </div>
+                            </div>
+                            <div class="q5">Time&nbsp<input type="time" name="time" id="we"> ;</div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="container-weekly-calculate">
+                    <button id="button-weekly-calculate">
+                        Calculate-weekly
+                    </button>
+                </div>
+
+                <div class="container-weekly-solutions">
+                    <div class="content-weekly-solutions">
+                        <p class="p2" id="as1" name="One Recent Full Backup files"></p>
+
+                        <p class="p2" id="bs2" name="One Differential Backup files"></p>
+
+                        <p class="p2" id="cs1" name="Log Backup files"></p>
+
+                        <p class="p2" id="cc2"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

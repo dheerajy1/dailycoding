@@ -1,0 +1,20 @@
+body {
+  background-color: aquamarine;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 3vh);
+}
+.container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  padding: 2%;
+}
+.content {
+  color: ghostwhite;
+}

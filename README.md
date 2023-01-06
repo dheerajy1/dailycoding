@@ -151,6 +151,8 @@ Day 71 - Day 80
 Day 81 - Day 90
 </summary>
 
+81. [Day81 Blog](/day%2081/day81blog.md)
+
 
 </details>
 

@@ -154,7 +154,9 @@ Day 81 - Day 90
 81. [Day81 Blog](/day%2081/day81blog.md)
 82. [Day82 Blog](day%2082/day82blog.md)
 83. [Day83 Blog](/day%2083/day83blog.md)
-84. [Day83 Blog](/day%2084/day84blog.md)
+84. [Day84 Blog](/day%2084/day84blog.md)
+85. [Day85 Blog](/day%2085/day85blog.md)
+
 
 
 </details>

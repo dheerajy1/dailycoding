@@ -156,6 +156,8 @@ Day 81 - Day 90
 83. [Day83 Blog](/day%2083/day83blog.md)
 84. [Day84 Blog](/day%2084/day84blog.md)
 85. [Day85 Blog](/day%2085/day85blog.md)
+86. [Day86 Blog](/day%2086/day86blog.md)
+
 
 
 

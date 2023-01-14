@@ -1,0 +1,77 @@
+[
+  {
+    "departing": "08:11",
+    "destination": "OMAN",
+    "flightNumber": ["OX 203", "AC8732"],
+    "gate": "A 01",
+    "status": "ON TIME"
+  },
+  {
+    "departing": "12:39",
+    "destination": "LONDON",
+    "flightNumber": ["CL 320", "AC8732"],
+    "gate": "C 31",
+    "status": "CANCELLED"
+  },
+  {
+    "departing": "13:21",
+    "destination": "DUBAI",
+    "flightNumber": ["DXB 201", "AC8732"],
+    "gate": "A 19",
+    "status": "CANCELLED"
+  },
+  {
+    "departing": "14:01",
+    "destination": "FRANKFURT",
+    "flightNumber": ["FR 402", "AC8732"],
+    "gate": "B 02",
+    "status": "ON TIME"
+  },
+  {
+    "departing": "15:22",
+    "destination": "TOKYO",
+    "flightNumber": ["TK 211", "AC8732"],
+    "gate": "A 32",
+    "status": "DELAYED"
+  },
+  {
+    "status": "On time",
+    "destination": "Washington (Dulles), USA",
+    "airline": ["United Airlines", "Air Canada"],
+    "flightNumber": ["UA3963", "AC3892"],
+    "previousSchedule": "",
+    "departing": "06:20",
+    "terminal": "1",
+    "gate": "F88"
+  },
+  {
+    "status": "On time",
+    "destination": "Cancun, MEX",
+    "airline": ["Sunwing"],
+    "flightNumber": ["WG513"],
+    "previousSchedule": "",
+    "departing": "06:20",
+    "terminal": "3",
+    "gate": "B28"
+  },
+  {
+    "status": "Delayed",
+    "destination": "Montego Bay, JAM",
+    "airline": ["Sunwing"],
+    "flightNumber": ["WG720"],
+    "previousSchedule": "06:20",
+    "departing": "07:55",
+    "terminal": "3",
+    "gate": "B37"
+  },
+  {
+    "status": "On time",
+    "destination": "St. John's (NL), CAN",
+    "airline": ["Air Canada"],
+    "flightNumber": ["AC680"],
+    "previousSchedule": "",
+    "departing": "06:25",
+    "terminal": "1",
+    "gate": "D38"
+  }
+]

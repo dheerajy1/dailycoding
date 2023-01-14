@@ -161,12 +161,6 @@ Day 81 - Day 90
 88. [Day88 Blog](/day%2088/day88blog.md)
 89. [Day89 Blog](/day%2089/day89blog.md)
 
-
-
-
-
-
-
 </details>
 
 
@@ -177,49 +171,3 @@ Day 91 - Day 100
 
 
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -170,7 +170,7 @@ Day 81 - Day 90
 <summary>
 Day 91 - Day 100
 </summary>
-91. [Day90 Blog](/day%2091/day91blog.md)
+91. [Day91 Blog](/day%2091/day91blog.md)
 
 
 </details>

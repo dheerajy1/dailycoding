@@ -160,7 +160,7 @@ Day 81 - Day 90
 87. [Day87 Blog](/day%2087/day87blog.md)
 88. [Day88 Blog](/day%2088/day88blog.md)
 89. [Day89 Blog](/day%2089/day89blog.md)
-90. [Day90 Blog](day%2090/day90blog.md)
+90. [Day90 Blog](/day%2090/day90blog.md)
 
 
 </details>
@@ -170,6 +170,7 @@ Day 81 - Day 90
 <summary>
 Day 91 - Day 100
 </summary>
+91. [Day90 Blog](/day%2091/day91blog.md)
 
 
 </details>

@@ -171,6 +171,8 @@ Day 81 - Day 90
 Day 91 - Day 100
 </summary>
 91. [Day91 Blog](/day%2091/day91blog.md)
+92. [Day92 Blog](/day%2092/day92blog.md)
+
 
 
 </details>

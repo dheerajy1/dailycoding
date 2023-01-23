@@ -178,6 +178,8 @@ Day 91 - Day 100
 95. [Day95 Blog](/day%2095/day95blog.md)
 96. [Day96 Blog](/day%2096/day96blog.md)
 97. [Day97 Blog](/day%2097/day97blog.md)
+98. [Day98 Blog](/day%2098/day98blog.md)
+
 
 
 

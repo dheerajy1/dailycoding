@@ -190,6 +190,7 @@ Day 101 - Day 110
 </summary>
 
 101. [Day101 Blog](/day101to200/day101to110/day%20101/day101blog.md)
+102. [Day102 Blog](/day101to200/day101to110/day%20102/day102blog.md)
 
 
 </details>

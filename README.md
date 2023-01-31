@@ -194,6 +194,7 @@ Day 101 - Day 110
 103. [Day103 Blog](/day101to200/day101to110/day%20103/day103blog.md)
 104. [Day104 Blog](/day101to200/day101to110/day%20104/day104blog.md)
 105. [Day105 Blog](/day101to200/day101to110/day%20105/day105blog.md)
+106. [Day106 Blog](/day101to200/day101to110/day%20106/day106blog.md)
 
 
 

@@ -21,7 +21,7 @@ function reverseBySeparator(string, separator) {
 # 2\. How to empty an array in JavaScript?
 
 ```javascript
-var arrayList =  ['a', 'b', 'c', 'd', 'e', 'f'];
+var arrayList = ["a", "b", "c", "d", "e", "f"];
 ```
 
 ## Method 1
@@ -56,7 +56,7 @@ console.log(isInt(0.3)); // false
 
 ## 4\. Explain what a callback function is and provide a simple example
 
-A callback function is a function that is passed to another function as an argument and is executed after some operation has been completed. Below is an example of a simple callback function that logs to the console *after* some operations have been completed.
+A callback function is a function that is passed to another function as an argument and is executed after some operation has been completed. Below is an example of a simple callback function that logs to the console _after_ some operations have been completed.
 
 ```javascript
 function modifyArray(arr, callback) {
@@ -68,7 +68,7 @@ function modifyArray(arr, callback) {
 
 var arr = [1, 2, 3, 4, 5];
 
-modifyArray(arr, function() {
+modifyArray(arr, function () {
   console.log("array has been modified", arr);
 });
 ```
@@ -99,9 +99,8 @@ Learned and Practised Tricky JavaScript Coding Interview Questions.
 # Code
 
 1. code
-    
-    ![Alt text](1.%20day115%20code.png)
-    
+
+   ![Alt text](1.%20day115%20code.png)
 
 # Source: JavaScript \[[Link](https://plainenglish.io/blog/10-tricky-javascript-coding-interview-question-with-solution)\]
 
@@ -109,10 +108,7 @@ Learned and Practised Tricky JavaScript Coding Interview Questions.
 
 # Connect with me:
 
-* [My Twitter](https://twitter.com/yssdheeraj)
-    
-* [My LinkedIn](https://www.linkedin.com/in/dheerajy1/)
-    
-* [My GitHub](https://github.com/dheerajy1)
-    
-* [My Hashnode](https://dheerajy1.hashnode.dev/)
+- [My Twitter](https://twitter.com/yssdheeraj)
+- [My LinkedIn](https://www.linkedin.com/in/dheerajy1/)
+- [My GitHub](https://github.com/dheerajy1)
+- [My Hashnode](https://dheerajy1.hashnode.dev/)

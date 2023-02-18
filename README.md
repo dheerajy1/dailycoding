@@ -228,6 +228,8 @@ Day 121 - Day 130
 121. [Day121 Blog](/day101to200/day121to130/day%20121/day121blog.md)
 122. [Day122 Blog](/day101to200/day121to130/day%20122/day122blog.md)
 123. [Day123 Blog](/day101to200/day121to130/day%20123/day123blog.md)
+124. [Day124 Blog](/day101to200/day121to130/day%20124/day124blog.md)
+
 
 
 </details>

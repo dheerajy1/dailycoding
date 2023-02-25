@@ -242,7 +242,16 @@ Day 121 - Day 130
 <summary>
 Day 131 - Day 140
 </summary>
+131. [Day131 Blog](/day101to200/day131to140/day%20131/day131blog.md)
 
+
+
+</details>
+
+<details>
+<summary>
+Day 141 - Day 150
+</summary>
 
 
 

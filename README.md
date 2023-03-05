@@ -250,6 +250,7 @@ Day 131 - Day 140
 136. [Day136 Blog](/day101to200/day131to140/day%20136/day136blog.md)
 137. [Day137 Blog](/day101to200/day131to140/day%20137/day137blog.md)
 138. [Day138 Blog](/day101to200/day131to140/day%20138/day138blog.md)
+139. [Day139 Blog](/day101to200/day131to140/day%20139/day139blog.md)
 
 
 

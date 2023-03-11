@@ -263,7 +263,7 @@ Day 141 - Day 150
 141. [Day141 Blog](/day101to200/day141to150/day%20141/day141blog.md)
 142. [Day142 Blog](/day101to200/day141to150/day%20142/day142blog.md)
 143. [Day143 Blog](/day101to200/day141to150/day%20143/day143blog.md)
-144. [Day144 Blog]()
+144. [Day144 Blog](/day101to200/day141to150/day%20144/day144blog.md)
 145. [Day145 Blog]()
 146. [Day146 Blog]()
 147. [Day147 Blog]()

@@ -278,8 +278,8 @@ Day 141 - Day 150
 Day 151 - Day 160
 </summary>
 
-151. [Day151 Blog](/day101to200/MSSQLintq/day151blog.md)
-152. [Day152 Blog]()
+151. [Day151 Blog](https://github.com/dheerajy1/dheerajy1/blob/e7f6b8e75c4b30c570b1ba86eac3808b9d6de085/README.md)
+152. [Day152 Blog](/day101to200/MSSQLintq/day152blog.md)
 153. [Day153 Blog]()
 154. [Day154 Blog]()
 155. [Day155 Blog]()

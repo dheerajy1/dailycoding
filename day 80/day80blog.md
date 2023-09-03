@@ -1,5 +1,7 @@
 Today #Day80 of #100DaysOfCode, I am adding the toggle to Switch between temperature units °Fahrenheit and °Celcius and imported Geo-Location data and a 'Getting random location' prompt for the 'How To Build A Weather App In JavaScript Without Needing A Server' project.
 
+
+
 # 2\. Getting data from json file using Axios library,
 
 In Axios library, get() method returns a promise hence you then() method to wait for the promise to get resolved,
@@ -168,6 +170,86 @@ I added the following features on my own,
     
     ![Alt text](3.%20day80%20preview%202.png)
     
+
+# Author: Dheeraj.y
+
+# Connect with me:
+
+* [My Twitter](https://twitter.com/yssdheeraj)
+    
+* [My LinkedIn](https://www.linkedin.com/in/dheerajy1/)
+    
+* [My GitHub](https://github.com/dheerajy1)
+    
+* [My Hashnode](https://dheerajy1.hashnode.dev/)
+
+---
+
+> **Today 3rd September 2023, I am fixing two issues about the Weather API app.**
+> 
+# 1\. Issue Long table
+
+## Issue Summary:
+
+The issue I faced was related to creating a scrollable table within a parent div. Specifically, I wanted to have a scrollable container for a table.
+
+## Solution:
+
+To achieve the desired result, you can follow these steps:
+
+1. Create a parent div with a specific height value and enable scrolling for it using the overflow: auto; property. This will ensure that the container becomes scrollable if the content exceeds its height.
+    
+
+```sql
+.container-hourly-div {
+  height: 400px; /* Set a specific height value */
+  overflow: auto; /* Enable scrolling for the container */
+
+}
+```
+
+1. Create a table within the parent div to display the content. Apply necessary styling to the table, such as setting the width to 100%, centering the text, adjusting padding, and adding borders.
+    
+
+```sql
+.hour-section {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  padding: 0% 4% 0% 5%;
+  border-radius: 9px;
+  border: 1px solid #111211;
+}
+```
+
+# 2\. Issue No contact Links
+
+I added my contact links from the project \[[Link](https://dheerajy1.hashnode.dev/built-a-css-project-and-learnt-js-closures-day66)\].
+
+# Conclusion
+
+Learning Objectives,
+
+1. Fixed Issued scrollable Table,
+    
+2. Added Contact Links.
+    
+
+## Site Live \[[Link](https://weather-app-dheeraj.netlify.app/)\]
+
+## Images:
+
+### Image-1
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693755230133/fce3d282-7749-4c2b-a75c-6f40fa54436d.png)
+
+### Image-2
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693755235103/324eab51-11cb-4659-930d-96a9259ba46a.png)
+
+### Image-3
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693755237917/07063661-b862-45c5-8329-2715dedebe95.png)
 
 # Author: Dheeraj.y
 

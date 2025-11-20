@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children }) => {
-  return <div className="w-full h-screen p-2 bg-amber-50">{children}</div>;
+  return <div className="w-full min-h-screen h-fit p-2 bg-amber-50">{children}</div>;
 };
 
 export default Layout;

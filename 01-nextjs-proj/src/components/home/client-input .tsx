@@ -3,8 +3,7 @@
 "use client";
 
 import React, { FC, useEffect, useState } from "react";
-
-import { ApiData } from "@/lib/api/functions";
+import { useRouter } from "next/navigation";
 
 import {
   Select,
@@ -32,70 +31,52 @@ const sampleApiUrl: {
   },
 ];
 
-const ClientInput : FC<Props> = ({}) => {
-  const [text, setText] = useState<string>("");
-  const [apiData, setApiData] = useState<Object | null>(null);
+const ClientInput: FC<Props> = ({}) => {
+  const router = useRouter();
+
+  const [color, setColor] = useState("");
 
   useEffect(() => {
-    // validation
-    if (!text.includes("https://")) return;
-
-    const fetchData = async () => {
-      try {
-        const data = await ApiData({ url: encodeURI(text) });
-
-        // test
-        // console.log("Box", data);
-
-        // immutattion update
-        setApiData((prev) => ({ ...data }));
-      } catch (error: unknown) {
-        const message =
-          error instanceof Error ? error.message : "Unknown error";
-
-        // test
-        // console.log("API error:", message);
-      }
-    };
-
-    fetchData();
-  }, [text]);
+    const c = `hsl(${Math.random() * 360},80%,75%)`;
+    setColor(c);
+  }, []);
 
   //test
-  //   console.log(`Page - client`);
-  //   console.log(`Box`, dataRef.current); ;
+  //   console.log(`ClientInput - client`);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const dataText = e.target.value.trim();
-
-    // string is a primitive data type - immutation - safe to directly perform update
-    setText(dataText);
+    const url = e.target.value.trim();
+    if (!url.startsWith("https://")) return;
+    router.replace(`/home?url=${encodeURIComponent(url)}`);
     return;
   };
 
   const handleSelectChange = (value: string) => {
-    // string is a primitive data type - immutation - safe to directly perform update
-    setText(value);
+    router.replace(`/home?url=${encodeURIComponent(value)}`);
     return;
   };
 
   return (
-    <div className="flex w-full flex-col gap-4 overflow-clip p-4">
-      <div className="w-fit">level 1 component</div>
+    <div className="flex w-full flex-col gap-4 overflow-clip rounded-lg border border-black p-4 shadow-lg">
+      <div className="flex min-h-4 w-fit min-w-4 flex-row items-center gap-4">
+        <div className="w-fit p-2">client component</div>
+        <div className={`h-full w-fit rounded p-2`} style={{ backgroundColor: color }}></div>
+      </div>
+
       <div className="w-fit">
         {" "}
         <input
-          value={text}
-          size={Math.max("Enter api url".length, text.length)}
+          // value={text}
+          // size={Math.max("Enter api url".length, text.length)}
           type="text"
           onChange={handleInputChange}
           placeholder="Enter api url"
-          className="w-fit max-w-[600px] rounded border border-black p-1"
+          className="w-fit max-w-[600px] min-w-[180px] rounded border border-black p-1"
         />
       </div>
 
       <Select onValueChange={handleSelectChange}>
-        <SelectTrigger className="max-w-[380px]">
+        <SelectTrigger className="max-w-[380px] min-w-[180px]">
           <SelectValue placeholder="Select a sample api url" />
         </SelectTrigger>
         <SelectContent>
@@ -111,14 +92,8 @@ const ClientInput : FC<Props> = ({}) => {
           </SelectGroup>
         </SelectContent>
       </Select>
-
-      <div className="w-fit">
-        <pre className="w-full rounded-md bg-[#CAE8BD] p-4 text-sm wrap-break-word whitespace-pre-wrap text-black">
-          {JSON.stringify(apiData, null, 2)}
-        </pre>
-      </div>
     </div>
   );
 };
 
-export { ClientInput  };
+export { ClientInput };

@@ -1,9 +1,7 @@
 // src\app\home\page.tsx
 
-"use server";
-
 import { FC } from "react";
-import { Box } from "@/components/home/box";
+import { ClientInput } from "@/components/home/client-input ";
 
 interface PageProp {}
 
@@ -13,7 +11,7 @@ const Page: FC<PageProp> = () => {
 
   return (
     <>
-      <Box />
+      <ClientInput />
     </>
   );
 };

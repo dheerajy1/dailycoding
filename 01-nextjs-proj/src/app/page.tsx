@@ -1,4 +1,3 @@
-"use server";
 
 import { FC } from "react";
 import { SigninForm } from "@/components/auth/signin-form";

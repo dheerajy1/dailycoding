@@ -13,31 +13,21 @@ const ApiData = async ({ url }: Props) => {
 
     const res = await axios.get(url);
 
-    const contentType = res.headers["content-type"] || "";
+    // test
+    // console.log(`ApiData - server`, res)
+
     const status = res.status;
+    const statusText = res.statusText;
 
     const statusErrorCodes = [404, 503];
 
     // Handle specific status errors
     if (statusErrorCodes.includes(status)) {
-      throw new Error(`${res.statusText} (${status}).`);
+      throw new Error(`${statusText} (${status}).`);
     }
 
-    // Handle HTML responses
-    if (contentType.includes("text/html")) {
-      return res.data;
-    }
+    return res.data;
 
-    // Handle JSON responses
-    if (
-      contentType.includes("application/json") ||
-      contentType.includes("application/vnd.api+json")
-    ) {
-      return res.data;
-    }
-
-    // Unknown / unsupported content type
-    throw new Error(`Unsupported content type: ${contentType}`);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown server error";
     return message;

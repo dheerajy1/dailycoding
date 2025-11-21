@@ -1,6 +1,6 @@
 // src\components\home\dynamic-rendering.tsx
 
-import { ApiData } from "@/lib/api/functions";
+import { ApiData } from "@/app/actions/actions";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
@@ -18,6 +18,9 @@ const DataRenderer: FC<Props> = async ({ url, className, ...props }) => {
       className={cn(`overflow-clip rounded-lg border border-black`, className)}
       {...props}
     >
+      <div className="w-fit p-2">
+        <p>data server component</p>
+      </div>
       <pre className="bg-green-100 p-4">{JSON.stringify(data, null, 2)}</pre>
     </div>
   );

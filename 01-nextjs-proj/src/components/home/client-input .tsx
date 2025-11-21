@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { DataClientComp } from "@/components/home/data-client-component";
 
 interface Props {}
 
@@ -34,33 +35,40 @@ const sampleApiUrl: {
 const ClientInput: FC<Props> = ({}) => {
   const router = useRouter();
 
-  const [color, setColor] = useState("");
+  const [url, setUrl] = useState<string | null>(null);
+  const [color, setColor] = useState<string>("");
 
   useEffect(() => {
-    const c = `hsl(${Math.random() * 360},80%,75%)`;
-    setColor(c);
+    setColor(`hsl(${Math.random() * 360},80%,75%)`);
   }, []);
 
-  //test
-  //   console.log(`ClientInput - client`);
+  // test
+  // console.log(`ClientInput - client`);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const url = e.target.value.trim();
     if (!url.startsWith("https://")) return;
     router.replace(`/home?url=${encodeURIComponent(url)}`);
+    setUrl(url);
     return;
   };
 
   const handleSelectChange = (value: string) => {
     router.replace(`/home?url=${encodeURIComponent(value)}`);
+    setUrl(value);
     return;
   };
 
   return (
     <div className="flex w-full flex-col gap-4 overflow-clip rounded-lg border border-black p-4 shadow-lg">
       <div className="flex min-h-4 w-fit min-w-4 flex-row items-center gap-4">
-        <div className="w-fit p-2">client component</div>
-        <div className={`h-full w-fit rounded p-2`} style={{ backgroundColor: color }}></div>
+        <div className="w-fit p-2">
+          <p>client component</p>
+        </div>
+        <div
+          className={`h-full w-fit rounded p-2`}
+          style={{ background: color }}
+        ></div>
       </div>
 
       <div className="w-fit">
@@ -92,6 +100,8 @@ const ClientInput: FC<Props> = ({}) => {
           </SelectGroup>
         </SelectContent>
       </Select>
+
+      {url && <DataClientComp url={url} />}
     </div>
   );
 };

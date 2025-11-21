@@ -1,10 +1,9 @@
 // src\app\home\page.tsx
 
-import { FC, Suspense } from "react";
+import React, { FC, Suspense } from "react";
 import { ClientInput } from "@/components/home/client-input ";
 import { DataRenderer } from "@/components/home/dynamic-rendering";
-
-interface PageProp {
+interface PageProp extends React.HTMLAttributes<HTMLDivElement> {
   searchParams: Promise<{ url?: string }>;
 }
 
@@ -18,6 +17,7 @@ const Page: FC<PageProp> = async ({ searchParams }) => {
   return (
     <div className="flex flex-row gap-4">
       <ClientInput />
+      
       {/* Parallel rendering zone */}
       <Suspense fallback={<div>Loading...</div>}>
         {url && <DataRenderer url={url} />}

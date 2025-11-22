@@ -4,7 +4,7 @@ import useSWR from "swr";
 
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import axios from "axios";
+import { getRandomApiUrl } from "@/data-access/random-api-url";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   url: string;
@@ -18,12 +18,8 @@ const DataClientComp: FC<Props> = ({ url, className, ...props }) => {
   // ---------------------------
 
   // data
-  const { data, error, isLoading } = useSWR(
-    url ? ["/api/home", url] : null,
-    async () => {
-      const res = await axios.get(`/api/home?url=${encodeURIComponent(url)}`);
-      return res.data;
-    },
+  const { data, error, isLoading } = useSWR(["/api/url", url], () =>
+    getRandomApiUrl({ query: encodeURIComponent(url) }),
   );
 
   if (isLoading) return <div>Loading...</div>;

@@ -1,3 +1,4 @@
+├── .env.local
 ├── .gitignore
 ├── .prettierrc
 ├── components.json
@@ -5,6 +6,7 @@
 ├── eslint.config.mjs
 ├── next-env.d.ts
 ├── next.config.ts
+├── nextjs-concepts-2025-10-25-1934.excalidraw
 ├── package.json
 ├── postcss.config.mjs
 ├── public
@@ -16,24 +18,55 @@
 ├── README.md
 ├── src
 │  ├── app
+│  │  ├── actions
+│  │  │  ├── auth.ts
+│  │  │  └── products.ts
+│  │  ├── api
+│  │  │  ├── products
+│  │  │  │  └── route.ts
+│  │  │  └── url
+│  │  │    └── route.ts
 │  │  ├── favicon.ico
 │  │  ├── globals.css
 │  │  ├── home
 │  │  │  ├── layout.tsx
 │  │  │  ├── loading.tsx
+│  │  │  ├── page.tsx
+│  │  │  └── state
+│  │  │    └── page.tsx
+│  │  ├── home-v2
 │  │  │  └── page.tsx
 │  │  ├── layout.tsx
 │  │  ├── loading.tsx
 │  │  └── page.tsx
 │  ├── components
+│  │  ├── auth
+│  │  │  └── signin-form.tsx
 │  │  ├── home
-│  │  │  ├── box.tsx
-│  │  │  └── go-home-button.tsx
+│  │  │  ├── client-input .tsx
+│  │  │  ├── data-client-component.tsx
+│  │  │  ├── dynamic-rendering.tsx
+│  │  │  └── home-page-header.tsx
+│  │  ├── home-v2
+│  │  │  └── products.tsx
+│  │  ├── state
+│  │  │  ├── first-level.tsx
+│  │  │  └── second-level.tsx
 │  │  └── ui
 │  │    ├── button.tsx
-│  │    └── skeleton.tsx
-│  └── lib
-│    ├── server
-│    │  └── functions.ts
-│    └── utils.ts
+│  │    ├── form.tsx
+│  │    ├── input.tsx
+│  │    ├── label.tsx
+│  │    ├── select.tsx
+│  │    ├── skeleton.tsx
+│  │    ├── sonner.tsx
+│  │    └── spinner.tsx
+│  ├── data-access
+│  │  ├── products.ts
+│  │  └── random-api-url.ts
+│  ├── lib
+│  │  └── utils.ts
+│  ├── proxy.ts
+│  └── types
+│    └── products.ts
 └── tsconfig.json

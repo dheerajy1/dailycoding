@@ -1,11 +1,12 @@
-// src\app\api\home\route.ts
+// src\app\api\url\route.ts
 
 import { NextRequest, NextResponse } from "next/server";
+
 import axios from "axios";
 
 /* 
 ====================================================================
- GET /api/products
+ GET /api/url
 --------------------------------------------------------------------
 • Purpose: Fetch all data
 • Query Params: None
@@ -14,6 +15,7 @@ import axios from "axios";
 • Forwards → ``
 ====================================================================
 */
+
 export async function GET(req: NextRequest) {
     try {
 
@@ -25,25 +27,20 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({ error: "Missing url param" }, { status: 400 });
         }
 
-        const res = await axios.get(url);
+        const res = await axios.get<unknown>(url);
 
-        const status = res.status;
-        const statusText = res.statusText;
-
-        const statusErrorCodes = [404, 503];
-
-        if (statusErrorCodes.includes(status)) {
-            return NextResponse.json(
-                { error: `${statusText || "Error"}` },
-                { status: status }
-            );
+        return NextResponse.json(res.data);
+    } catch (err: unknown) {
+        // Uniform error response
+        let status = 500;
+        let message = "Unknown error";
+        if (axios.isAxiosError(err)) {
+            status = err.response?.status || 500;
+            message = err.response?.data?.message || err.message;
+        } else if (err instanceof Error) {
+            message = err.message;
         }
 
-        const data = await res.data;
-
-        return NextResponse.json(data, { status: status });
-    } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : "Unknown error";
-        return NextResponse.json({ error: message }, { status: 500 });
+        return NextResponse.json({ error: message }, { status });
     }
 }

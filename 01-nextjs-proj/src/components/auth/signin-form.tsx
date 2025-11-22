@@ -1,16 +1,19 @@
+// src\components\auth\signin-form.tsx
+
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { useActionState } from "react";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Spinner } from "@/components/ui/spinner";
 
 import { LogIn } from "lucide-react";
 
+import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -23,6 +26,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
+import { postSignin } from "@/app/actions/auth";
 
 interface Props {
   className?: string;
@@ -33,17 +37,28 @@ const formSchema = z.object({
   username: z.string().min(2, {
     error: "Username must be at least 2 characters.",
   }),
+  password: z
+    .string()
+    .min(1, "Please enter your password")
+    .min(7, "Password must be at least 7 characters long"),
 });
 
-const SigninForm: FC<Props> = ({ className, redirect, ...props }) => {
-  const [isLoading, setIsLoading] = useState(false);
+const initialState = { success: false, error: null };
 
+const SigninForm: FC<Props> = ({ className, redirect, ...props }) => {
   const router = useRouter();
 
+  const [state, formAction, isPending] = useActionState(
+    postSignin,
+    initialState,
+  );
+
   const form = useForm<z.infer<typeof formSchema>>({
+    mode: "onChange", // <-- makes isValid update live
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      password: "",
     },
   });
 
@@ -51,44 +66,31 @@ const SigninForm: FC<Props> = ({ className, redirect, ...props }) => {
   const isValid = form.formState.isValid; // Check if form is valid
   const isDirty = form.formState.isDirty; // Check if form is modified
 
-  const handleOnSubmit = (data: z.infer<typeof formSchema>) => {
-    if (isLoading) return; // prevent performing multiple on submits
+  // Show toast when state updates
+  useEffect(() => {
+    if (isPending) return; // skip while loading
 
-    setIsLoading((prev) => !prev); // Start loading
-
-    try {
-      const loginPromise = new Promise<{ name: string }>((resolve) =>
-        setTimeout(() => resolve({ name: data.username }), 500),
-      );
-
-      toast.promise<{ name: string }>(loginPromise, {
-        loading: "Signing in...",
-        success: (data) => `Welcome back ${data.name}`,
-        error: "Error",
-      });
+    if (state.success) {
+      toast.success("Welcome back!");
       router.push(redirect);
-    } catch (error: unknown) {
-      // const msg = error instanceof Error ? error.message : "Something went wrong!";
-      // test
-      // console.log(msg);
-    } finally {
-      setIsLoading((prev) => !prev); // Stop loading
     }
-  };
+
+    if (state.error) {
+      toast.error(state.error);
+    }
+  }, [state, isPending, router, redirect]);
 
   return (
     <div
       className={cn(
-        `flex min-h-98 w-3/5 flex-col items-center justify-center rounded-lg bg-white p-4 dark:bg-black`,
+        `flex min-h-3/5 w-1/3 flex-col items-center justify-center rounded-lg bg-white p-4 dark:bg-black`,
         className,
       )}
       {...props}
     >
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(handleOnSubmit)}
-          className="space-y-8"
-        >
+        <form action={formAction} className="space-y-8">
+          {/* Email */}
           <FormField
             control={form.control}
             name="username"
@@ -96,14 +98,30 @@ const SigninForm: FC<Props> = ({ className, redirect, ...props }) => {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="type username" {...field} />
+                  <Input placeholder="your username" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          {/* Password */}
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input type="password" placeholder="••••••••" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <Button
-            disabled={!isValid || !isDirty} // Disable if form is not valid or has no changes
+            disabled={isPending || !isValid || !isDirty} // Disable if form is not valid or has no changes
             className={cn(
               "mt-2 w-full transition",
               !isValid || !isDirty
@@ -111,7 +129,7 @@ const SigninForm: FC<Props> = ({ className, redirect, ...props }) => {
                 : "",
             )}
           >
-            {isLoading ? (
+            {isPending ? (
               <Spinner />
             ) : (
               <>

@@ -1,6 +1,6 @@
 // src\components\home\dynamic-rendering.tsx
 
-import { ApiData } from "@/app/actions/actions";
+import { getRandomApiUrl } from "@/data-access/random-api-url";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
@@ -11,7 +11,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const DataRenderer: FC<Props> = async ({ url, className, ...props }) => {
   if (!url) return <div>No URL yet.</div>;
 
-  const data = await ApiData({ url });
+  const data = await getRandomApiUrl({ query: url });
 
   return (
     <div

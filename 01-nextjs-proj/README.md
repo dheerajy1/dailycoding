@@ -158,3 +158,43 @@ source: [[DummyJSON - user's credentials](https://dummyjson.com/docs/auth)]
     "role": "admin"
 }
 ```
+
+for doing mutations
+
+https://crudcrud.com/
+
+
+# build info
+
+```
+PS F:\VS-Code\frontend-journey\01-nextjs-proj> bun next build
+   ▲ Next.js 16.0.3 (Turbopack, Cache Components)
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · serverActions
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 65s
+ ✓ Finished TypeScript in 12.3s
+ ✓ Collecting page data using 7 workers in 11.0s    
+ ✓ Generating static pages using 7 workers (11/11) in 2.9s
+ ✓ Finalizing page optimization in 15.1ms
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/auth/me
+├ ƒ /api/products
+├ ƒ /api/url
+├ ○ /error/misconfigured-auth
+├ ◐ /home
+├ ◐ /home-v2
+└ ○ /home/state
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)             prerendered as static content
+◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
+ƒ  (Dynamic)            server-rendered on demand
+```

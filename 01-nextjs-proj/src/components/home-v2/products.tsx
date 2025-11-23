@@ -1,4 +1,6 @@
-// src\components\home\data-client-component.tsx
+// src\components\home-v2\products.tsx
+
+"use client";
 
 import useSWR from "swr";
 

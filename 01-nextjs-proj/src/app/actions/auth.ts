@@ -4,6 +4,7 @@
 
 import axios from "axios";
 import { cookies as _cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 interface AuthLoginResponse {
   id: number;
@@ -122,14 +123,16 @@ const postRefreshAccessToken = async (): Promise<RefreshResponse | null> => {
 
   const cookies = await _cookies();
 
-  if (!refreshTokenCookieKey) return null;
+  const accessToken = cookies.get(accessTokenCookieKey)?.value;
+  const refreshToken = cookies.get(refreshTokenCookieKey)?.value;
 
-  const refreshTokenCookie = cookies.get(refreshTokenCookieKey);
+  // Already logged in → redirect
+  if (accessToken && refreshToken) redirect("/home");
 
-  if (!refreshTokenCookie) return null;
-
-  const refreshToken = refreshTokenCookie.value;
+  // No refresh token → cannot refresh → stay on login page
   if (!refreshToken) return null;
+
+  // Attempt refresh
 
   try {
     const SERVER_URL = process.env.SERVER_URL;
@@ -175,8 +178,11 @@ const postRefreshAccessToken = async (): Promise<RefreshResponse | null> => {
       path: "/",
       maxAge: 60 * 60 * 24 * 7, // 7 days
     });
+    
+    // Successful refresh → redirect
+    redirect("/home");
 
-    return res.data;
+    // return res.data;
   } catch (err: unknown) {
     // console.log("Refresh token failed:", err);
     return null;

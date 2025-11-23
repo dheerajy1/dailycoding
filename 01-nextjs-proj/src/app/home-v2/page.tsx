@@ -1,7 +1,9 @@
-// src\app\home\page.tsx
+// src\app\home-v2\page.tsx
 
-import React, { FC } from "react";
+import React, { FC, Suspense } from "react";
 import { Products } from "@/components/home-v2/products";
+import StaticBlock from "@/components/home-v2/static-block";
+import DynamicServerProductsStats from "@/components/home-v2/dynamic-server-products-stats";
 
 interface PageProp extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -10,7 +12,12 @@ const Page: FC<PageProp> = async ({}) => {
   // console.log(`Page home v2 - server`);
 
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-col gap-4">
+      {/* STATIC */}
+      <StaticBlock />
+      <Suspense fallback={<div>Loading...</div>}>
+        <DynamicServerProductsStats />
+      </Suspense>
       <Products />
     </div>
   );

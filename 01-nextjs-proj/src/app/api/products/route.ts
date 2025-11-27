@@ -6,7 +6,7 @@ import { cookies as _cookies } from "next/headers";
 
 import axios from "axios";
 
-import { ProductsResponse } from "@/types/products";
+import { ProductsResponse } from "@/types/products.types";
 
 export async function GET(req: NextRequest) {
   try {
@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
     }
 
     const accessToken = accessTokenCookie.value;
-    
+
     if (!accessToken) {
       return NextResponse.json({ error: "Session invalid or expired" }, { status: 401 });
     }

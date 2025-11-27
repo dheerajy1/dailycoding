@@ -1,12 +1,12 @@
 // src/types/products.ts
 
-export interface ProductDimensions {
+interface ProductDimensions {
   width: number;
   height: number;
   depth: number;
 }
 
-export interface ProductReview {
+interface ProductReview {
   rating: number;
   comment: string;
   date: string; // ISO string
@@ -14,7 +14,7 @@ export interface ProductReview {
   reviewerEmail: string;
 }
 
-export interface ProductMeta {
+interface ProductMeta {
   createdAt: string; // ISO string
   updatedAt: string; // ISO string
   barcode: string;

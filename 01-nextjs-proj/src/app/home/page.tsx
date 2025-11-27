@@ -1,33 +1,32 @@
 // src\app\home\page.tsx
 
-import React, { FC, Suspense } from "react";
-import { ClientInput } from "@/components/home/client-input ";
-import { DataRenderer } from "@/components/home/dynamic-rendering";
+import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-interface PageProp extends React.HTMLAttributes<HTMLDivElement> {
-  searchParams: Promise<{ url?: string }>;
-}
+interface PageProp {}
 
-const Page: FC<PageProp> = async ({ searchParams }) => {
-  const resolvedParams = await searchParams;
-  const url = decodeURIComponent(resolvedParams.url || "");
-
+const Page: React.FC<PageProp> = async ({}) => {
   //test
   // console.log(`Page home - server`);
 
   return (
     <div className="flex flex-row gap-4">
-      <Link href="/home/state">
-        <p className="border border-black p-2">state</p>
-      </Link>
-      
-      <ClientInput />
-
-      {/* Parallel rendering zone */}
-      <Suspense fallback={<div>Loading...</div>}>
-        {url && <DataRenderer url={url} />}
-      </Suspense>
+      <Button variant={"link"}>
+        <Link href="/home-v2">
+          <p className="border border-black p-2">home-v2</p>
+        </Link>
+      </Button>
+      <Button variant={"link"}>
+        <Link href="/home-v3">
+          <p className="border border-black p-2">home-v3</p>
+        </Link>
+      </Button>
+      <Button variant={"link"}>
+        <Link href="/home-v4">
+          <p className="border border-black p-2">home-v4</p>
+        </Link>
+      </Button>
     </div>
   );
 };

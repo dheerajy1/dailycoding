@@ -6,7 +6,8 @@ import useSWR from "swr";
 
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import { getProducts } from "@/data-access/products";
+import { api } from "@/lib/http";
+import { ProductsResponse } from "@/types/products.types";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -16,16 +17,15 @@ const Products: FC<Props> = ({ className, ...props }) => {
   // ---------------------------
 
   // data
-  const { data, error, isLoading } = useSWR(["products"], () =>
-    getProducts({ query: `limit=10` }),
+  const { data, error, isLoading } = useSWR(
+    ["products"],
+    async () => (await api.get<ProductsResponse>("/products?limit=10")).data,
   );
 
   if (isLoading) return <div>Loading...</div>;
-  if (error || !data || !data.data) return <div>Error</div>;
+  if (error || !data) return <div>Error</div>;
 
-  const {
-    data: { products: products },
-  } = data;
+  const { products: products } = data;
 
   return (
     <div

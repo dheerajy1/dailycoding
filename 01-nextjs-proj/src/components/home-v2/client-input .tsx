@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { DataClientComp } from "@/components/home/data-client-component";
+import { DataClientComp } from "@/components/home-v2/data-client-component";
 
 interface Props {}
 

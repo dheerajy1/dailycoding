@@ -1,24 +1,33 @@
 // src\app\home-v2\page.tsx
 
 import React, { FC, Suspense } from "react";
-import { Products } from "@/components/home-v2/products";
-import StaticBlock from "@/components/home-v2/static-block";
-import DynamicServerProductsStats from "@/components/home-v2/dynamic-server-products-stats";
+import { ClientInput } from "@/components/home-v2/client-input ";
+import { DataRenderer } from "@/components/home-v2/dynamic-rendering";
+import Link from "next/link";
 
-interface PageProp extends React.HTMLAttributes<HTMLDivElement> {}
+interface PageProp extends React.HTMLAttributes<HTMLDivElement> {
+  searchParams: Promise<{ url?: string }>;
+}
 
-const Page: FC<PageProp> = async ({}) => {
+const Page: FC<PageProp> = async ({ searchParams }) => {
+  const resolvedParams = await searchParams;
+  const url = decodeURIComponent(resolvedParams.url || "");
+
   //test
-  // console.log(`Page home v2 - server`);
+  // console.log(`Page home - server`);
 
   return (
-    <div className="flex flex-col gap-4">
-      {/* STATIC */}
-      <StaticBlock />
+    <div className="flex flex-row gap-4">
+      <Link href="/home/state">
+        <p className="border border-black p-2">state</p>
+      </Link>
+
+      <ClientInput />
+
+      {/* Parallel rendering zone */}
       <Suspense fallback={<div>Loading...</div>}>
-        <DynamicServerProductsStats />
+        {url && <DataRenderer url={url} />}
       </Suspense>
-      <Products />
     </div>
   );
 };

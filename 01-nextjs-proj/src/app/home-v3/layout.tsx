@@ -1,5 +1,6 @@
-// src\app\home\layout.tsx
+// src\app\home-v3\layout.tsx
 
+import { HomePageHeader } from "@/components/home-v2/home-page-header";
 import React, { FC } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,6 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <div className="h-fit min-h-screen w-full bg-amber-50 p-5">
+      <HomePageHeader />
       {children}
     </div>
   );

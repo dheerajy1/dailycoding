@@ -161,7 +161,7 @@ source: [[DummyJSON - user's credentials](https://dummyjson.com/docs/auth)]
 
 for doing mutations
 
-https://crudcrud.com/
+https://beeceptor.com/
 
 
 # build info

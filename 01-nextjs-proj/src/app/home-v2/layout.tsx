@@ -1,6 +1,6 @@
-// src\app\home\layout.tsx
+// src\app\home-v2\layout.tsx
 
-import { HomePageHeader } from "@/components/home/home-page-header";
+import { HomePageHeader } from "@/components/home-v2/home-page-header";
 import React, { FC } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

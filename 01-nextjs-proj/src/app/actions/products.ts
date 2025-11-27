@@ -2,9 +2,8 @@
 
 "use server";
 
-import { ProductsResponse } from "@/types/products";
+import { ProductsResponse } from "@/types/products.types";
 import axios from "axios";
-import { cookies } from "next/headers";
 
 interface Props {
     query: string;

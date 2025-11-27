@@ -1,5 +1,5 @@
 // src\components\home-v2\dynamic-server-products-stats.tsx
-import { ProductsResponse } from "@/types/products";
+import { ProductsResponse } from "@/types/products.types";
 import axios from "axios";
 import { cookies as _cookies } from "next/headers";
 

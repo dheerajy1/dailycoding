@@ -1,9 +1,6 @@
 {
   "name": "bun-elysia-vercel",
   "version": "0.0.0",
-  "overrides": {
-    "@sinclair/typebox": "^0.34.0"
-  },
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,7 +16,6 @@
     "mssql": "^12.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "vercel": "^50.32.3",
     "zod": "^4.3.6"
   },
   "devDependencies": {

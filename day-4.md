@@ -1,15 +1,5 @@
 # Day 4 — Posts, Pages, Media
 
-**10–11 Update**  
-Learned difference between posts, pages, and media handling
-
-**11–1 Update**  
-Created posts/pages, uploaded media, and configured display
-
-https://github.com/dheerajy1/dailycoding/blob/task-journey/day-4.md
-
----
-
 # Task 1
 
 ## Understanding Posts, Pages, Media

@@ -4,9 +4,13 @@
 
 ## Static vs Dynamic Websites and WordPress Overview
 
-Static websites display fixed content and require manual code changes for updates. They are simple, fast, and suitable for small websites. Example: e-commerce websites.
+Static websites display fixed content and require manual code changes for updates. They are simple, fast, and suitable for small websites. 
 
-Dynamic websites generate content dynamically using server-side processing and databases. They are flexible and suitable for interactive applications. Example: portfolio websites.
+Example: portfolio websites.
+
+Dynamic websites generate content dynamically using server-side processing and databases. They are flexible and suitable for interactive applications. 
+
+Example: e-commerce websites.
 
 WordPress is a Content Management System (CMS) used to build dynamic websites easily using themes and plugins without deep coding knowledge.
 

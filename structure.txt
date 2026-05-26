@@ -1,0 +1,28 @@
+Folder PATH listing
+Volume serial number is 7478-274D
+C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
+|   index.html
+|   structure.txt
+|   
++---phase_1_day_1_task
+|   |   about.html
+|   |   day1_task.md
+|   |   index.html
+|   |   
+|   +---images
+|   |       plitvice-Lakes-national-park.jpg
+|   |       the-trump-brand-logo.jpg
+|   |       
+|   \---my-profile-website
+|       |   index.html
+|       |   
+|       \---images
+|               0fficial-presidential-portraitp-of-president-donald-J-trump.jpg
+|               
+\---phase_1_day_2_task
+        day2_task.md
+        hour_1.html
+        hour_2.html
+        hour_3.html
+        index.html
+        

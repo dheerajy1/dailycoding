@@ -3,7 +3,7 @@
 ## Project Root Path
 
 ```powershell
-C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap
+$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap
 ```
 
 ---
@@ -52,13 +52,13 @@ phase_1_day_2_task/hour_1.html
 ### Create Day 2 Folder
 
 ```powershell
-mkdir "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task"
+mkdir "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task"
 ```
 
 ### Create Main `index.html`
 
 ```powershell
-ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\index.html"
+ni "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\index.html"
 ```
 
 ---
@@ -68,19 +68,19 @@ ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_da
 ### Check Git Status
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
 ```
 
 ### Stage Files
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
 ```
 
 ### Commit Hour 1 Work
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 1 student table task"
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 1 student table task"
 ```
 
 ---
@@ -127,11 +127,11 @@ phase_1_day_2_task/hour_2.html
 ### Create Hour Files
 
 ```powershell
-ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_1.html"
+ni "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_1.html"
 ```
 
 ```powershell
-ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_2.html"
+ni "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_2.html"
 ```
 
 ---
@@ -141,19 +141,19 @@ ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_da
 ### Check Git Status
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
 ```
 
 ### Stage Files
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
 ```
 
 ### Commit Hour 2 Work
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 2 forms and inputs task"
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 2 forms and inputs task"
 ```
 
 ---
@@ -196,7 +196,7 @@ phase_1_day_2_task/hour_3.html
 ### Create Hour 3 File
 
 ```powershell
-ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_3.html"
+ni "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_day_2_task\hour_3.html"
 ```
 
 ---
@@ -206,19 +206,19 @@ ni "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap\phase_1_da
 ### Check Git Status
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" status
 ```
 
 ### Stage Files
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" add .
 ```
 
 ### Commit Hour 3 Work
 
 ```powershell
-git -C "C:\Users\ADMIN\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 3 student registration project"
+git -C "$HOME\Downloads\vs-code\frontend_web_kt_learning_roadmap" commit -m "feat: complete Phase 1 Day 2 Hour 3 student registration project"
 ```
 
 ---

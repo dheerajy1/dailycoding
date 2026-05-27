@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio & Video Practice</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #222222;
+        }
+
+        .media-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        audio,
+        video,
+        iframe {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>HTML5 Audio & Video Practice</h1>
+
+        <div class="media-card">
+
+            <h2>Audio Player</h2>
+
+            <p>
+                Practice using the HTML5 audio tag.
+            </p>
+
+            <audio controls>
+
+                <source
+                    src="https://samplelib.com/mp3/sample-3s.mp3"
+                    type="audio/mpeg"
+                >
+
+            </audio>
+
+        </div>
+
+        <div class="media-card">
+
+            <h2>Video Player</h2>
+
+            <p>
+                Practice using the HTML5 video tag.
+            </p>
+
+            <video controls>
+
+                <source
+                    src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+        <div class="media-card">
+
+            <h2>YouTube Embedded Video</h2>
+
+            <p>
+                Practice embedding YouTube videos using iframe.
+            </p>
+
+            <iframe
+                height="500"
+                src="https://www.youtube.com/embed/_PwhiWxHK8o"
+                title="YouTube video player"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

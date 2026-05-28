@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile Settings - Dashboard</title>
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <!-- Header -->
+      <div class="mb-3">
+        <h3>Settings Panel</h3>
+        <p class="text-muted">Manage your profile and preferences</p>
+      </div>
+
+      <div class="row">
+        <!-- Profile Card -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5>Profile Settings</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="userName"
+                  class="form-control"
+                  value="Admin User"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  value="admin@example.com"
+                />
+              </div>
+
+              <button class="btn btn-primary" onclick="saveProfile()">
+                Save Profile
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theme Settings -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5>Theme Settings</h5>
+
+              <p>Select dashboard theme:</p>
+
+              <button class="btn btn-dark me-2" onclick="setTheme('dark')">
+                Dark Mode
+              </button>
+
+              <button class="btn btn-light border" onclick="setTheme('light')">
+                Light Mode
+              </button>
+
+              <hr />
+
+              <p class="text-muted">
+                Theme preference will be saved using LocalStorage API
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // LocalStorage API (MANDATORY FEATURE)
+      function setTheme(mode) {
+        localStorage.setItem("dashboardTheme", mode);
+        alert("Theme saved: " + mode);
+      }
+
+      // Load saved theme on page load
+      window.onload = function () {
+        const theme = localStorage.getItem("dashboardTheme");
+        if (theme) {
+          console.log("Loaded theme:", theme);
+        }
+      };
+
+      // Profile save (demo)
+      function saveProfile() {
+        const name = document.getElementById("userName").value;
+        localStorage.setItem("userName", name);
+        alert("Profile saved for " + name);
+      }
+    </script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

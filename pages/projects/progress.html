@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Project Progress Tracker</title>
+
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Project Progress Tracker</h3>
+      </div>
+
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Client</th>
+                <th>Progress</th>
+                <th>Status</th>
+                <th>Deadline</th>
+              </tr>
+            </thead>
+
+            <tbody id="progressTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function loadProgress() {
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+        let table = document.getElementById("progressTable");
+
+        table.innerHTML = "";
+
+        projects.forEach((project) => {
+          let color =
+            project.status === "completed"
+              ? "bg-success"
+              : project.status === "active"
+                ? "bg-primary"
+                : "bg-warning";
+
+          table.innerHTML += `
+            <tr>
+
+              <td>${project.name}</td>
+
+              <td>${project.client}</td>
+
+              <td style="width:250px">
+
+                <div class="progress">
+
+                  <div
+                    class="progress-bar ${color}"
+                    style="width:${project.progress}%"
+                  >
+                    ${project.progress}%
+                  </div>
+
+                </div>
+
+              </td>
+
+              <td>
+                <span class="badge ${color}">
+                  ${project.status}
+                </span>
+              </td>
+
+              <td>${project.deadline}</td>
+
+            </tr>
+          `;
+        });
+      }
+
+      window.onload = loadProgress;
+    </script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Client List - Dashboard</title>
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Client Management</h3>
+        <a href="./assign.html" class="nav-link">
+          <button class="btn btn-primary">
+            <i class="bi bi-person-plus"></i> Add Client
+          </button>
+        </a>
+      </div>
+
+      <!-- Search + Filter -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="clientSearch"
+            class="form-control"
+            placeholder="Search client..."
+          />
+        </div>
+
+        <div class="col-md-3">
+          <select class="form-select" id="statusFilter">
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Client Table -->
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Client ID</th>
+                <th>Name</th>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Meeting</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="clientTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Details Modal -->
+    <div class="modal fade" id="clientModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Client Details</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="clientDetails"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      // Search functionality
+      document
+        .getElementById("clientSearch")
+        .addEventListener("keyup", function () {
+          let value = this.value.toLowerCase();
+          let rows = document.querySelectorAll("#clientTable tr");
+
+          rows.forEach((row) => {
+            row.style.display = row.innerText.toLowerCase().includes(value)
+              ? ""
+              : "none";
+          });
+        });
+    </script>
+    <script>
+      // Load clients from LocalStorage
+      function loadClients() {
+        let clients = JSON.parse(localStorage.getItem("clients")) || [];
+        let table = document.getElementById("clientTable");
+
+        table.innerHTML = "";
+
+        clients.forEach((client) => {
+          let row = `
+        <tr>
+          <td>${client.id}</td>
+          <td>${client.name}</td>
+          <td>${client.project}</td>
+          <td>
+            <span class="badge ${
+              client.status === "active"
+                ? "bg-success"
+                : client.status === "pending"
+                  ? "bg-warning"
+                  : "bg-secondary"
+            }">
+              ${client.status}
+            </span>
+          </td>
+          <td>${client.meeting || "Not Scheduled"}</td>
+          <td>
+         <button
+            class="btn btn-sm btn-info"
+            onclick="viewClient('${client.id}')"
+          >
+            View
+          </button>
+
+          <a
+            href="./assign.html?id=${client.id}"
+            class="btn btn-sm btn-warning"
+          >
+            Edit
+          </a>
+          </td>
+        </tr>
+      `;
+
+          table.innerHTML += row;
+        });
+      }
+
+      // Search functionality
+      document
+        .getElementById("clientSearch")
+        .addEventListener("keyup", function () {
+          let value = this.value.toLowerCase();
+          let rows = document.querySelectorAll("#clientTable tr");
+
+          rows.forEach((row) => {
+            row.style.display = row.innerText.toLowerCase().includes(value)
+              ? ""
+              : "none";
+          });
+        });
+
+      // Load on page start
+      window.onload = loadClients;
+    </script>
+    <script>
+      function viewClient(id) {
+        let clients = JSON.parse(localStorage.getItem("clients")) || [];
+
+        let client = clients.find((c) => c.id === id);
+
+        if (!client) return;
+
+        document.getElementById("clientDetails").innerHTML = `
+      <p><strong>ID:</strong> ${client.id}</p>
+
+      <p><strong>Name:</strong> ${client.name}</p>
+
+      <p><strong>Project:</strong> ${client.project}</p>
+
+      <p><strong>Status:</strong> ${client.status}</p>
+
+      <p><strong>Meeting:</strong> ${client.meeting}</p>
+    `;
+
+        let modal = new bootstrap.Modal(document.getElementById("clientModal"));
+
+        modal.show();
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

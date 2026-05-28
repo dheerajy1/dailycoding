@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Assign Client Project</title>
+
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Assign Client Project</h3>
+        <a href="./list.html" class="nav-link">
+          <button class="btn btn-primary">
+            <i class="bi"></i> Show Clients
+          </button>
+        </a>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Client Name</label>
+
+              <input
+                type="text"
+                id="clientName"
+                class="form-control"
+                placeholder="Enter client name"
+              />
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Project Name</label>
+
+              <input
+                type="text"
+                id="projectName"
+                class="form-control"
+                placeholder="Enter project name"
+              />
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Status</label>
+
+              <select id="clientStatus" class="form-select">
+                <option value="active">Active</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label"> Meeting Date </label>
+
+              <input type="date" id="meetingDate" class="form-control" />
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="saveClient()">
+            <i class="bi bi-save"></i>
+            Save Client
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const editId = params.get("id");
+
+      function loadClientForEdit() {
+        if (!editId) return;
+
+        let clients = JSON.parse(localStorage.getItem("clients")) || [];
+
+        let client = clients.find((c) => c.id === editId);
+
+        if (!client) return;
+
+        document.getElementById("clientName").value = client.name;
+
+        document.getElementById("projectName").value = client.project;
+
+        document.getElementById("clientStatus").value = client.status;
+
+        document.getElementById("meetingDate").value = client.meeting;
+
+        document.querySelector("h3").innerText = "Edit Client Project";
+      }
+
+      function saveClient() {
+        let name = document.getElementById("clientName").value;
+
+        let project = document.getElementById("projectName").value;
+
+        let status = document.getElementById("clientStatus").value;
+
+        let meeting = document.getElementById("meetingDate").value;
+
+        if (!name || !project) {
+          alert("Fill required fields");
+          return;
+        }
+
+        let clients = JSON.parse(localStorage.getItem("clients")) || [];
+
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+        if (editId) {
+          clients = clients.map((client) => {
+            if (client.id === editId) {
+              return {
+                ...client,
+                name,
+                project,
+                status,
+                meeting,
+              };
+            }
+
+            return client;
+          });
+
+          projects = projects.map((projectItem) => {
+            if (projectItem.client === name) {
+              return {
+                ...projectItem,
+                name: project,
+                client: name,
+                status,
+              };
+            }
+
+            return projectItem;
+          });
+
+          alert("Client updated successfully");
+        } else {
+          let newClient = {
+            id: "CL" + (clients.length + 1),
+            name,
+            project,
+            status,
+            meeting,
+          };
+
+          let newProject = {
+            name: project,
+            client: name,
+            progress:
+              status === "completed" ? 100 : status === "active" ? 70 : 30,
+            deadline: "2026-12-31",
+            status,
+          };
+
+          clients.push(newClient);
+          projects.push(newProject);
+
+          alert("Client added successfully");
+        }
+
+        localStorage.setItem("clients", JSON.stringify(clients));
+
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+        location.href = "./list.html";
+      }
+
+      window.onload = loadClientForEdit;
+    </script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

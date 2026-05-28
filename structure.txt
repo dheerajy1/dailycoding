@@ -1,0 +1,56 @@
+Folder PATH listing
+Volume serial number is 7478-274D
+C:\USERS\ADMIN\DOWNLOADS\VS-CODE\WEB_KT_PHASE_1_TASK
+|   index.html
+|   README.md
+|   structure.txt
+|   
++---assets
+|   \---img
+|           AdminLTELogo.png
+|           user1-128x128.jpg
+|           user2-160x160.jpg
+|           user3-128x128.jpg
+|           user5-128x128.jpg
+|           user6-128x128.jpg
+|           user7-128x128.jpg
+|           user8-128x128.jpg
+|           
++---css
+|       adminlte.css
+|       adminlte.css.map
+|       adminlte.min.css
+|       adminlte.min.css.map
+|       adminlte.rtl.css
+|       adminlte.rtl.css.map
+|       adminlte.rtl.min.css
+|       adminlte.rtl.min.css.map
+|       
++---custom
+|   +---css
+|   \---js
+|           theme.js
+|           
++---js
+|       adminlte.js
+|       adminlte.js.map
+|       adminlte.min.js
+|       adminlte.min.js.map
+|       
+\---pages
+    +---clients
+    |       assign.html
+    |       list.html
+    |       
+    +---employees
+    |       add.html
+    |       list.html
+    |       
+    +---projects
+    |       overview.html
+    |       progress.html
+    |       
+    \---settings
+            profile.html
+            theme.html
+            

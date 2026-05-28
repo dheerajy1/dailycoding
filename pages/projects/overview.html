@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Project Overview - Dashboard</title>
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Project Tracking</h3>
+
+        <a href="../clients/assign.html" class="btn btn-primary">
+          <i class="bi bi-plus-circle"></i>
+          New Project
+        </a>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="row" id="projectContainer"></div>
+    </div>
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Project Details</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="projectDetails"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Load projects from LocalStorage
+      function loadProjects() {
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+        let container = document.getElementById("projectContainer");
+
+        container.innerHTML = "";
+
+        projects.forEach((project) => {
+          let progressColor =
+            project.status === "completed"
+              ? "bg-success"
+              : project.status === "pending"
+                ? "bg-warning"
+                : "bg-danger";
+
+          let card = `
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+
+              <h5>${project.name}</h5>
+              <p class="text-muted">Client: ${project.client}</p>
+
+              <div class="mb-2">
+                <small>Progress</small>
+                <div class="progress">
+                  <div class="progress-bar ${progressColor}" style="width: ${project.progress}%"></div>
+                </div>
+              </div>
+
+              <p>Deadline: <strong>${project.deadline}</strong></p>
+
+           <div class="d-flex justify-content-between align-items-center mt-3">
+
+          <span class="badge ${progressColor}">
+            ${project.status}
+          </span>
+
+          <div>
+
+            <button
+              class="btn btn-sm btn-info"
+              onclick="viewProject('${project.name}')"
+            >
+              View
+            </button>
+
+            <button
+              class="btn btn-sm btn-danger"
+              onclick="deleteProject('${project.name}')"
+            >
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+            </div>
+          </div>
+        </div>
+      `;
+
+          container.innerHTML += card;
+        });
+      }
+
+      function viewProject(name) {
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+        let project = projects.find((p) => p.name === name);
+
+        if (!project) return;
+
+        document.getElementById("projectDetails").innerHTML = `
+          <p><strong>Project:</strong> ${project.name}</p>
+
+          <p><strong>Client:</strong> ${project.client}</p>
+
+          <p><strong>Progress:</strong> ${project.progress}%</p>
+
+          <p><strong>Deadline:</strong> ${project.deadline}</p>
+
+          <p><strong>Status:</strong> ${project.status}</p>
+        `;
+
+        let modal = new bootstrap.Modal(
+          document.getElementById("projectModal"),
+        );
+
+        modal.show();
+      }
+
+      function deleteProject(name) {
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+        projects = projects.filter((p) => p.name !== name);
+
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+        loadProjects();
+      }
+
+      // Load on page start
+      window.onload = loadProjects;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

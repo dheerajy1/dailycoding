@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Employee List - Dashboard</title>
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <!-- Sidebar (already in index layout, but we keep structure consistent) -->
+
+    <div class="app-main p-3">
+      <!-- Page Header -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Employee Management</h3>
+        <a href="./add.html" class="nav-link">
+          <button class="btn btn-primary">
+            <i class="bi bi-person-plus"></i> Add Employee
+          </button>
+        </a>
+      </div>
+
+      <!-- Search + Filter -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search employee..."
+          />
+        </div>
+
+        <div class="col-md-3">
+          <select class="form-select" id="roleFilter">
+            <option value="">All Roles</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Employee Table -->
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th style="cursor: pointer" onclick="sortByName()">
+                  Name <i class="bi bi-arrow-down-up"></i>
+                </th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="employeeTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- pagination -->
+      <div class="d-flex justify-content-end align-items-center gap-2 mt-3">
+        <button class="btn btn-secondary btn-sm me-2" onclick="prevPage()">
+          Previous
+        </button>
+        <span id="pageInfo" class="fw-bold"></span>
+        <button class="btn btn-secondary btn-sm" onclick="nextPage()">
+          Next
+        </button>
+      </div>
+    </div>
+
+    <!-- Employee Details Modal -->
+    <div class="modal fade" id="employeeModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Employee Details</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="employeeDetails"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      // Clipboard API (MANDATORY FEATURE)
+      function copyID(id) {
+        navigator.clipboard.writeText(id).then(() => {
+          alert("Copied Employee ID: " + id);
+        });
+      }
+
+      // Simple Search (we will upgrade later)
+      document
+        .getElementById("searchInput")
+        .addEventListener("keyup", function () {
+          let value = this.value.toLowerCase();
+          let rows = document.querySelectorAll("#employeeTable tr");
+
+          rows.forEach((row) => {
+            row.style.display = row.innerText.toLowerCase().includes(value)
+              ? ""
+              : "none";
+          });
+        });
+    </script>
+    <script>
+      let currentPage = 1;
+      let rowsPerPage = 5;
+      // Load employees from LocalStorage and render table
+            let sortAsc = true;
+
+      function sortByName() {
+        let employees =
+          JSON.parse(localStorage.getItem("employees")) || [];
+
+        employees.sort((a, b) => {
+          if (sortAsc) {
+            return a.name.localeCompare(b.name);
+          } else {
+            return b.name.localeCompare(a.name);
+          }
+        });
+
+        sortAsc = !sortAsc;
+
+        localStorage.setItem("employees", JSON.stringify(employees));
+
+        loadEmployees();
+      }
+      function loadEmployees() {
+        let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+        let table = document.getElementById("employeeTable");
+
+        table.innerHTML = "";
+
+        let start = (currentPage - 1) * rowsPerPage;
+        let end = start + rowsPerPage;
+
+        let paginatedEmployees = employees.slice(start, end);
+        let totalPages = Math.ceil(employees.length / rowsPerPage);
+
+        document.getElementById("pageInfo").innerText =
+          `Page ${currentPage} of ${totalPages}`;
+        paginatedEmployees.forEach((emp) => {
+          let row = `
+        <tr>
+          <td>
+            ${emp.id}
+            <button class="btn btn-sm btn-light ms-2" onclick="copyID('${emp.id}')">
+              <i class="bi bi-clipboard"></i>
+            </button>
+          </td>
+
+          <td>${emp.name}</td>
+          <td>${emp.role}</td>
+          <td>${emp.email}</td>
+
+          <td>
+            <span class="badge ${emp.status === "active" ? "bg-success" : "bg-danger"}">
+              ${emp.status}
+            </span>
+          </td>
+
+          <td>
+            <button class="btn btn-sm btn-info" onclick="viewEmployee('${emp.id}')">
+              View
+            </button>
+
+            <button class="btn btn-sm btn-danger" onclick="deleteEmployee('${emp.id}')">
+              Delete
+            </button>
+          </td>
+        </tr>
+      `;
+
+          table.innerHTML += row;
+        });
+      }
+
+      // Clipboard API (already used, kept here for safety)
+      function copyID(id) {
+        navigator.clipboard.writeText(id).then(() => alert("Copied: " + id));
+      }
+
+      function deleteEmployee(id) {
+        let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+        employees = employees.filter((emp) => emp.id !== id);
+
+        localStorage.setItem("employees", JSON.stringify(employees));
+
+        loadEmployees();
+      }
+
+      function viewEmployee(id) {
+        let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+        let employee = employees.find((emp) => emp.id === id);
+
+        if (!employee) return;
+
+        document.getElementById("employeeDetails").innerHTML = `
+          <p><strong>ID:</strong> ${employee.id}</p>
+          <p><strong>Name:</strong> ${employee.name}</p>
+          <p><strong>Role:</strong> ${employee.role}</p>
+          <p><strong>Email:</strong> ${employee.email}</p>
+          <p><strong>Status:</strong> ${employee.status}</p>
+        `;
+
+        let modal = new bootstrap.Modal(
+          document.getElementById("employeeModal"),
+        );
+
+        modal.show();
+      }
+      function nextPage() {
+        let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+        let totalPages = Math.ceil(employees.length / rowsPerPage);
+
+        if (currentPage < totalPages) {
+          currentPage++;
+          loadEmployees();
+        }
+      }
+
+      function prevPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          loadEmployees();
+        }
+      }
+
+      // Search on dynamic data
+      document
+        .getElementById("searchInput")
+        .addEventListener("keyup", function () {
+          let value = this.value.toLowerCase();
+          let rows = document.querySelectorAll("#employeeTable tr");
+
+          rows.forEach((row) => {
+            row.style.display = row.innerText.toLowerCase().includes(value)
+              ? ""
+              : "none";
+          });
+        });
+      // Role Filter
+      document
+        .getElementById("roleFilter")
+        .addEventListener("change", function () {
+          let value = this.value.toLowerCase();
+          let rows = document.querySelectorAll("#employeeTable tr");
+
+          rows.forEach((row) => {
+            row.style.display =
+              value === "" || row.innerText.toLowerCase().includes(value)
+                ? ""
+                : "none";
+          });
+        });
+      // Load on page start
+      window.onload = loadEmployees;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

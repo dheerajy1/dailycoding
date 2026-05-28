@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Theme Settings - Dashboard</title>
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="app-wrapper">
+    <div class="app-main p-3">
+      <h3>Theme Customization</h3>
+      <p class="text-muted">
+        Choose and persist your dashboard theme using LocalStorage API
+      </p>
+
+      <!-- Theme Cards -->
+      <div class="row">
+        <!-- Dark Theme -->
+        <div class="col-md-6">
+          <div class="card shadow-sm p-3">
+            <h5><i class="bi bi-moon"></i> Dark Theme</h5>
+            <p>Professional dark mode for dashboard usage</p>
+
+            <button class="btn btn-dark" onclick="setTheme('dark')">
+              Activate Dark Mode
+            </button>
+          </div>
+        </div>
+
+        <!-- Light Theme -->
+        <div class="col-md-6">
+          <div class="card shadow-sm p-3">
+            <h5><i class="bi bi-sun"></i> Light Theme</h5>
+            <p>Clean light UI for better readability</p>
+
+            <button class="btn btn-light border" onclick="setTheme('light')">
+              Activate Light Mode
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Theme Display -->
+      <div class="mt-4">
+        <div class="alert alert-info">
+          Current Saved Theme: <strong id="currentTheme">Not set</strong>
+        </div>
+      </div>
+    </div>
+    <script>
+      function setTheme(mode) {
+        localStorage.setItem("dashboardTheme", mode);
+
+        applyTheme(mode);
+
+        document.getElementById("currentTheme").innerText = mode;
+      }
+
+      function applyTheme(mode) {
+        if (mode === "dark") {
+          document.body.classList.add("dark-mode");
+        } else {
+          document.body.classList.remove("dark-mode");
+        }
+      }
+
+      window.onload = function () {
+        const theme = localStorage.getItem("dashboardTheme") || "light";
+
+        document.getElementById("currentTheme").innerText = theme;
+
+        applyTheme(theme);
+      };
+    </script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

@@ -1180,9 +1180,14 @@
 
     <script>
       // World map by jsVectorMap
-      new jsVectorMap({
+      window.dashboardMap = new jsVectorMap({
         selector: "#world-map",
         map: "world",
+        markers: [],
+        markerStyle: {
+          initial: { fill: "#dc3545", stroke: "#ffffff", strokeWidth: 2, r: 8 },
+          hover: { fill: "#ffc107" },
+        },
       });
 
       // Sparkline charts
@@ -1302,6 +1307,16 @@
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
 
+            // Add marker to the map
+            if (window.dashboardMap) {
+              window.dashboardMap.addMarkers([
+                {
+                  name: "You are here",
+                  coords: [lat, lon],
+                },
+              ]);
+            }
+
             fetch(
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
             )
@@ -1310,7 +1325,7 @@
                 let state = data.address.state || "";
                 let country = data.address.country || "";
                 document.getElementById("userLocation").innerText =
-                  `${state}, ${country}, Lat: ${lat}, Lon: ${lon}`;
+                  `${state}, ${country}, Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`;
               });
           },
           function (error) {

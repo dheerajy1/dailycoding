@@ -1,0 +1,39 @@
+/* Ensure the link itself behaves as a flex container and doesn't expand infinitely */
+.nav-link {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+  min-width: 0; /* Forces flex items to respect boundaries */
+}
+
+/* Container for the text and arrow */
+.nav-text-container {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0; /* Crucial: allows the text inside to shrink and truncate */
+  margin: 0 !important;
+  padding-left: 10px; /* Adjust spacing from the left icon if needed */
+}
+
+/* The text span that actually truncates */
+.truncate-text {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-block;
+  flex: 1;
+  min-width: 0; /* Crucial for text-overflow to work in flexboxes */
+  padding-right: 8px;
+}
+
+/* Keep the arrow locked to the right side */
+.nav-arrow {
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+.truncate-text {
+  max-width: 150px; /* Temporarily force it small to see the '...' */
+}

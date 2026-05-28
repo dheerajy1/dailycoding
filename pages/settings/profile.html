@@ -5,7 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Profile Settings - Dashboard</title>
+    <!--begin::SEO & Accessibility Meta Tags-->
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#007bff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="supported-color-schemes" content="light dark" />
 
+    <meta name="title" content="profile - AdminLTE v4 Dashboard" />
+    <meta name="author" content="ColorlibHQ" />
+    <meta
+      name="description"
+      content="profile to the company roster using the AdminLTE Bootstrap 5 Dashboard."
+    />
+    <meta
+      name="keywords"
+      content="profile, human resources, bootstrap 5, admin dashboard, employee management"
+    />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="profile - Dashboard" />
+    <meta
+      property="og:description"
+      content="profile to the company roster using the AdminLTE Bootstrap 5 Dashboard."
+    />
+    <meta property="og:type" content="website" />
+    <!--end::SEO & Accessibility Meta Tags-->
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="../../css/adminlte.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
@@ -455,6 +487,12 @@
                       <p>Theme Settings</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="./seed.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Seed Settings</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -475,13 +513,14 @@
           </div>
 
           <div class="row">
-            <!-- Profile Card -->
-            <div class="col-md-6">
-              <div class="card shadow-sm">
+            <!-- Left Column: Profile and Theme Settings -->
+            <div class="col-md-5">
+              <!-- Profile Card -->
+              <div class="card shadow-sm mb-4">
                 <div class="card-body">
                   <h5>Profile Settings</h5>
 
-                  <div class="mb-3">
+                  <div class="mb-3 mt-3">
                     <label class="form-label">Name</label>
                     <input
                       type="text"
@@ -505,15 +544,13 @@
                   </button>
                 </div>
               </div>
-            </div>
 
-            <!-- Theme Settings -->
-            <div class="col-md-6">
+              <!-- Theme Settings -->
               <div class="card shadow-sm">
                 <div class="card-body">
                   <h5>Theme Settings</h5>
 
-                  <p>Select dashboard theme:</p>
+                  <p class="mt-3">Select dashboard theme:</p>
 
                   <button class="btn btn-dark me-2" onclick="setTheme('dark')">
                     Dark Mode
@@ -528,9 +565,22 @@
 
                   <hr />
 
-                  <p class="text-muted">
+                  <p class="text-muted small">
                     Theme preference will be saved using LocalStorage API
                   </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Activity Timeline -->
+            <div class="col-md-7">
+              <div class="card shadow-sm">
+                <div class="card-header border-0">
+                  <h3 class="card-title">Recent Activity Timeline</h3>
+                </div>
+                <div class="card-body">
+                  <!-- The timeline will be dynamically injected here via JS -->
+                  <div id="activityTimelineContainer"></div>
                 </div>
               </div>
             </div>
@@ -547,25 +597,137 @@
       function setTheme(mode) {
         localStorage.setItem("dashboardTheme", mode);
         alert("Theme saved: " + mode);
+        // Force immediate update across the app
+        document.documentElement.setAttribute("data-bs-theme", mode);
       }
-
-      // Load saved theme on page load
-      window.onload = function () {
-        const theme = localStorage.getItem("dashboardTheme");
-        if (theme) {
-          console.log("Loaded theme:", theme);
-        }
-      };
 
       // Profile save (demo)
       function saveProfile() {
         const name = document.getElementById("userName").value;
         localStorage.setItem("userName", name);
+
+        // Log the activity to our custom timeline array
+        addActivityLog(
+          "Profile Updated",
+          `Changed profile name to ${name}.`,
+          "bi-person-check-fill",
+          "text-bg-primary",
+        );
         alert("Profile saved for " + name);
+        loadActivityTimeline(); // Refresh timeline
       }
+
+      // Custom Activity Timeline Logic
+      function addActivityLog(title, body, icon, color) {
+        let activities = JSON.parse(localStorage.getItem("activities")) || [];
+
+        const now = new Date();
+        const dateStr = now.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+        const timeStr = now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        activities.unshift({
+          date: dateStr,
+          time: timeStr,
+          icon: icon,
+          color: color,
+          title: title,
+          body: body,
+        });
+
+        // Keep only last 10 activities to save storage
+        if (activities.length > 10) activities.pop();
+
+        localStorage.setItem("activities", JSON.stringify(activities));
+      }
+
+      function loadActivityTimeline() {
+        let activities = JSON.parse(localStorage.getItem("activities"));
+
+        // Provide some default dummy data if array is empty or missing
+        if (!activities || activities.length === 0) {
+          activities = [
+            {
+              date: "28 May 2026",
+              time: "14:30",
+              icon: "bi-kanban",
+              color: "text-bg-success",
+              title: "Project Status Updated",
+              body: 'Moved "Website Redesign" to Completed status.',
+            },
+            {
+              date: "27 May 2026",
+              time: "10:15",
+              icon: "bi-person-plus-fill",
+              color: "text-bg-info",
+              title: "New Employee Added",
+              body: "Sarah Connor joined the design team.",
+            },
+            {
+              date: "25 May 2026",
+              time: "09:00",
+              icon: "bi-box-arrow-in-right",
+              color: "text-bg-warning",
+              title: "System Login",
+              body: "Logged into the AdminLTE dashboard successfully.",
+            },
+          ];
+          localStorage.setItem("activities", JSON.stringify(activities));
+        }
+
+        let timelineHtml = '<div class="timeline">';
+        let currentDate = "";
+
+        activities.forEach((act) => {
+          if (act.date !== currentDate) {
+            timelineHtml += `<div class="time-label"><span class="text-bg-danger">${act.date}</span></div>`;
+            currentDate = act.date;
+          }
+
+          timelineHtml += `
+            <div>
+              <i class="bi ${act.icon} ${act.color}"></i>
+              <div class="timeline-item">
+                <span class="time"><i class="bi bi-clock-fill"></i> ${act.time}</span>
+                <h3 class="timeline-header fw-bold">${act.title}</h3>
+                <div class="timeline-body text-muted">${act.body}</div>
+              </div>
+            </div>
+          `;
+        });
+
+        timelineHtml += `<div><i class="bi bi-clock-fill text-bg-secondary"></i></div></div>`;
+
+        const container = document.getElementById("activityTimelineContainer");
+        if (container) {
+          container.innerHTML = timelineHtml;
+        }
+      }
+
+      // Load functions on page load
+      window.onload = function () {
+        const theme = localStorage.getItem("dashboardTheme");
+        if (theme) {
+          console.log("Loaded theme:", theme);
+        }
+
+        const savedName = localStorage.getItem("userName");
+        if (savedName) {
+          document.getElementById("userName").value = savedName;
+        }
+
+        loadActivityTimeline();
+      };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/adminlte.min.js"></script>
     <script src="../../custom/js/theme.js"></script>
+    <script src="../../custom/js/script.js"></script>
   </body>
 </html>

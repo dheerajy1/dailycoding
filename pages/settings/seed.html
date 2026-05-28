@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load Data - Dashboard</title>
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="layout-fixed bg-body-tertiary">
+    <div
+      class="app-wrapper d-flex justify-content-center align-items-center"
+      style="min-height: 100vh"
+    >
+      <main
+        class="app-main p-4"
+        style="flex: none; width: 100%; max-width: 500px"
+      >
+        <div class="card shadow-sm text-center">
+          <div class="card-header border-0 mt-3">
+            <h3 class="card-title w-100 fw-bold">Demo Data Setup</h3>
+          </div>
+          <div class="card-body">
+            <p class="text-muted mb-4">
+              Click the buttons below to manage dummy data for testing purposes.
+            </p>
+
+            <button
+              class="btn btn-primary btn-lg w-100 mb-3"
+              onclick="seedData()"
+            >
+              <i class="bi bi-database-add"></i> Load Dummy Data
+            </button>
+
+            <button
+              class="btn btn-danger btn-lg w-100 mb-4"
+              onclick="clearData()"
+            >
+              <i class="bi bi-trash"></i> Clear All Data
+            </button>
+
+            <a href="../../index.html" class="btn btn-outline-secondary w-100">
+              Return to Dashboard
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function seedData() {
+        const employees = [
+          {
+            id: "EMP1",
+            name: "Alice Johnson",
+            role: "developer",
+            email: "alice@example.com",
+            status: "active",
+          },
+          {
+            id: "EMP2",
+            name: "Bob Smith",
+            role: "designer",
+            email: "bob@example.com",
+            status: "active",
+          },
+          {
+            id: "EMP3",
+            name: "Charlie Brown",
+            role: "manager",
+            email: "charlie@example.com",
+            status: "inactive",
+          },
+          {
+            id: "EMP4",
+            name: "Diana Prince",
+            role: "developer",
+            email: "diana@example.com",
+            status: "active",
+          },
+        ];
+
+        const clients = [
+          {
+            id: "CLI1",
+            name: "Acme Corp",
+            email: "contact@acme.com",
+            status: "active",
+            company: "Acme",
+          },
+          {
+            id: "CLI2",
+            name: "Global Tech",
+            email: "info@global.com",
+            status: "active",
+            company: "Global Tech",
+          },
+        ];
+
+        let today = new Date();
+        let tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+
+        const projects = [
+          {
+            name: "Website Redesign",
+            client: "Acme Corp",
+            progress: 45,
+            deadline: today.toISOString().split("T")[0],
+            status: "active",
+          },
+          {
+            name: "Mobile App MVP",
+            client: "Global Tech",
+            progress: 80,
+            deadline: tomorrow.toISOString().split("T")[0],
+            status: "active",
+          },
+          {
+            name: "SEO Audit",
+            client: "Acme Corp",
+            progress: 100,
+            deadline: "2026-01-01",
+            status: "completed",
+          },
+        ];
+
+        // This overwrites any existing arrays to prevent duplicates
+        localStorage.setItem("employees", JSON.stringify(employees));
+        localStorage.setItem("clients", JSON.stringify(clients));
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+        alert(
+          "Dummy data loaded successfully! You can now return to the dashboard.",
+        );
+      }
+
+      function clearData() {
+        if (
+          confirm(
+            "Are you sure you want to delete ALL employees, clients, and projects? (Theme settings will be saved)",
+          )
+        ) {
+          localStorage.removeItem("employees");
+          localStorage.removeItem("clients");
+          localStorage.removeItem("projects");
+          localStorage.removeItem("activities");
+          sessionStorage.removeItem("notifiedProjects");
+
+          alert("All dashboard data cleared successfully!");
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../custom/js/theme.js"></script>
+  </body>
+</html>

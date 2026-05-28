@@ -25,10 +25,12 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\WEB_KT_PHASE_1_TASK
 |       adminlte.rtl.css.map
 |       adminlte.rtl.min.css
 |       adminlte.rtl.min.css.map
+|       style.css
 |       
 +---custom
 |   +---css
 |   \---js
+|           script.js
 |           theme.js
 |           
 +---js

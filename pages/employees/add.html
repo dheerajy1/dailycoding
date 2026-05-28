@@ -1,10 +1,47 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
 
     <title>Add Employee - Dashboard</title>
+
+    <!--begin::SEO & Accessibility Meta Tags-->
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#007bff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="supported-color-schemes" content="light dark" />
+
+    <meta name="title" content="Add Employee - AdminLTE v4 Dashboard" />
+    <meta name="author" content="ColorlibHQ" />
+    <meta
+      name="description"
+      content="Add a new employee to the company roster using the AdminLTE Bootstrap 5 Dashboard."
+    />
+    <meta
+      name="keywords"
+      content="add employee, human resources, bootstrap 5, admin dashboard, employee management"
+    />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Add Employee - Dashboard" />
+    <meta
+      property="og:description"
+      content="Add a new employee to the company roster using the AdminLTE Bootstrap 5 Dashboard."
+    />
+    <meta property="og:type" content="website" />
+    <!--end::SEO & Accessibility Meta Tags-->
 
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="../../css/adminlte.min.css" />
@@ -31,6 +68,7 @@
                 data-lte-toggle="sidebar"
                 href="#"
                 role="button"
+                aria-label="Toggle sidebar"
               >
                 <i class="bi bi-list"></i>
               </a>
@@ -47,6 +85,7 @@
                 data-widget="navbar-search"
                 href="#"
                 role="button"
+                aria-label="Toggle search"
               >
                 <i class="bi bi-search"></i>
               </a>
@@ -55,7 +94,13 @@
 
             <!--begin::Messages Dropdown Menu-->
             <li class="nav-item dropdown">
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">
+              <a
+                class="nav-link"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-label="Messages"
+              >
                 <i class="bi bi-chat-text"></i>
                 <span class="navbar-badge badge text-bg-danger">3</span>
               </a>
@@ -147,7 +192,13 @@
 
             <!--begin::Notifications Dropdown Menu-->
             <li class="nav-item dropdown">
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">
+              <a
+                class="nav-link"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-label="Notifications"
+              >
                 <i class="bi bi-bell-fill"></i>
                 <span class="navbar-badge badge text-bg-warning">15</span>
               </a>
@@ -180,7 +231,12 @@
 
             <!--begin::Fullscreen Toggle-->
             <li class="nav-item">
-              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+              <a
+                class="nav-link"
+                href="#"
+                data-lte-toggle="fullscreen"
+                aria-label="Toggle fullscreen"
+              >
                 <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
                 <i
                   data-lte-icon="minimize"
@@ -261,6 +317,7 @@
                 href="#"
                 class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
+                aria-label="User Menu"
               >
                 <img
                   src="../../assets/img/user2-160x160.jpg"
@@ -323,7 +380,11 @@
         <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
           <!--begin::Brand Link-->
-          <a href="../../index.html" class="brand-link">
+          <a
+            href="../../index.html"
+            class="brand-link"
+            aria-label="Dashboard Home"
+          >
             <!--begin::Brand Image-->
             <img
               src="../../assets/img/AdminLTELogo.png"
@@ -360,7 +421,7 @@
 
               <!-- Employee Management -->
               <li class="nav-item menu-open">
-                <button class="nav-link">
+                <button class="nav-link" aria-expanded="true">
                   <i class="nav-icon bi bi-people"></i>
                   <p>
                     <span class="truncate-text">Employee Management</span>
@@ -385,7 +446,7 @@
 
               <!-- Client Management -->
               <li class="nav-item menu-open">
-                <button class="nav-link">
+                <button class="nav-link" aria-expanded="true">
                   <i class="nav-icon bi bi-person-badge"></i>
                   <p>
                     Client Management
@@ -410,7 +471,7 @@
 
               <!-- Project Tracking -->
               <li class="nav-item menu-open">
-                <button class="nav-link">
+                <button class="nav-link" aria-expanded="true">
                   <i class="nav-icon bi bi-kanban"></i>
                   <p>
                     Project Tracking
@@ -435,7 +496,7 @@
 
               <!-- Settings -->
               <li class="nav-item menu-open">
-                <button class="nav-link">
+                <button class="nav-link" aria-expanded="true">
                   <i class="nav-icon bi bi-gear"></i>
                   <p>
                     Settings
@@ -455,6 +516,12 @@
                       <p>Theme Settings</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="../settings/seed.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Seed Settings</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -471,13 +538,9 @@
           <!-- Page Header -->
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h3>Add Employee</h3>
-            <p class="text-muted">
-              Create new employee and store using LocalStorage API
-            </p>
-
             <a href="./list.html" class="nav-link">
               <button class="btn btn-primary">
-                <i class="bi"></i> Show Employee
+                <i class="bi bi-list-ul"></i> Show Employee
               </button>
             </a>
           </div>
@@ -487,7 +550,7 @@
               <!-- Employee Form -->
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Employee Name</label>
+                  <label for="empName" class="form-label">Employee Name</label>
                   <input
                     type="text"
                     id="empName"
@@ -497,7 +560,7 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Role</label>
+                  <label for="empRole" class="form-label">Role</label>
                   <select id="empRole" class="form-select">
                     <option value="developer">Developer</option>
                     <option value="designer">Designer</option>
@@ -506,7 +569,7 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Email</label>
+                  <label for="empEmail" class="form-label">Email</label>
                   <input
                     type="email"
                     id="empEmail"
@@ -516,7 +579,7 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Status</label>
+                  <label for="empStatus" class="form-label">Status</label>
                   <select id="empStatus" class="form-select">
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
@@ -575,5 +638,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/adminlte.min.js"></script>
     <script src="../../custom/js/theme.js"></script>
+    <script src="../../custom/js/script.js"></script>
   </body>
 </html>

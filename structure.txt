@@ -19,10 +19,36 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       \---images
 |               0fficial-presidential-portraitp-of-president-donald-J-trump.jpg
 |               
-\---phase_1_day_2_task
-        day2_task.md
-        hour_1.html
-        hour_2.html
-        hour_3.html
-        index.html
-        
++---phase_1_day_2_task
+|       day2_task.md
+|       hour_1.html
+|       hour_2.html
+|       hour_3.html
+|       index.html
+|       
++---phase_1_day_3_task
+|   |   day3_task.md
+|   |   hour_1.html
+|   |   hour_2.html
+|   |   index.html
+|   |   
+|   \---company-profile-website
+|       |   about.html
+|       |   contact.html
+|       |   index.html
+|       |   services.html
+|       |   
+|       \---images
+\---phase_2_day_1_task
+    |   day1_task.md
+    |   index.html
+    |   
+    \---assets
+        \---css
+                about.css
+                footer.css
+                hero.css
+                navbar.css
+                services.css
+                style.css
+                

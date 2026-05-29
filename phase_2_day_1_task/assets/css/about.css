@@ -1,0 +1,32 @@
+.about {
+    background-color: #e5e7eb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.about-description {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    color: #374151;
+    line-height: 1.8;
+}
+
+/* Responsive About */
+
+@media (max-width: 768px) {
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+}

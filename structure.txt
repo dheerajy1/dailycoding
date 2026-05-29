@@ -1,0 +1,43 @@
+.gitignore
+bun.lock
+eslint.config.js
+index.html
+package.json
+README.md
+tailwind.config.ts
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+
+> public
+Folder PATH listing
+Volume serial number is 7478-274D
+C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\PUBLIC
+    favicon.svg
+    icons.svg
+    
+No subfolders exist 
+
+
+> src
+Folder PATH listing
+Volume serial number is 7478-274D
+C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
+|   App.tsx
+|   index.css
+|   main.tsx
+|   
++---assets
+|       hero.png
+|       react.svg
+|       vite.svg
+|       
++---components
+|       Card.tsx
+|       Hero.tsx
+|       Navbar.tsx
+|       
+\---styles
+        App.css
+        

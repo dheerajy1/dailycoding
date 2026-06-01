@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+.btn {
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}

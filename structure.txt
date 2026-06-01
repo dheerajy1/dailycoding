@@ -39,16 +39,36 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       |   services.html
 |       |   
 |       \---images
-\---phase_2_day_1_task
-    |   day1_task.md
++---phase_2_day_1_task
+|   |   day1_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       about.css
+|       |       footer.css
+|       |       hero.css
+|       |       navbar.css
+|       |       services.css
+|       |       style.css
+|       |       
+|       \---images
+|               1_landing_page_desktop_view.png
+|               2_landing_page_mobile_view.png
+|               
+\---phase_2_day_2_task
     |   index.html
     |   
     \---assets
-        \---css
-                about.css
-                footer.css
-                hero.css
-                navbar.css
-                services.css
-                style.css
-                
+        +---css
+        |       contact.css
+        |       faq.css
+        |       features.css
+        |       footer.css
+        |       hero.css
+        |       navbar.css
+        |       pricing.css
+        |       style.css
+        |       testimonials.css
+        |       
+        \---images

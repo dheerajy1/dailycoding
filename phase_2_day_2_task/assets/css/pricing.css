@@ -1,0 +1,25 @@
+.pricing {
+  padding: 80px 20px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.pricing-card {
+  padding: 40px 30px;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.featured-plan {
+  border: 2px solid #0d6efd;
+}

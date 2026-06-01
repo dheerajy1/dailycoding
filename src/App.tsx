@@ -1,34 +1,23 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Card from "./components/Card";
+import { appRoutes } from "./lib/constants";
 
-function App() {
+export default function App() {
+  const navLinks = appRoutes.filter(route => route.showInNav);
+
   return (
-    <main className="bg-(--color-bg) min-h-screen">
-      <Navbar logo="ReactUI" />
+    <main className="min-h-screen bg-(--bg-normal)">
+      <Navbar logo="ReactUI" navLinks={navLinks} />
 
-      <Hero />
-
-      <section className="max-w-7xl mx-auto px-6 py-20 border border-(--border-main) rounded-xl my-8">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card
-            title="Fast Development"
-            description="Build reusable interfaces quickly using React and Tailwind."
+      <Routes>
+        {appRoutes.map((route) => (
+          <Route
+            key={route.id}
+            path={route.path}
+            element={<route.Component />} // Seamlessly instantiates the component
           />
-
-          <Card
-            title="Reusable Components"
-            description="Create scalable UI systems with clean component architecture."
-          />
-
-          <Card
-            title="Modern Design"
-            description="Responsive layouts with modern dark UI styling."
-          />
-        </div>
-      </section>
+        ))}
+      </Routes>
     </main>
   );
 }
-
-export default App;

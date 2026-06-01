@@ -28,16 +28,43 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |   index.css
 |   main.tsx
 |   
++---app
+|   |   Home.tsx
+|   |   
+|   \---day-1
+|       |   index.tsx
+|       |   
+|       +---task-1
+|       |       AdminDashboardLayout.tsx
+|       |       FoodDeliveryHomepage.tsx
+|       |       index.tsx
+|       |       RealTimeChatApplication.tsx
+|       |       
+|       +---task-2
+|       |       index.tsx
+|       |       Login.tsx
+|       |       Register.tsx
+|       |       
+|       \---task-3
+|               index.tsx
+|               
 +---assets
 |       hero.png
 |       react.svg
 |       vite.svg
 |       
 +---components
-|       Card.tsx
-|       Hero.tsx
-|       Navbar.tsx
+|   |   Card.tsx
+|   |   Hero.tsx
+|   |   Navbar.tsx
+|   |   
+|   \---ui
+|           Button.tsx
+|           
++---lib
+|       constants.ts
 |       
-\---styles
-        App.css
-        
++---styles
+|       App.css
+|       
+\---utils

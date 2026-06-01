@@ -12,9 +12,12 @@
   --accent-hover: #2563eb;
   --accent-muted: #bfdbfe;
 
-  /* Text & Border */
+  /* Text */
   --text-main: #09090b;
   --text-muted: #71717a;
+  --text-inverse: #ffffff;
+
+  /* Border */
   --border-main: #e5e7eb;
 
   /* Spacing system (8px base system) */

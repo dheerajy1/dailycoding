@@ -1,36 +1,32 @@
+import { Link } from "react-router-dom";
+
 type NavbarProps = {
   logo: string;
+  navLinks: Array<{
+    id: number;
+    name: string;
+    path: string;
+  }>;
 };
 
-const Navbar = ({ logo }: NavbarProps) => {
+const Navbar = ({ logo, navLinks }: NavbarProps) => {
   return (
     <header className="bg-(--bg-primary) border-b border-(--border-main)">
       <div className="max-w-(--container) mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <button>
-          <a href="/" className="hover:text-(--text-main) transition">
-            <h1 className="text-(--text-main) text-xl font-bold">{logo}</h1>
-          </a>
-        </button>
+        <Link to="/" className="hover:text-(--text-main) transition">
+          <h1 className="text-(--text-main) text-xl font-bold">{logo}</h1>
+        </Link>
 
-        {/* Nav */}
         <nav className="flex items-center gap-8 text-(--text-muted)">
-          <button>
-            <a href="/" className="hover:text-(--text-main) transition">
-              Home
-            </a>
-          </button>
-          <button>
-            <a
-              href="https://www.youtube.com/"
+          {navLinks.map((link) => (
+            <Link
+              key={link.id}
+              to={link.path}
               className="hover:text-(--text-main) transition"
             >
-              Features
-            </a>
-          </button>
-          <button>
-            <a className="hover:text-(--text-main) transition">Docs</a>
-          </button>
+              {link.name}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

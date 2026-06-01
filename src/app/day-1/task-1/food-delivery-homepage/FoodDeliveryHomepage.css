@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --food-bg-main: #f9fafb; /* gray-50 */
+  --food-bg-surface: #ffffff; /* white */
+  --food-bg-profile: #e5e7eb; /* gray-200 */
+  --food-accent-brand: #ea580c; /* orange-600 */
+  --food-accent-gradient-start: #f97316; /* orange-500 */
+  --food-accent-gradient-end: #ef4444; /* red-500 */
+  --food-accent-badge: #f97316; /* orange-500 */
+  --food-accent-hover-border: #fed7aa; /* orange-200 */
+
+  /* Text Colors */
+  --food-text-main: #1f2937; /* gray-800 */
+  --food-text-dark: #111827; /* gray-900 */
+  --food-text-muted: #6b7280; /* gray-500 */
+  --food-text-nav: #4b5563; /* gray-600 */
+  --food-text-hero-muted: #ffedd5; /* orange-100 */
+
+  /* Borders & Dividers */
+  --food-border-light: #f3f4f6; /* gray-100 */
+  --food-border-main: #e5e7eb; /* gray-200 */
+
+  /* Sizing, Spacing & Layout */
+  --food-sidebar-width: 16rem; /* w-64 */
+  --food-avatar-size: 2.25rem; /* w-9 h-9 */
+  --food-radius-main: 1rem; /* rounded-2xl */
+  --food-radius-input: 0.75rem; /* rounded-xl */
+}

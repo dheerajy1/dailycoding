@@ -4,13 +4,13 @@ import Day1 from "../app/day-1";
 import Day1Task1 from "../app/day-1/task-1";
 import Day1Task2 from "../app/day-1/task-2";
 import Day1Task3 from "../app/day-1/task-3";
-import RealTimeChatApplication from "../app/day-1/task-1/RealTimeChatApplication";
-import FoodDeliveryHomepage from "../app/day-1/task-1/FoodDeliveryHomepage";
-import AdminDashboardLayout from "../app/day-1/task-1/AdminDashboardLayout";
+import RealTimeChatApplication from "../app/day-1/task-1/real-time-chat-application";
+import FoodDeliveryHomepage from "../app/day-1/task-1/food-delivery-homepage";
+import AdminDashboardLayout from "../app/day-1/task-1/admin-dashboard-layout";
 import Login from "../app/day-1/task-2/Login";
 import Register from "../app/day-1/task-2/Register";
-import Products from "../app/day-1/task-3/Products";
-import ProductDetails from "../app/day-1/task-3/ProductDetails";
+import Ecommerce from "../app/day-1/task-3/ecommerce";
+import ProductDetails from "../app/day-1/task-3/ecommerce/ProductDetails";
 
 // import Day2 from "../app/day-2";
 // import Day3 from "../app/day-3";
@@ -85,9 +85,9 @@ export const appRoutes: AppRoute[] = [
   {
     id: 11,
     name: "Day 1 task 3",
-    path: "/day-1/task-3/products",
+    path: "/day-1/task-3/ecommerce",
     showInNav: false,
-    Component: Products,
+    Component: Ecommerce,
   },
   {
     id: 12,

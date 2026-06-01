@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "./styles/App.css";
+@import "./app/day-1/task-1/real-time-chat-application/RealTimeChat.css";
+@import "./app/day-1/task-1/food-delivery-homepage/FoodDeliveryHomepage.css";
+@import "./app/day-1/task-1/admin-dashboard-layout/AdminDashboardLayout.css";
+@import "./app/day-1/task-3/ecommerce/Ecommerce.css";
 
 :root {
   /* Backgrounds */

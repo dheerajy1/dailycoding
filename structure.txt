@@ -35,32 +35,60 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |       |   index.tsx
 |       |   
 |       +---task-1
-|       |       AdminDashboardLayout.tsx
-|       |       FoodDeliveryHomepage.tsx
-|       |       index.tsx
-|       |       RealTimeChatApplication.tsx
-|       |       
+|       |   |   index.tsx
+|       |   |   
+|       |   +---admin-dashboard-layout
+|       |   |       AdminContent.tsx
+|       |   |       AdminDashboardLayout.css
+|       |   |       AdminNavbar.tsx
+|       |   |       AdminSidebar.tsx
+|       |   |       data.ts
+|       |   |       index.tsx
+|       |   |       
+|       |   +---food-delivery-homepage
+|       |   |       data.ts
+|       |   |       FoodDeliveryContent.tsx
+|       |   |       FoodDeliveryHomepage.css
+|       |   |       FoodDeliveryNavbar.tsx
+|       |   |       FoodDeliverySidebar.tsx
+|       |   |       index.tsx
+|       |   |       
+|       |   \---real-time-chat-application
+|       |           data.ts
+|       |           index.tsx
+|       |           RealTimeChat.css
+|       |           RealTimeChatArea.tsx
+|       |           RealTimeChatNavbar.tsx
+|       |           RealTimeChatSidebar.tsx
+|       |           
 |       +---task-2
 |       |       index.tsx
 |       |       Login.tsx
 |       |       Register.tsx
 |       |       
 |       \---task-3
-|               index.tsx
-|               
+|           |   index.tsx
+|           |   
+|           \---ecommerce
+|                   data.ts
+|                   ProductCard.tsx
+|                   ProductDetails.tsx
+|                   Products.tsx
+|                   
 +---assets
 |       hero.png
 |       react.svg
 |       vite.svg
 |       
 +---components
-|   |   Card.tsx
-|   |   Hero.tsx
-|   |   Navbar.tsx
-|   |   
-|   \---ui
-|           Button.tsx
-|           
+|       Card.tsx
+|       Hero.tsx
+|       Navbar.tsx
+|       Sidebar.tsx
+|       
++---layouts
+|       BaseLayout.tsx
+|       
 +---lib
 |       constants.ts
 |       

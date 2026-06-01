@@ -5,6 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: ["exposed-starting-namespace-twins.trycloudflare.com"],
+    allowedHosts: ["*.trycloudflare.com"],
   },
 });

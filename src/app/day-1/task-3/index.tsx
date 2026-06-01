@@ -13,7 +13,7 @@ const Day1Task3 = () => {
         <Card
           title="E-Commerce Product"
           description="E-Commerce Product with Product Listing, Product Cards, Product Details Page, Search Functionality"
-          link="/day-1/task-3/products"
+          link="/day-1/task-3/ecommerce"
         />
       </div>
     </main>

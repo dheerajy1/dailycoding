@@ -1,0 +1,24 @@
+:root {
+  /* Colors */
+  --shop-bg-main: #fafafa;         /* Ultra clean off-white */
+  --shop-bg-surface: #ffffff;      /* Pure white cards/navs */
+  --shop-bg-muted: #f4f4f5;        /* Light gray dividers/inputs */
+  --shop-accent-brand: #09090b;    /* Premium dark midnight/black theme execution */
+  --shop-accent-hover: #27272a;    /* Off-black interactive states */
+  --shop-accent-sale: #dc2626;     /* Discount/badge crimson alerts */
+  --shop-accent-star: #eab308;     /* Rating values yellow */
+
+  /* Text Colors */
+  --shop-text-main: #18181b;       /* Zinc 900 primary text */
+  --shop-text-muted: #71717a;      /* Zinc 500 secondary notes */
+  --shop-text-inverse: #ffffff;    /* Pure white elements */
+
+  /* Borders & Framework */
+  --shop-border-main: #e4e4e7;     /* Soft zinc 200 grid dividers */
+  --shop-border-focus: #a1a1aa;    /* Focus outlines zinc 400 */
+
+  /* Structural Geometry */
+  --shop-radius-card: 0.5rem;      /* Elegant subtle rounding */
+  --shop-radius-badge: 9999px;     /* Pill styling capsules */
+  --shop-aspect-ratio: 4 / 5;      /* High fashion vertical imagery card profiles */
+}

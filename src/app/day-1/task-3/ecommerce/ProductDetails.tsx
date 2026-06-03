@@ -1,9 +1,9 @@
 import { PRODUCTS } from "./data";
 
 interface ProductDetailsProps {
-  productId: number;
-  onBack: () => void;
-  onAddToCart: () => void;
+  productId?: number;
+  onBack?: () => void;
+  onAddToCart?: () => void;
 }
 
 const ProductDetails = ({
@@ -11,7 +11,7 @@ const ProductDetails = ({
   onBack,
   onAddToCart,
 }: ProductDetailsProps) => {
-  const product = PRODUCTS.find((p) => p.id === productId);
+  const product = productId ? PRODUCTS.find((p) => p.id === productId) : undefined;
 
   if (!product) {
     return (

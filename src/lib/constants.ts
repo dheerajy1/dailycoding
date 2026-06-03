@@ -12,15 +12,19 @@ import Register from "../app/day-1/task-2/Register";
 import Ecommerce from "../app/day-1/task-3/ecommerce";
 import ProductDetails from "../app/day-1/task-3/ecommerce/ProductDetails";
 
-// import Day2 from "../app/day-2";
-// import Day3 from "../app/day-3";
+// Day 2 Imports
+import Day2 from "../app/day-2";
+import Day2Task1 from "../app/day-2/task-1";
+import Day2Task2 from "../app/day-2/task-2";
+import Day2Task3 from "../app/day-2/task-3";
+import Day2FoodDeliveryHomepage from "../app/day-2/task-1/food-delivery-homepage";
 
 export interface AppRoute {
   id: number;
   name: string;
   path: string;
   showInNav: boolean;
-  Component: React.ComponentType; // Pure TypeScript reference type
+  Component: React.ComponentType<object>;
 }
 
 export const appRoutes: AppRoute[] = [
@@ -97,6 +101,34 @@ export const appRoutes: AppRoute[] = [
     Component: ProductDetails,
   },
 
-  // { id: 15, name: "Day 2", path: "/day-2", showInNav: true, Component: Day2 },
-  // { id: 31, name: "Day 3", path: "/day-3", showInNav: true, Component: Day3 },
+  // Day 2 Routes Configuration
+  { id: 15, name: "Day 2", path: "/day-2", showInNav: true, Component: Day2 },
+  {
+    id: 16,
+    name: "Day 2 task 1",
+    path: "/day-2/task-1",
+    showInNav: false,
+    Component: Day2Task1,
+  },
+  {
+    id: 17,
+    name: "Day 2 task 2",
+    path: "/day-2/task-2",
+    showInNav: false,
+    Component: Day2Task2,
+  },
+  {
+    id: 18,
+    name: "Day 2 task 3",
+    path: "/day-2/task-3",
+    showInNav: false,
+    Component: Day2Task3,
+  },
+  {
+    id: 19,
+    name: "Day 2 task 1",
+    path: "/day-2/task-1/food-delivery-homepage",
+    showInNav: false,
+    Component: Day2FoodDeliveryHomepage,
+  },
 ];

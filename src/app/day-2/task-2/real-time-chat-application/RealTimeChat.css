@@ -1,0 +1,26 @@
+:root {
+  /* Colors */
+  --chat-bg-main: #f9fafb;
+  --chat-bg-surface: #ffffff;
+  --chat-bg-input: #f3f4f6;
+  --chat-accent-brand: #2563eb;
+  --chat-accent-hover: #1d4ed8;
+  --chat-accent-success: #22c55e;
+  
+  /* Text Colors */
+  --chat-text-main: #111827;
+  --chat-text-muted: #6b7280;
+  --chat-text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --chat-border-color: #e5e7eb;
+  --chat-border-light: #f3f4f6;
+  
+  /* Sizing, Spacing & Layout */
+  --chat-sidebar-width: 20rem;
+  --chat-avatar-lg: 3rem;
+  --chat-avatar-md: 2.5rem;
+  --chat-avatar-sm: 2rem;
+  --chat-radius-main: 1rem;
+  --chat-radius-input: 9999px;
+}

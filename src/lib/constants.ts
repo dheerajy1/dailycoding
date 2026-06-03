@@ -19,6 +19,20 @@ import Day2Task2 from "../app/day-2/task-2";
 import Day2Task3 from "../app/day-2/task-3";
 import Day2FoodDeliveryHomepage from "../app/day-2/task-1/food-delivery-homepage";
 import Day2RealTimeChatApplication from "../app/day-2/task-2/real-time-chat-application";
+import Day2AdminDashboard from "../app/day-2/task-3/admin-dashboard-layout";
+
+// Import your submodules so they can be referenced inside the routing tree array
+import AdminContent from "../app/day-2/task-3/admin-dashboard-layout/AdminContent";
+import AdminAnalytics from "../app/day-2/task-3/admin-dashboard-layout/AdminAnalytics";
+import AdminCustomers from "../app/day-2/task-3/admin-dashboard-layout/AdminCustomers";
+import AdminOrders from "../app/day-2/task-3/admin-dashboard-layout/AdminOrders";
+import AdminSettings from "../app/day-2/task-3/admin-dashboard-layout/AdminSettings";
+
+export interface SubRoute {
+  path: string; // blank for index sub-page or explicit like "analytics"
+  isIndex?: boolean;
+  Component: React.ComponentType<object>;
+}
 
 export interface AppRoute {
   id: number;
@@ -26,6 +40,7 @@ export interface AppRoute {
   path: string;
   showInNav: boolean;
   Component: React.ComponentType<object>;
+  children?: SubRoute[]; // Added to match Next.js layout child architectures
 }
 
 export const appRoutes: AppRoute[] = [
@@ -138,5 +153,20 @@ export const appRoutes: AppRoute[] = [
     path: "/day-2/task-2/real-time-chat-application",
     showInNav: false,
     Component: Day2RealTimeChatApplication,
+  },
+  {
+    id: 21,
+    name: "Day 2 task 1",
+    path: "/day-2/task-3/admin-dashboard-layout",
+    showInNav: false,
+    Component: Day2AdminDashboard,
+    // Define the child layout routes right here to build clean nested URLs!
+    children: [
+      { path: "", isIndex: true, Component: AdminContent },
+      { path: "analytics", Component: AdminAnalytics },
+      { path: "customers", Component: AdminCustomers },
+      { path: "orders", Component: AdminOrders },
+      { path: "settings", Component: AdminSettings },
+    ],
   },
 ];

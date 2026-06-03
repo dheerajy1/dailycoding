@@ -5,6 +5,10 @@
 @import "./app/day-1/task-1/admin-dashboard-layout/AdminDashboardLayout.css";
 @import "./app/day-1/task-3/ecommerce/Ecommerce.css";
 
+@import "./app/day-2/task-1/food-delivery-homepage/FoodDeliveryHomepage.css";
+@import "./app/day-2/task-2/real-time-chat-application/RealTimeChat.css";
+@import "./app/day-2/task-3/admin-dashboard-layout/AdminDashboardLayout.css";
+
 :root {
   /* Backgrounds */
   --bg-normal: #ffffff;

@@ -1,65 +1,118 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import { cn } from "../../../../lib/utils";
+
 type AdminSidebarProps = {
   isSidebarOpen: boolean;
   onClose: () => void;
 };
 
 const AdminSidebar = ({ isSidebarOpen, onClose }: AdminSidebarProps) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Define clean route segments matching our nested path mappings
+  const menuItems = [
+    {
+      label: "Overview",
+      icon: "📊",
+      path: "/day-2/task-3/admin-dashboard-layout",
+    },
+    {
+      label: "Analytics",
+      icon: "📈",
+      path: "/day-2/task-3/admin-dashboard-layout/analytics",
+    },
+    {
+      label: "Customers",
+      icon: "👥",
+      path: "/day-2/task-3/admin-dashboard-layout/customers",
+    },
+    {
+      label: "Orders",
+      icon: "📦",
+      path: "/day-2/task-3/admin-dashboard-layout/orders",
+    },
+    {
+      label: "SaaS Settings",
+      icon: "⚙️",
+      path: "/day-2/task-3/admin-dashboard-layout/settings",
+    },
+  ];
+
   return (
     <>
-      {/* Mobile Overlay */}
+      {/* Mobile Drawer Overlay Backdrop using variables with opacity mod */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-(--admin-bg-sidebar)/40 backdrop-blur-xs z-40 md:hidden"
           onClick={onClose}
         />
       )}
 
-      {/* Sidebar Panel */}
+      {/* Main Persistent Control Rail */}
       <aside
-        className={`fixed inset-y-0 left-0 z-30 w-(--admin-sidebar-width) bg-(--admin-bg-surface) border-r border-(--admin-border-main) p-6 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 w-(--admin-sidebar-width) bg-(--admin-bg-sidebar) text-(--admin-text-inverse) p-5 flex flex-col border-r border-(--admin-sidebar-border) transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static shrink-0",
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full",
+        )}
       >
-        <div className="flex justify-between items-center md:block">
-          <h2 className="text-xl font-bold text-(--admin-text-main)">
-            Admin Panel
-          </h2>
-          {/* Mobile Close Button */}
+        {/* Brand Terminal Node */}
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-(--admin-sidebar-border)">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">⚡</span>
+            <span className="font-bold text-lg tracking-tight admin-brand-text-gradient">
+              ApexSaaS Admin
+            </span>
+          </div>
           <button
             onClick={onClose}
-            className="md:hidden text-2xl text-(--admin-text-muted) hover:text-(--admin-text-main) transition-colors"
+            className="md:hidden text-xl outline-none text-(--admin-sidebar-text-unselected) cursor-pointer"
           >
             &times;
           </button>
         </div>
 
-        {/* Navigation Stream */}
-        <nav className="mt-8 flex flex-col gap-4 text-(--admin-text-muted)">
-          <a
-            href="#"
-            className="hover:text-(--admin-text-main) font-medium transition-colors"
-          >
-            Dashboard
-          </a>
-          <a
-            href="#"
-            className="hover:text-(--admin-text-main) font-medium transition-colors"
-          >
-            Analytics
-          </a>
-          <a
-            href="#"
-            className="hover:text-(--admin-text-main) font-medium transition-colors"
-          >
-            Users
-          </a>
-          <a
-            href="#"
-            className="hover:text-(--admin-text-main) font-medium transition-colors"
-          >
-            Settings
-          </a>
+        {/* Navigation Core */}
+        <nav className="flex-1 space-y-1.5">
+          {menuItems.map((item, idx) => {
+            // Checks if the current browser URL pathname perfectly matches this item's target route path
+            const isItemActive = location.pathname === item.path;
+
+            return (
+              <button
+                key={idx}
+                onClick={() => {
+                  navigate(item.path); // Transitions URL address path seamlessly
+                  onClose(); // Auto-closes mobile sidebar navigation drawer overlay
+                }}
+                className={cn(
+                  "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition duration-200 outline-none cursor-pointer",
+                  isItemActive
+                    ? "bg-(--admin-brand-accent) text-(--admin-text-inverse)"
+                    : "bg-transparent text-(--admin-sidebar-text-unselected) hover:bg-(--admin-sidebar-item-hover-bg) hover:text-(--admin-sidebar-text-hover)",
+                )}
+              >
+                <span className="text-base">{item.icon}</span>
+                {item.label}
+              </button>
+            );
+          })}
         </nav>
+
+        {/* User Account Capsule Footer */}
+        <div className="mt-auto border-t border-(--admin-sidebar-border) pt-4 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm border bg-(--admin-profile-avatar-bg) border-(--admin-profile-avatar-border) text-(--admin-profile-avatar-text)">
+            DS
+          </div>
+          <div className="min-w-0">
+            <p className="text-xs font-semibold truncate text-(--admin-text-inverse)">
+              Dheeraj Sharma
+            </p>
+            <p className="text-[10px] truncate text-(--admin-profile-subtitle)">
+              admin@apexsaas.io
+            </p>
+          </div>
+        </div>
       </aside>
     </>
   );

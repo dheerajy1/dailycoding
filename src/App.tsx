@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <Routes>
-      {/* GROUP 1: Routes WITH the Navbar */}
+      {/* GROUP 1: Routes WITH the Global Template Navbar */}
       <Route element={<BaseLayout navLinks={navLinks} />}>
         {layoutRoutes.map((route) => (
           <Route
@@ -41,10 +41,40 @@ export default function App() {
         ))}
       </Route>
 
-      {/* GROUP 2: Routes WITHOUT the Navbar (Your standalone apps!) */}
-      {standaloneRoutes.map((route) => (
-        <Route key={route.id} path={route.path} element={<route.Component />} />
-      ))}
+      {/* GROUP 2: Standalone routes mapping Next.js nested layout sub-trees */}
+      {standaloneRoutes.map((route) => {
+        // If the standalone application has children, render them as a nested sub-route group
+        if (route.children) {
+          return (
+            <Route
+              key={route.id}
+              path={route.path}
+              element={<route.Component />}
+            >
+              {route.children.map((child, childIdx) =>
+                child.isIndex ? (
+                  <Route key={childIdx} index element={<child.Component />} />
+                ) : (
+                  <Route
+                    key={childIdx}
+                    path={child.path}
+                    element={<child.Component />}
+                  />
+                ),
+              )}
+            </Route>
+          );
+        }
+
+        // Default flat fallback for standalone pages with no structural layouts
+        return (
+          <Route
+            key={route.id}
+            path={route.path}
+            element={<route.Component />}
+          />
+        );
+      })}
     </Routes>
   );
 }

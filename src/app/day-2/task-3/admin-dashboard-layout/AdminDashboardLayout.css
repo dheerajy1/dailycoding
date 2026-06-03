@@ -1,28 +1,67 @@
+@theme {
+  --color-admin-brand-accent: var(--admin-brand-accent);
+  --color-admin-brand-accent-hover: var(--admin-brand-accent-hover);
+}
+
 :root {
-  /* Colors */
-  --admin-bg-main: #f9fafb; /* Replacement for default bg-primary if needed */
-  --admin-bg-surface: #ffffff; /* bg-white */
-  --admin-bg-muted: #f3f4f6; /* bg-gray-100 */
-  --admin-bg-table-header: #f9fafb; /* bg-gray-50/50 */
+  /* Main Application Structural Canvas */
+  --admin-bg-main: #f8fafc;
+  --admin-bg-surface: #ffffff;
+  --admin-bg-sidebar: #0f172a;
+  --admin-border-color: #e2e8f0;
 
-  /* Brand/Accent Colors */
-  --admin-accent-gradient-start: #2563eb; /* blue-600 */
-  --admin-accent-gradient-end: #4338ca; /* indigo-700 */
+  /* Global Core Typography Layers */
+  --admin-text-main: #1e293b;
+  --admin-text-muted: #64748b;
+  --admin-text-inverse: #ffffff;
 
-  /* Status Badges */
-  --admin-status-paid-bg: #dcfce7; /* bg-green-100 */
-  --admin-status-paid-text: #15803d; /* text-green-700 */
-  --admin-status-pending-bg: #fef9c3; /* bg-yellow-100 */
-  --admin-status-pending-text: #a16207; /* text-yellow-700 */
+  /* Interactive Interactive Component Accents */
+  --admin-brand-accent: #6366f1;
+  --admin-brand-accent-hover: #4f46e5;
 
-  /* Avatar Accent Tokens */
-  --admin-avatar-bg: #dbeafe; /* bg-blue-100 */
-  --admin-avatar-text: #2563eb; /* text-blue-600 */
-  --admin-avatar-border: #bfdbfe; /* border-blue-200 */
+  /* Global Semantic Health Trackers (Text/Foregrounds) */
+  --admin-color-success: #10b981;
+  --admin-color-warning: #f59e0b;
+  --admin-color-danger: #ef4444;
 
-  /* Text Variations */
-  --admin-text-hero-muted: #dbeafe; /* text-blue-100 */
+  /* Global Semantic Badge Health Trackers (Background Alphas) */
+  --admin-bg-success-badge: rgba(16, 185, 129, 0.1);
+  --admin-bg-warning-badge: rgba(245, 158, 11, 0.1);
+  --admin-bg-danger-badge: rgba(239, 68, 68, 0.1);
 
-  /* Layout Sizing */
-  --admin-sidebar-width: 16rem; /* w-64 */
+  /* Theme-able Dark Sidebar Component Internals */
+  --admin-sidebar-border: #1e293b;
+  --admin-sidebar-text-unselected: #94a3b8;
+  --admin-sidebar-text-hover: #ffffff;
+  --admin-sidebar-item-hover-bg: rgba(30, 41, 59, 0.6);
+
+  /* Brand Typography Linear Gradient Vector Nodes */
+  --admin-brand-gradient-start: #818cf8; /* Indigo-400 */
+  --admin-brand-gradient-end: #22d3ee; /* Cyan-400 */
+
+  /* Dedicated Profile Base Layout Badges */
+  --admin-profile-avatar-bg: rgba(99, 102, 241, 0.2);
+  --admin-profile-avatar-border: rgba(129, 140, 248, 0.3);
+  --admin-profile-avatar-text: #a5b4fc;
+  --admin-profile-subtitle: #94a3b8;
+
+  /* Global Application Radii & Structural Metric Anchors */
+  --admin-radius-main: 12px;
+  --admin-sidebar-width: 260px;
+}
+
+/* Custom interactive engine scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }

@@ -71,6 +71,9 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |           |   
 |           \---ecommerce
 |                   data.ts
+|                   Ecommerce.css
+|                   Header.tsx
+|                   index.tsx
 |                   ProductCard.tsx
 |                   ProductDetails.tsx
 |                   Products.tsx

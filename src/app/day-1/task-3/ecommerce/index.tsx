@@ -2,15 +2,20 @@ import { useState } from "react";
 import { PRODUCTS } from "./data";
 import Products from "./Products";
 import ProductDetails from "./ProductDetails";
+import Header from "./Header";
 
 const EcommerceIndex = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
+  const [selectedProductId, setSelectedProductId] = useState<number | null>(
+    null,
+  );
   const [cartCount, setCartCount] = useState(0);
 
-  // Derive unique categories dynamically from metadata source
-  const categories = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
+  const categories = [
+    "All",
+    ...Array.from(new Set(PRODUCTS.map((p) => p.category))),
+  ];
 
   const handleProductSelect = (id: number) => {
     setSelectedProductId(id);
@@ -21,67 +26,119 @@ const EcommerceIndex = () => {
     setCartCount((prev) => prev + 1);
   };
 
+  const handleResetFilters = () => {
+    setSelectedProductId(null);
+    setSearchQuery("");
+    setSelectedCategory("All");
+  };
+
   return (
-    <div className="min-h-screen bg-(--shop-bg-main) text-(--shop-text-main) font-sans antialiased">
-      
-      {/* Premium Minimal Global Navigation Header */}
-      <header className="sticky top-0 z-40 bg-(--shop-bg-surface) border-b border-(--shop-border-main) backdrop-blur-md bg-opacity-95">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 gap-4">
-            
-            {/* Branding Anchor */}
-            <button 
-              onClick={() => { setSelectedProductId(null); setSearchQuery(""); setSelectedCategory("All"); }}
-              className="text-xl font-black tracking-tight text-(--shop-text-main) hover:opacity-80 transition"
-            >
-              STUDIO&bull;MARKET
-            </button>
+    <div className="min-h-screen bg-(--shop-bg-main) text-(--shop-text-main) antialiased">
+      <Header
+        cartCount={cartCount}
+        onResetView={handleResetFilters}
+        onHomeClick={() => setSelectedProductId(null)}
+      />
 
-            {/* Centered Category Quick-Links Bar (Desktop Only) */}
-            <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => { setSelectedCategory(cat); setSelectedProductId(null); }}
-                  className={`transition-colors relative py-1 ${
-                    selectedCategory === cat 
-                      ? "text-(--shop-text-main) font-semibold" 
-                      : "text-(--shop-text-muted) hover:text-(--shop-text-main)"
-                  }`}
-                >
-                  {cat}
-                  {selectedCategory === cat && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-(--shop-accent-brand)" />
-                  )}
-                </button>
-              ))}
-            </nav>
+      {/* --- RECONSTRUCTED HERO BANNER COLLECTION SLIDER --- */}
+      {selectedProductId === null && (
+        <section className="bg-(--shop-bg-surface) pt-20 pb-16 px-6 relative">
+          <div className="max-w-7xl mx-auto text-center relative">
+            {/* Header Content Block */}
+            <h2 className="font-serif text-5xl md:text-6xl tracking-wide text-(--shop-text-main) mb-6">
+              New Collections
+            </h2>
+            <p className="text-(--shop-text-muted) font-light text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-14 opacity-90">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+              voluptas ut dolorum consequuntur, adipisci repellat! Eveniet
+              commodi voluptatem voluptate, eum minima, in suscipit explicabo
+              voluptatibus harum, quibusdam ex repellat eaque!
+            </p>
 
-            {/* Shopping Cart Pill Utility */}
-            <div className="flex items-center gap-4">
-              <button className="relative p-2 text-(--shop-text-main) hover:bg-(--shop-bg-muted) rounded-full transition">
-                <span className="text-xl">👜</span>
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-(--shop-accent-sale) text-(--shop-text-inverse) text-[10px] font-bold w-4 h-4 rounded-(--shop-radius-badge) flex items-center justify-center shadow-xs">
-                    {cartCount}
-                  </span>
-                )}
+            {/* Carousel Slider Mock Row Layout */}
+            <div className="relative px-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Column Card 1 */}
+                <div className="flex flex-col text-left group">
+                  <div className="overflow-hidden mb-5 bg-(--shop-bg-muted) rounded-(--shop-radius-card)">
+                    <div className="aspect-4/5 w-full bg-neutral-200 transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <h4 className="font-serif text-lg text-(--shop-text-main) tracking-wider uppercase mb-2">
+                    Soft leather jackets
+                  </h4>
+                  <p className="text-xs text-(--shop-text-muted) leading-relaxed mb-3 max-w-xs font-light">
+                    Scelerisque duis aliquam qui lorem ipsum dolor amet,
+                    consectetur adipiscing elit.
+                  </p>
+                  <div>
+                    <button className="text-[10px] font-bold tracking-widest uppercase border-b border-(--shop-accent-brand) pb-1 text-(--shop-text-main) hover:text-(--shop-text-muted) hover:border-(--shop-text-muted) transition-colors">
+                      Discover Now
+                    </button>
+                  </div>
+                </div>
+
+                {/* Column Card 2 */}
+                <div className="flex flex-col text-left group">
+                  <div className="overflow-hidden mb-5 bg-(--shop-bg-muted) rounded-(--shop-radius-card)">
+                    <div className="aspect-4/5 w-full bg-neutral-300 transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <h4 className="font-serif text-lg text-(--shop-text-main) tracking-wider uppercase mb-2">
+                    Soft leather jackets
+                  </h4>
+                  <p className="text-xs text-(--shop-text-muted) leading-relaxed mb-3 max-w-xs font-light">
+                    Scelerisque duis aliquam qui lorem ipsum dolor amet,
+                    consectetur adipiscing elit.
+                  </p>
+                  <div>
+                    <button className="text-[10px] font-bold tracking-widest uppercase border-b border-(--shop-accent-brand) pb-1 text-(--shop-text-main) hover:text-(--shop-text-muted) hover:border-(--shop-text-muted) transition-colors">
+                      Discover Now
+                    </button>
+                  </div>
+                </div>
+
+                {/* Column Card 3 */}
+                <div className="flex flex-col text-left group">
+                  <div className="overflow-hidden mb-5 bg-(--shop-bg-muted) rounded-(--shop-radius-card)">
+                    <div className="aspect-4/5 w-full bg-neutral-400 transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <h4 className="font-serif text-lg text-(--shop-text-main) tracking-wider uppercase mb-2">
+                    Soft leather jackets
+                  </h4>
+                  <p className="text-xs text-(--shop-text-muted) leading-relaxed mb-3 max-w-xs font-light">
+                    Scelerisque duis aliquam qui lorem ipsum dolor amet,
+                    consectetur adipiscing elit.
+                  </p>
+                  <div>
+                    <button className="text-[10px] font-bold tracking-widest uppercase border-b border-(--shop-accent-brand) pb-1 text-(--shop-text-main) hover:text-(--shop-text-muted) hover:border-(--shop-text-muted) transition-colors">
+                      Discover Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Left Arrow Icon */}
+              <button className="absolute left-0 top-1/3 transform -translate-y-1/2 w-12 h-12 rounded-(--shop-radius-badge) border border-(--shop-border-main) flex items-center justify-center bg-(--shop-bg-surface) text-(--shop-text-muted) hover:text-(--shop-text-main) transition-colors">
+                ←
+              </button>
+
+              {/* Right Arrow Icon */}
+              <button className="absolute right-0 top-1/3 transform -translate-y-1/2 w-12 h-12 rounded-(--shop-radius-badge) border border-(--shop-border-main) flex items-center justify-center bg-(--shop-bg-surface) text-(--shop-text-muted) hover:text-(--shop-text-main) transition-colors">
+                →
               </button>
             </div>
-
           </div>
-        </div>
-      </header>
+        </section>
+      )}
 
-      {/* Main Dynamic Viewport Frame */}
+      {/* --- MAIN DYNAMIC APPLICATION FRAME VIEWPORT --- */}
       {selectedProductId !== null ? (
-        <ProductDetails 
-          productId={selectedProductId} 
-          onBack={() => setSelectedProductId(null)} 
+        <ProductDetails
+          productId={selectedProductId}
+          onBack={() => setSelectedProductId(null)}
           onAddToCart={handleAddToCart}
         />
       ) : (
-        <Products 
+        <Products
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           selectedCategory={selectedCategory}
@@ -91,13 +148,12 @@ const EcommerceIndex = () => {
         />
       )}
 
-      {/* High-End Minimalist Footer */}
-      <footer className="bg-(--shop-bg-surface) border-t border-(--shop-border-main) mt-20 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-(--shop-text-muted)">
-          &copy; {new Date().getFullYear()} STUDIO&bull;MARKET Inc. All architectural rights reserved.
+      {/* --- STANDALONE HIGH-END BOUTIQUE FOOTER --- */}
+      <footer className="bg-(--shop-bg-surface) border-t border-(--shop-border-main) mt-20 py-10">
+        <div className="max-w-7xl mx-auto px-6 text-center text-xs tracking-widest text-(--shop-text-muted) uppercase">
+          &copy; {new Date().getFullYear()} Kaira. All layout rights reserved.
         </div>
       </footer>
-
     </div>
   );
 };

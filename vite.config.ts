@@ -7,4 +7,7 @@ export default defineConfig({
   server: {
     allowedHosts: ["*.trycloudflare.com"],
   },
+  define: {
+    "process.env": process.env, // inject Bun’s env into frontend
+  },
 });

@@ -18,6 +18,7 @@ import Day2Task1 from "../app/day-2/task-1";
 import Day2Task2 from "../app/day-2/task-2";
 import Day2Task3 from "../app/day-2/task-3";
 import Day2FoodDeliveryHomepage from "../app/day-2/task-1/food-delivery-homepage";
+import Day2RealTimeChatApplication from "../app/day-2/task-2/real-time-chat-application";
 
 export interface AppRoute {
   id: number;
@@ -130,5 +131,12 @@ export const appRoutes: AppRoute[] = [
     path: "/day-2/task-1/food-delivery-homepage",
     showInNav: false,
     Component: Day2FoodDeliveryHomepage,
+  },
+  {
+    id: 20,
+    name: "Day 2 task 1",
+    path: "/day-2/task-2/real-time-chat-application",
+    showInNav: false,
+    Component: Day2RealTimeChatApplication,
   },
 ];

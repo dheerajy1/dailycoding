@@ -6,7 +6,7 @@
   --chat-accent-brand: #2563eb;
   --chat-accent-hover: #1d4ed8;
   --chat-accent-success: #22c55e;
-  
+
   /* Text Colors */
   --chat-text-main: #111827;
   --chat-text-muted: #6b7280;
@@ -15,7 +15,7 @@
   /* Borders & Dividers */
   --chat-border-color: #e5e7eb;
   --chat-border-light: #f3f4f6;
-  
+
   /* Sizing, Spacing & Layout */
   --chat-sidebar-width: 20rem;
   --chat-avatar-lg: 3rem;
@@ -23,4 +23,14 @@
   --chat-avatar-sm: 2rem;
   --chat-radius-main: 1rem;
   --chat-radius-input: 9999px;
+
+  /* Status Colors */
+  --chat-status-success: #22c55e;
+  --chat-status-success-dark: #16a34a;
+  --chat-status-error: #ef4444;
+  --chat-status-loading: #9ca3af;
+
+  /* Effects */
+  --chat-shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --chat-opacity-disabled: 0.4;
 }

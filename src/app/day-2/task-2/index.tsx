@@ -1,6 +1,6 @@
 import Card from "../../../components/Card";
 
-const Day1Task1 = () => {
+const Day2Task2 = () => {
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold text-(--text-main)">Day 1 - Task 2</h1>
@@ -20,4 +20,4 @@ const Day1Task1 = () => {
   );
 };
 
-export default Day1Task1;
+export default Day2Task2;

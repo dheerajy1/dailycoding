@@ -11,9 +11,13 @@ export default function App() {
   const pathsWithNavbar = [
     "/",
     "/day-1",
+    "/day-2",
     "/day-1/task-1",
     "/day-1/task-2",
     "/day-1/task-3",
+    "/day-2/task-1",
+    "/day-2/task-2",
+    "/day-2/task-3",
   ];
 
   // 3. Split the routes into two groups based on the list above

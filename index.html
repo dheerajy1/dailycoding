@@ -1,80 +1,202 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Web KT Learning Roadmap</title>
 
     <style>
+      :root {
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --accent: #e0e7ff;
+        --border-color: #e2e8f0;
+        --shadow:
+          0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        --radius: 12px;
+      }
+
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f6f9;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.5;
+        padding: 40px 20px;
       }
 
       .container {
-        width: 90%;
-        max-width: 1000px;
-        margin: 80px auto;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      header {
         text-align: center;
+        margin-bottom: 48px;
       }
 
       h1 {
-        color: #222222;
-        margin-bottom: 15px;
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        margin-bottom: 8px;
+        background: linear-gradient(to right, #4f46e5, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
-      p {
-        color: #666666;
-        margin-bottom: 50px;
-        font-size: 18px;
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.125rem;
       }
 
-      .button-container {
+      .phase-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 28px;
+        margin-bottom: 32px;
+        box-shadow: var(--shadow);
+      }
+
+      .phase-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 20px;
         display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Simple indicator badge for the phases */
+      .phase-title::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 24px;
+        background-color: var(--primary);
+        border-radius: 4px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+
+      .task-link {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        gap: 25px;
-        flex-wrap: wrap;
-      }
-
-      a {
+        align-items: center;
         text-decoration: none;
-        background-color: #007bff;
-        color: white;
-        padding: 18px 35px;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+        padding: 20px;
+        border-radius: calc(var(--radius) - 2px);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s ease-in-out;
+        text-align: center;
       }
 
-      a:hover {
-        background-color: #0056b3;
-        transform: translateY(-3px);
+      .task-link span {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 400;
+        margin-top: 4px;
+      }
+
+      .task-link:hover {
+        background-color: var(--accent);
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgb(79 70 229 / 0.1);
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 16px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        .phase-card {
+          padding: 20px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Frontend Web KT Learning Roadmap</h1>
+      <header>
+        <h1>Frontend Web KT Learning Roadmap</h1>
+        <p class="subtitle">
+          Track your progress and access daily practice tasks
+        </p>
+      </header>
 
-      <p>Phase 1 HTML5 Fundamentals Practice Tasks</p>
+      <main>
+        <section class="phase-card">
+          <h2 class="phase-title">
+            Phase 1: HTML5 Fundamentals Practice Tasks
+          </h2>
+          <div class="grid-container">
+            <a href="phase_1_day_1_task/index.html" class="task-link">
+              Day 1
+              <span>Introduction & Elements</span>
+            </a>
+            <a href="phase_1_day_2_task/index.html" class="task-link">
+              Day 2
+              <span>Forms & Validations</span>
+            </a>
+            <a href="phase_1_day_3_task/index.html" class="task-link">
+              Day 3
+              <span>Semantic Layouts</span>
+            </a>
+          </div>
+        </section>
 
-      <div class="button-container">
-        <a href="phase_1_day_1_task/index.html"> Phase 1 - Day 1 </a>
-
-        <a href="phase_1_day_2_task/index.html"> Phase 1 - Day 2 </a>
-
-        <a href="phase_1_day_3_task/index.html"> Phase 1 - Day 3 </a>
-      </div>
-
-      <p>Phase 2 HTML5 Fundamentals Practice Tasks</p>
-
-      <div class="button-container">
-        <a href="phase_2_day_1_task\index.html"> Phase 2 - Day 1 </a>
-        <a href="phase_2_day_2_task\index.html"> Phase 2 - Day 2 </a>
-      </div>
+        <section class="phase-card">
+          <h2 class="phase-title">Phase 2: CSS3 Core & Styling</h2>
+          <div class="grid-container">
+            <a href="phase_2_day_1_task/index.html" class="task-link">
+              Day 1
+              <span>Selectors & Box Model</span>
+            </a>
+            <a href="phase_2_day_2_task/index.html" class="task-link">
+              Day 2
+              <span>Flexbox Layouts</span>
+            </a>
+            <a href="phase_2_day_3_task/index.html" class="task-link">
+              Day 3
+              <span>Grid & Responsiveness</span>
+            </a>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>

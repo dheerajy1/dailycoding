@@ -1,0 +1,43 @@
+/* Header variables */
+
+:root {
+  --header-gap: var(--space-md);
+
+  --header-search-width: 250px;
+
+  --header-profile-padding-y: var(--space-sm);
+  --header-profile-padding-x: var(--space-md);
+
+  --header-profile-radius: var(--radius-sm);
+}
+
+/* Header */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: var(--header-gap);
+}
+
+.header-search {
+  width: var(--header-search-width);
+}
+
+.header-profile {
+  padding-block: var(--header-profile-padding-y);
+  padding-inline: var(--header-profile-padding-x);
+
+  background-color: var(--color-bg-primary);
+
+  border: var(--border-width-thin) solid
+    var(--color-border-primary);
+
+  border-radius: var(--header-profile-radius);
+}

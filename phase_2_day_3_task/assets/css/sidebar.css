@@ -1,0 +1,60 @@
+:root {
+  /* Sidebar variables */
+  --sidebar-padding: var(--space-lg);
+  --sidebar-title-size: 1.25rem;
+
+  /* Navigation variables */
+  --sidebar-nav-gap: var(--space-sm);
+
+  --sidebar-link-padding-y: var(--space-sm);
+  --sidebar-link-padding-x: var(--space-md);
+
+  --sidebar-link-radius: var(--radius-sm);
+
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: var(--layout-sidebar-width);
+  min-height: 100vh;
+
+  padding: var(--sidebar-padding);
+
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+}
+
+/* Logo */
+
+.sidebar-logo {
+  margin-bottom: var(--space-xl);
+}
+
+/* Navigation */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-nav-gap);
+}
+
+.sidebar-link {
+  padding-block: var(--sidebar-link-padding-y);
+  padding-inline: var(--sidebar-link-padding-x);
+
+  color: var(--color-sidebar-text);
+
+  text-decoration: none;
+
+  border-radius: var(--sidebar-link-radius);
+
+  transition: var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  background-color: var(--sidebar-link-hover-bg);
+
+  color: var(--color-sidebar-text);
+}

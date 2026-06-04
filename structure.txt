@@ -83,9 +83,18 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
         |       header.css
         |       notifications.css
         |       responsive.css
+        |       revenue.css
         |       settings.css
         |       sidebar.css
         |       style.css
         |       users.css
         |       
-        \---images
+        +---images
+        +---js
+        |       script.js
+        |       
+        \---pages
+                revenue.html
+                settings.html
+                users.html
+                

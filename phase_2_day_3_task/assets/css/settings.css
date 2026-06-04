@@ -1,0 +1,74 @@
+/* ==========================================================================
+   SECTION 1: SYSTEM MANAGEMENT PANEL BLOCKS
+   
+   * Locks side boundaries for dashboard settings.
+   * Overrides core text configurations inside boxes.
+   * Arranges card bottom spacer margin bounds.
+   ========================================================================== */
+.settings-section {
+  padding-inline: var(--st-pad-x);
+  padding-bottom: var(--st-pad-b);
+}
+
+.settings-card {
+  padding: var(--st-c-pad);
+  background-color: var(--theme-bg-surface);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--st-c-rad);
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-card h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.settings-card .text-muted {
+  color: var(--theme-text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* ==========================================================================
+   SECTION 2: DATA REGISTRATION ELEMENT SHAPES
+   
+   * Enforces font metrics across form headers.
+   * Changes border accents on selected boxes.
+   * Spreads soft focus glow rings outward.
+   ========================================================================== */
+.settings-form .form-label {
+  color: var(--theme-text-main);
+  font-weight: var(--weight-med);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.settings-form .form-control:focus,
+.settings-form .form-select:focus {
+  border-color: var(--sys-brand);
+  box-shadow: 0 0 0 3px var(--alpha-focus);
+}
+
+/* ==========================================================================
+   SECTION 3: DESTRUCTIVE ACTION INTERFACES
+   
+   * Replaces border colors using alert red.
+   * Styles warning titles via danger tokens.
+   ========================================================================== */
+.settings-card.danger-zone-card {
+  border-color: var(--sys-danger);
+}
+
+.danger-zone-title {
+  color: var(--sys-danger);
+}
+
+/* ==========================================================================
+   SECTION 4: MOBILE RESPONSIVE SHIFTS
+   
+   * Compresses control module borders on tablets.
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --st-pad-x: var(--space-md);
+  }
+}

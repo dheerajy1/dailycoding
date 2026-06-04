@@ -1,0 +1,30 @@
+/* ==========================================================================
+   SECTION 1: PLATFORM UTILITY TOGGLE COMMANDS
+   
+   * Suppresses active view toggles via classes.
+   ========================================================================== */
+.sidebar-toggle.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   SECTION 2: RESPONSIVE DEVICE BREAKPOINT REFLEXES
+   
+   * Hides interactive elements when drawers open.
+   * Recalculates grid columns inside application screens.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .sidebar.active ~ .main-content .sidebar-toggle {
+    display: none;
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .revenue-section,
+  .tasks-section,
+  .dashboard-insights {
+    grid-template-columns: 1fr;
+  }
+}

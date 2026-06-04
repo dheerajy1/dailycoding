@@ -1,60 +1,151 @@
-:root {
-  /* Sidebar variables */
-  --sidebar-padding: var(--space-lg);
-  --sidebar-title-size: 1.25rem;
-
-  /* Navigation variables */
-  --sidebar-nav-gap: var(--space-sm);
-
-  --sidebar-link-padding-y: var(--space-sm);
-  --sidebar-link-padding-x: var(--space-md);
-
-  --sidebar-link-radius: var(--radius-sm);
-
-  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.08);
-}
-
-/* Sidebar */
-
+/* ==========================================================================
+   SECTION 1: TRACK STRUCTURE PANELS
+   
+   * Positions navigation panel viewport hooks.
+   * Locks panel to vertical screen heights.
+   * Passes smooth transition resize timing.
+   * Handles scroll layout inner container overflows.
+   ========================================================================== */
 .sidebar {
-  width: var(--layout-sidebar-width);
-  min-height: 100vh;
-
-  padding: var(--sidebar-padding);
-
-  background-color: var(--color-sidebar-bg);
-  color: var(--color-sidebar-text);
+  width: var(--sb-w);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: var(--sb-pad);
+  background-color: var(--sb-bg);
+  color: var(--sb-txt);
+  transition: var(--sb-trans);
+  z-index: var(--sb-z);
+  overflow-y: auto;
 }
 
-/* Logo */
+.sidebar.collapsed {
+  width: 0px;
+  padding-inline: 0px;
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   SECTION 2: DRAWER TOP BRAND HEADERS
+   
+   * Aligns text and close triggers together.
+   * Evenly spaces design layout elements apart.
+   * Overrides trailing label text margins.
+   * Enforces font scales on logos.
+   ========================================================================== */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sb-hd-gap);
+  width: 100%;
+}
 
 .sidebar-logo {
-  margin-bottom: var(--space-xl);
+  margin-bottom: 0;
+  font-size: var(--sb-logo-sz);
 }
 
-/* Navigation */
+.sidebar-close {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sb-txt);
+  font-size: var(--sb-close-sz);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
 
+/* ==========================================================================
+   SECTION 3: DIRECTORY LINK TRAILING LISTS
+   
+   * Chains child link coordinates vertically.
+   * Spacks list gaps using modular metrics.
+   * Disables text wrapping within links.
+   * Fires changes during interactive hover points.
+   ========================================================================== */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: var(--sidebar-nav-gap);
+  gap: var(--sb-nav-gap);
 }
 
 .sidebar-link {
-  padding-block: var(--sidebar-link-padding-y);
-  padding-inline: var(--sidebar-link-padding-x);
-
-  color: var(--color-sidebar-text);
-
+  padding: var(--sb-lnk-pad-y) var(--sb-lnk-pad-x);
+  color: var(--sb-txt);
   text-decoration: none;
-
-  border-radius: var(--sidebar-link-radius);
-
-  transition: var(--transition-fast);
+  border-radius: var(--sb-lnk-rad);
+  transition: var(--sb-trans);
+  white-space: nowrap;
 }
 
 .sidebar-link:hover {
-  background-color: var(--sidebar-link-hover-bg);
+  background-color: var(--sb-lnk-hov);
+}
 
-  color: var(--color-sidebar-text);
+/* ==========================================================================
+   SECTION 4: PLATFORM INTERACTION CONTROLS
+   
+   * Standardizes design sizing for menu toggles.
+   * Inserts margins for neighboring components.
+   * Overrides base color attributes for triggers.
+   * Sets absolute dimensions for modal backdrops.
+   ========================================================================== */
+.sidebar-toggle {
+  font-size: var(--tgl-sz);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: var(--tgl-mr);
+  color: var(--tgl-txt);
+  z-index: var(--tgl-z);
+  position: relative;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--ovr-bg);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--ovr-trans);
+  z-index: var(--ovr-z);
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   SECTION 5: RESPONSIVE MEDIA HOOK WINDOWS
+   
+   * Shifts navigation drawers off screen bounds.
+   * Hooks alternative drawer slide animation curves.
+   * Forces layouts open under active statuses.
+   * Toggles close buttons on phone models.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: var(--layout-sidebar-mobile);
+    height: 100vh;
+    width: var(--layout-sidebar-desktop);
+    background: var(--theme-sidebar-bg);
+    visibility: visible;
+    transition: left var(--transition-slide);
+    z-index: var(--z-sidebar-mobile);
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar-close {
+    display: block;
+  }
 }

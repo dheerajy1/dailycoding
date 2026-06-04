@@ -1,0 +1,135 @@
+/* ==========================================================================
+   SECTION 1: CONTAINER BASE OVERLAYS
+   
+   * Unlocks component padding zones.
+   * Implements theme card background values.
+   * Frames card panels via standard borders.
+   * Spaces tracking titles down gracefully.
+   ========================================================================== */
+.notifications-section {
+  padding: 0;
+}
+
+.notifications-card {
+  padding: var(--nt-c-pad);
+  background-color: var(--nt-bg);
+  border: var(--border-thin) solid var(--nt-border);
+  border-radius: var(--nt-c-rad);
+  box-shadow: var(--nt-shadow);
+}
+
+.notifications-card h3 {
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   SECTION 2: VERTICAL TRACK TIMELINE SPINES
+   
+   * Links tracking lists to absolute layouts.
+   * Clears layout channels for indicators.
+   * Renders long tracking paths using pseudo elements.
+   * Draws track lines through panel backgrounds.
+   ========================================================================== */
+.notifications-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nt-gap);
+  padding-left: 40px;
+}
+
+.notifications-timeline::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: var(--nt-spine-w);
+  background-color: var(--nt-border);
+}
+
+/* ==========================================================================
+   SECTION 3: CHRONOLOGICAL ACTIVITY NODES
+   
+   * Packs internal logging tracks cleanly.
+   * Slides components slightly over during clicks.
+   * Centers mini track indicator nodes precisely.
+   * Changes message description text color properties.
+   ========================================================================== */
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  background-color: var(--nt-bg);
+  border: var(--border-thin) solid var(--nt-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--nt-shadow);
+  transition: var(--transition-fast);
+}
+
+.timeline-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--nt-shadow-hov);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 18px;
+  width: var(--nt-dot-sz);
+  height: var(--nt-dot-sz);
+  border-radius: 50%;
+  background-color: var(--sys-brand);
+  border: var(--border-thick) solid var(--nt-bg);
+}
+
+.timeline-item h6 {
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--theme-text-muted);
+}
+
+/* ==========================================================================
+   SECTION 4: STATE ACCENT DISPLAY BADGES
+   
+   * Forms circular layout structures for badges.
+   * Centers embedded notification icons perfectly.
+   * Maps green status fills onto success nodes.
+   * Binds caution orange accents to warnings.
+   ========================================================================== */
+.notif-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  margin-right: var(--space-sm);
+}
+
+.timeline-item.success .notif-icon {
+  background-color: var(--sys-success);
+  color: var(--theme-bg-surface);
+}
+
+.timeline-item.warning .notif-icon {
+  background-color: var(--sys-warning);
+  color: var(--theme-bg-surface);
+}
+
+.timeline-item.danger .notif-icon {
+  background-color: var(--sys-danger);
+  color: var(--theme-bg-surface);
+}
+
+.timeline-item.info .notif-icon {
+  background-color: var(--sys-brand);
+  color: var(--theme-bg-surface);
+}

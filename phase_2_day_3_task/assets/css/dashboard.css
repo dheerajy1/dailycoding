@@ -1,79 +1,143 @@
-:root {
-  /* Dashboard variables */
-  --dashboard-content-padding: var(--space-xl);
-
-  /* Overview variables */
-  --overview-section-padding: var(--space-xl);
-
-  --overview-grid-gap: var(--space-lg);
-
-  --overview-card-padding: var(--space-lg);
-
-  --overview-card-radius: var(--radius-md);
-}
-
-/* Dashboard layout */
-
-.dashboard-wrapper {
-  display: flex;
-
-  min-height: 100vh;
-}
-
+/* ==========================================================================
+   SECTION 1: APPLICATION BACKING CANVASES
+   
+   * Sets default element box width parameters.
+   * Clears out hardcoded horizontal spacing configurations.
+   * Maps content layouts to full size bounds.
+   * Pushes content spaces past active sidebars.
+   ========================================================================== */
 .main-content {
-  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding-top: var(--db-h-clear);
+  padding-left: var(--layout-sidebar-desktop);
+  transition: padding-left var(--db-trans);
 }
 
-.dashboard-header {
-  height: var(--layout-header-height);
-
-  display: flex;
-  align-items: center;
-
-  padding-inline: var(--dashboard-content-padding);
-
-  background-color: var(--color-bg-surface);
-
-  border-bottom: var(--border-width-thin) solid var(--color-border-primary);
+/* ==========================================================================
+   SECTION 2: COLLAPSED VIEW STATE OVERRIDES
+   
+   * Clears out panel side space padding.
+   * Forces content rows out to edge boundaries.
+   ========================================================================== */
+.sidebar.collapsed + .main-content,
+.sidebar.collapsed ~ .main-content,
+body.sidebar-collapsed .main-content,
+body.collapsed-sidebar .main-content,
+.main-content.sidebar-is-collapsed {
+  padding-left: 0;
 }
 
-/* Overview section */
-
+/* ==========================================================================
+   SECTION 3: SCOREBOARD METRIC PANELS MESH
+   
+   * Groups metric score cards into grids.
+   * Spices rows dynamically using fraction values.
+   * Sets shadow profiles for depth definition.
+   * Lifts panel components up on hover.
+   ========================================================================== */
 .dashboard-overview {
-  padding: var(--overview-section-padding);
-
+  padding: var(--ov-pad);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-  gap: var(--overview-grid-gap);
+  gap: var(--ov-gap);
 }
 
-/* Overview card */
-
 .overview-card {
-  padding: var(--overview-card-padding);
-
-  background-color: var(--color-bg-surface);
-
-  border: var(--border-width-thin) solid var(--color-border-primary);
-
-  border-radius: var(--overview-card-radius);
-
+  padding: var(--ov-c-pad);
+  background-color: var(--ov-bg);
+  border: var(--border-thin) solid var(--ov-border);
+  border-radius: var(--ov-c-rad);
   box-shadow: var(--shadow-sm);
-
   transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
 .overview-card:hover {
-  transform: translateY(-4px);
-
+  transform: translateY(-6px);
   box-shadow: var(--shadow-md);
 }
 
 .overview-card h6 {
-  color: var(--color-text-secondary);
+  color: var(--ov-txt-lbl);
 }
 
 .overview-card h3 {
-  margin-top: var(--space-sm);
+  color: var(--ov-txt-h);
+}
+
+/* ==========================================================================
+   SECTION 4: ANALYTICS VISUALIZATION BLOCKS
+   
+   * Coordinates bounding box edge limits cleanly.
+   * Unifies dashboard chart template background sheets.
+   * Normalizes curved corners for dashboard plots.
+   ========================================================================== */
+.dataviz {
+  padding-inline: var(--dv-pad-x);
+  padding-bottom: var(--dv-pad-b);
+}
+
+.dataviz-chart-card {
+  background-color: var(--dv-bg) !important;
+  border-radius: var(--dv-rad) !important;
+}
+
+/* ==========================================================================
+   SECTION 5: SYSTEM FEED LOG ARCHITECTURE
+   
+   * Spaces tracking feeds below visualization modules.
+   * Stretches component width layouts to boundaries.
+   ========================================================================== */
+.dashboard-insights {
+  padding-inline: var(--ins-pad-x);
+  padding-bottom: var(--ins-pad-b);
+}
+
+.notifications-section {
+  padding: 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   SECTION 6: RESPONSIVE MEDIA GRID SCALES
+   
+   * Drops metric grids down to pairs.
+   * Collapses layout tracks into columns on phones.
+   * Re-aligns parent margins near device walls.
+   * Neutralizes desktop side panel structural offsets.
+   ========================================================================== */
+@media (max-width: 992px) {
+  .dashboard-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --ov-pad: var(--ov-pad-mobi);
+    --dv-pad-x: var(--ov-pad-mobi);
+    --ins-pad-x: var(--ov-pad-mobi);
+  }
+
+  .main-content {
+    padding-left: 0 !important;
+    padding-top: var(--db-h-clear-mobi) !important;
+  }
+
+  .sidebar.collapsed + .main-content,
+  .sidebar.collapsed ~ .main-content,
+  body.sidebar-collapsed .main-content,
+  body.collapsed-sidebar .main-content {
+    padding-left: 0 !important;
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-md) !important;
+    padding-inline: var(--space-md) !important;
+  }
 }

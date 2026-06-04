@@ -1,0 +1,222 @@
+/* ==========================================================================
+   SECTION 1: BALANCE SUMMARY SCORE CARDS
+   
+   * Automates card item sizing via minmax grids.
+   * Handles inner element column stacking directions.
+   * Generates shadow textures around container bounds.
+   * Customizes layout settings for trending text tracks.
+   ========================================================================== */
+.revenue-section {
+  padding-inline: var(--rev-pad-x);
+  padding-bottom: var(--rev-pad-b);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.revenue-section .overview-card {
+  padding: var(--rev-c-pad);
+  background-color: var(--rev-bg);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--rev-rad);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.revenue-section .overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.revenue-section .overview-card h6 {
+  color: var(--rev-txt-lbl);
+}
+
+.revenue-section .overview-card h3 {
+  color: var(--rev-txt-val);
+}
+
+.revenue-kpi {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: fit-content;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--alpha-success);
+  border: var(--border-thin) solid var(--sys-success);
+  border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   SECTION 2: TRANSACTION LEDGER TABLES
+   
+   * Locks container block spaces below scores.
+   * Modifies font weights for header copy.
+   * Allocates column inner grid cell margins.
+   * Draws data table horizontal dividing borders.
+   ========================================================================== */
+.transactions-wrapper {
+  padding-inline: var(--rev-pad-x);
+  padding-bottom: var(--rev-pad-b);
+}
+
+.transactions-card {
+  padding: var(--rev-c-pad);
+  background-color: var(--rev-bg);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--rev-rad);
+  box-shadow: var(--shadow-sm);
+}
+
+.transactions-card h4 {
+  color: var(--rev-txt-val);
+  font-weight: var(--weight-semi);
+  margin-bottom: var(--space-md);
+}
+
+.table-responsive {
+  margin: 0;
+}
+
+.custom-table {
+  width: 100%;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.custom-table th {
+  background-color: var(--theme-bg-primary);
+  color: var(--rev-txt-lbl);
+  font-weight: var(--weight-semi);
+  font-size: var(--text-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: var(--border-thick) solid var(--theme-border-line);
+}
+
+.custom-table td {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--rev-txt-val);
+  font-size: var(--text-sm);
+  border-bottom: var(--border-thin) solid var(--theme-border-line);
+}
+
+.badge-success {
+  background-color: var(--alpha-success);
+  color: var(--sys-success);
+  border: var(--border-thin) solid var(--sys-success);
+  padding: 0.35em 0.65em;
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-med);
+  font-size: var(--text-xs);
+}
+
+.badge-pending {
+  background-color: var(--alpha-warning);
+  color: var(--sys-warning);
+  border: var(--border-thin) solid var(--sys-warning);
+  padding: 0.35em 0.65em;
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-med);
+  font-size: var(--text-xs);
+}
+
+/* ==========================================================================
+   SECTION 3: PLAN TIER METRICS MATRIX
+   
+   * Builds tracking boxes for licensing distribution.
+   * Caps text elements to clean uppercase.
+   * Arranges statistical readings inside flat levels.
+   * Masks progress bar layout overflow regions.
+   ========================================================================== */
+.tier-breakout-wrapper {
+  padding-inline: var(--rev-pad-x);
+  padding-bottom: var(--rev-pad-b);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.tier-card {
+  padding: var(--rev-c-pad);
+  background-color: var(--rev-bg);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--rev-rad);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-card h5 {
+  font-size: var(--text-sm);
+  color: var(--rev-txt-lbl);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+
+.tier-stats {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.tier-stats h2 {
+  font-size: calc(var(--text-xl) * 1.2);
+  font-weight: var(--weight-bold);
+  color: var(--rev-txt-val);
+  margin: 0;
+}
+
+.tier-stats span {
+  font-size: var(--text-xs);
+  color: var(--rev-txt-lbl);
+}
+
+.tier-progress-container {
+  background-color: var(--theme-bg-primary);
+  height: 6px;
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-sm);
+  overflow: hidden;
+}
+
+.tier-progress-bar {
+  height: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.tier-enterprise .tier-progress-bar {
+  background-color: var(--sys-brand);
+}
+
+.tier-pro .tier-progress-bar {
+  background-color: var(--sys-success);
+}
+
+.tier-basic .tier-progress-bar {
+  background-color: var(--sys-warning);
+}
+
+/* ==========================================================================
+   SECTION 4: MOBILE RESPONSIVE REFLEXES
+   
+   * Compresses grid side clearances on devices.
+   * Stacks table summary elements into tracks.
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --rev-pad-x: var(--space-md);
+  }
+
+  .revenue-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

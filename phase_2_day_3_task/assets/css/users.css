@@ -1,0 +1,145 @@
+/* ==========================================================================
+   SECTION 1: STRUCTURAL COMPONENT OVERLAYS
+   
+   * Maps out padding metrics for views.
+   * Standardizes elevation shadows for account sheets.
+   ========================================================================== */
+.users-section {
+  padding-inline: var(--usr-pad);
+  padding-bottom: var(--usr-pad);
+}
+
+.users-card {
+  padding: var(--usr-c-pad);
+  background-color: var(--theme-bg-surface);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--usr-c-rad);
+  box-shadow: var(--shadow-sm);
+}
+
+.users-card h3 {
+  margin-bottom: var(--space-lg);
+}
+
+/* ==========================================================================
+   SECTION 2: MEMBERS ACCOUNT DATA CELLS
+   
+   * Standardizes text contrast rules across rows.
+   ========================================================================== */
+.users-table {
+  margin-bottom: 0;
+}
+
+.users-table th {
+  color: var(--theme-text-main);
+}
+
+.users-table td {
+  color: var(--theme-text-muted);
+}
+
+/* ==========================================================================
+   SECTION 3: VERIFICATION SYSTEM STATE TAGS
+   
+   * Sets up inline boxes for badges.
+   * Formats weight variables for status labels.
+   * Matches active rows with green tints.
+   * Maps caution yellow styles to delays.
+   ========================================================================== */
+.status-badge {
+  display: inline-block;
+  padding-block: var(--usr-bdg-pad-y);
+  padding-inline: var(--usr-bdg-pad-x);
+  border-radius: var(--usr-bdg-rad);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semi);
+}
+
+.status-active {
+  color: var(--sys-success);
+  background-color: var(--alpha-success);
+}
+
+.status-pending {
+  color: var(--sys-warning);
+  background-color: var(--alpha-warning);
+}
+
+/* ==========================================================================
+   SECTION 4: HIGHLIGHT ACCOUNT QUANTITY METRICS
+   
+   * Shapes mini grids for user values.
+   * Directs header text to uppercase flows.
+   ========================================================================== */
+.users-metrics-grid {
+  padding-inline: var(--usr-pad);
+  padding-bottom: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.metric-mini-card {
+  padding: var(--usr-c-pad);
+  background-color: var(--theme-bg-surface);
+  border: var(--border-thin) solid var(--theme-border-line);
+  border-radius: var(--usr-c-rad);
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-mini-card h6 {
+  color: var(--theme-text-muted);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.metric-mini-card h4 {
+  color: var(--theme-text-main);
+  font-weight: var(--weight-bold);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 5: DATA AUDITING TRACE TRACKS
+   
+   * Spaces tracking items across log lists.
+   * Removes dividing track lines on ends.
+   ========================================================================== */
+.user-ops-section {
+  padding-inline: var(--usr-pad);
+  padding-bottom: var(--usr-pad);
+}
+
+.audit-log-section {
+  padding-inline: var(--usr-pad);
+  padding-bottom: var(--usr-pad);
+}
+
+.log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: var(--border-thin) solid var(--theme-border-line);
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   SECTION 6: RESPONSIVE MEDIA GRID SCALES
+   
+   * Tightens account margins for phone displays.
+   * Forces mini summaries into single layouts.
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --usr-pad: var(--space-md);
+  }
+
+  .users-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

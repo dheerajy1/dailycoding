@@ -1,43 +1,131 @@
-/* Header variables */
-
-:root {
-  --header-gap: var(--space-md);
-
-  --header-search-width: 250px;
-
-  --header-profile-padding-y: var(--space-sm);
-  --header-profile-padding-x: var(--space-md);
-
-  --header-profile-radius: var(--radius-sm);
-}
-
-/* Header */
-
+/* ==========================================================================
+   SECTION 1: SCREEN MASTER EDGE WRAPPERS
+   
+   * Anchors header fixed to top edge boundaries.
+   * Maps dynamic left offset via sidebar variable.
+   * Runs fast layout transformation width shifts smoothly.
+   * Syncs multiple javascript window toggle class states.
+   ========================================================================== */
 .dashboard-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--layout-sidebar-desktop);
+  height: var(--hd-h);
+  z-index: var(--hd-z);
+  background-color: var(--hd-bg);
+  border-bottom: var(--border-thin) solid var(--hd-border);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: var(--hd-pad-y) var(--hd-pad-x);
+  transition:
+    left var(--hd-trans),
+    padding var(--hd-trans);
 }
 
+.sidebar.collapsed + .main-content .dashboard-header,
+.sidebar.collapsed ~ .main-content .dashboard-header,
+body.sidebar-collapsed .dashboard-header,
+body.collapsed-sidebar .dashboard-header {
+  left: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: ACTION UTILITY CLUSTERS
+   
+   * Groups right header interactive element actions.
+   * Enforces rigorous width dimensions on search.
+   * Prevents interactive components from structural shrinking.
+   * Shapes rounded boundaries on account fields.
+   ========================================================================== */
 .header-actions {
   display: flex;
   align-items: center;
-
-  gap: var(--header-gap);
+  gap: var(--hd-gap);
+  flex-shrink: 0;
 }
 
 .header-search {
-  width: var(--header-search-width);
+  width: var(--hd-srch-w);
+  flex-shrink: 0;
 }
 
 .header-profile {
-  padding-block: var(--header-profile-padding-y);
-  padding-inline: var(--header-profile-padding-x);
+  padding-block: var(--hd-prof-pad-y);
+  padding-inline: var(--hd-prof-pad-x);
+  background-color: var(--hd-prof-bg);
+  border: var(--border-thin) solid var(--hd-border);
+  border-radius: var(--hd-prof-rad);
+  flex-shrink: 0;
+}
 
-  background-color: var(--color-bg-primary);
+/* ==========================================================================
+   SECTION 3: RESPONSIVE MEDIA GRID SCALES
+   
+   * Maximizes header full widths across mobile views.
+   * Forces absolute left layout bounds to zero.
+   * Fixes fluid component jumping using rigid widths.
+   * Limits layout spacing gaps under tight views.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    left: 0 !important;
+    padding-inline: var(--hd-pad-x-mobi) !important;
+    height: var(--hd-h-mobi) !important;
+    gap: var(--hd-gap-mobi) !important;
+    justify-content: space-between !important;
+  }
 
-  border: var(--border-width-thin) solid
-    var(--color-border-primary);
+  .sidebar-toggle {
+    margin-right: 0 !important;
+    flex-shrink: 0;
+  }
 
-  border-radius: var(--header-profile-radius);
+  .dashboard-title {
+    font-size: calc(var(--text-lg) * 0.9) !important;
+    white-space: nowrap;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-actions {
+    gap: var(--hd-gap-mobi) !important;
+    margin-left: auto !important;
+  }
+
+  .header-search {
+    width: var(--hd-srch-w-mobi) !important;
+    max-width: var(--hd-srch-w-mobi) !important;
+    font-size: var(--text-xs) !important;
+  }
+
+  .header-profile {
+    font-size: var(--text-xs) !important;
+    padding: var(--space-xs) var(--space-sm) !important;
+  }
+}
+
+/* ==========================================================================
+   SECTION 4: MICRO DEVICE COMPRESSION SCALES
+   
+   * Drops title tags completely inside smartphones.
+   * Pushes action modules tightly against the right wall.
+   * Limits maximum width sizes for search nodes.
+   ========================================================================== */
+@media (max-width: 425px) {
+  .dashboard-title {
+    display: none !important;
+  }
+
+  .header-actions {
+    margin-left: auto !important;
+    gap: var(--space-sm) !important;
+  }
+
+  .header-search {
+    width: var(--hd-srch-w-micro) !important;
+    max-width: var(--hd-srch-w-micro) !important;
+  }
 }

@@ -14,8 +14,9 @@
   padding: 80px 0;
 }
 
-.contact h2, .contact p {
-  color: #ffffff !important;
+.contact h2,
+.contact p {
+  color: #ffffff;
 }
 
 .contact-form-container {

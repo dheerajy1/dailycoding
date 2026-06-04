@@ -16,3 +16,21 @@
   border: 1px solid #dee2e6;
   text-align: center;
 }
+
+.testimonials {
+  background-color: var(--light-bg-1);
+  padding: 80px 0;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid var(--secondary-color); /* Cyan highlight line */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card h5 {
+  color: var(--dark-neutral);
+  margin-top: 15px;
+}

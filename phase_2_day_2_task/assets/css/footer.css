@@ -12,3 +12,15 @@
 .footer p {
   margin-bottom: 10px;
 }
+
+.footer {
+  background-color: #090d16; /* Extra deep black-slate */
+  color: #94a3b8;
+  padding: 50px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer h4 {
+  color: #ffffff;
+  font-weight: 700;
+}

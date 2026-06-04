@@ -1,11 +1,25 @@
+:root {
+  --primary-color: #6366f1; /* Indigo */
+  --secondary-color: #06b6d4; /* Cyan */
+  --dark-neutral: #0f172a; /* Deep Slate */
+  --light-bg-1: #f8fafc; /* Off-white */
+  --light-bg-2: #f1f5f9; /* Slightly darker grey for alternating sections */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  color: #334155;
+  background-color: #ffffff;
   line-height: 1.6;
 }
 

@@ -1,3 +1,21 @@
 .faq {
   padding: 80px 20px;
 }
+
+.faq {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.accordion-item {
+  border: 1px solid #e2e8f0;
+  margin-bottom: 15px;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(99, 102, 241, 0.08); /* Soft primary tint */
+  color: var(--primary-color);
+  box-shadow: none;
+}

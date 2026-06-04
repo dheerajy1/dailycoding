@@ -1,23 +1,164 @@
+/* Color Palette & Base Variables */
+:root {
+  --primary-color: #6366f1; /* Indigo */
+  --secondary-color: #06b6d4; /* Cyan */
+  --dark-neutral: #0f172a; /* Deep Slate */
+  --bg-light: #f8fafc; /* Clean off-white background */
+}
+
+/* Hero Section Settings */
 .hero {
-  padding: 120px 20px;
-  text-align: center;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.hero-description {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  font-size: 1.1rem;
-}
-
-.hero-buttons {
+  background-color: var(--bg-light);
+  padding: 100px 0;
+  min-height: 80vh;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Gradient Text Effect for Brand Name */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Blob Positioning Wrapper */
+.blob-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Allows user to click buttons through the blobs */
+  z-index: 0;
+}
+
+/* Core Blob Styles with High-Visibility Color Animation */
+.blob {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  filter: blur(
+    50px
+  ); /* Slightly reduced blur so the color gradient pops more */
+  opacity: 0.65;
+  will-change: transform, background-color;
+}
+
+/* Blob 1: Shifts from Indigo to Cyan to Purple */
+.blob-1 {
+  top: -5%;
+  left: 15%;
+  animation: blobOneShift 12s infinite ease-in-out;
+}
+
+/* Blob 2: Shifts from Cyan to Purple to Indigo (out of sync for maximum contrast) */
+.blob-2 {
+  bottom: -5%;
+  right: 15%;
+  animation: blobTwoShift 12s infinite ease-in-out;
+}
+
+/* Color Palette + Movement Keyframes for Blob 1 */
+@keyframes blobOneShift {
+  0% {
+    background-color: #6366f1; /* Indigo */
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  33% {
+    background-color: #06b6d4; /* Cyan */
+    transform: rotate(120deg) translate(30px, -50px) scale(1.15);
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+  }
+  66% {
+    background-color: #a855f7; /* Vibrant Purple accent */
+    transform: rotate(240deg) translate(-20px, 30px) scale(0.9);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+  }
+  100% {
+    background-color: #6366f1; /* Back to Indigo */
+    transform: rotate(360deg) translate(0px, 0px) scale(1);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+}
+
+/* Color Palette + Movement Keyframes for Blob 2 */
+@keyframes blobTwoShift {
+  0% {
+    background-color: #06b6d4; /* Starts as Cyan */
+    transform: rotate(360deg) translate(0px, 0px) scale(1);
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+  }
+  33% {
+    background-color: #a855f7; /* Purple */
+    transform: rotate(240deg) translate(-40px, 40px) scale(0.85);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+  }
+  66% {
+    background-color: #6366f1; /* Indigo */
+    transform: rotate(120deg) translate(40px, -30px) scale(1.1);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  100% {
+    background-color: #06b6d4; /* Back to Cyan */
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+  }
+}
+
+/* Custom Themed Buttons to override default Bootstrap styles */
+.btn-custom-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+.btn-custom-primary:hover {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-custom-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.btn-custom-outline:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Fluid Blob Morphing & Floating Keyframes */
+@keyframes floatBlobs {
+  0% {
+    transform: translate(0px, 0px) scale(1) cubic-bezier(0.25, 0.1, 0.25, 1);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+  }
+  50% {
+    transform: translate(40px, -60px) scale(1.2);
+    border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.9);
+    border-radius: 70% 30% 50% 50% / 60% 50% 50% 40%;
+  }
+}
+
+/* Ensure foreground content stays above backgrounds */
+.z-1 {
+  z-index: 1;
 }

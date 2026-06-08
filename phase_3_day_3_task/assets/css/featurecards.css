@@ -1,0 +1,29 @@
+
+/* ==========================================================================
+   FEATURES CARD GRID LAYOUTS
+   ========================================================================== */
+
+.max-width-p {
+  max-width: 32rem;
+}
+
+.feature-card-item {
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.feature-card-item:hover {
+  transform: translateY(-0.25rem);
+  border-color: var(--primary-brand);
+}
+
+.feature-icon-box {
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
+  font-size: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}

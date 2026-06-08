@@ -1,0 +1,16 @@
+/* ==========================================================================
+   ADVANCED ENTERPRISE FOOTER STYLES
+   ========================================================================== */
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+  color: var(--light-surface);
+}
+
+.footer-link-item {
+  transition: color var(--transition-smooth) !important;
+}
+
+.footer-link-item:hover {
+  color: var(--primary-brand) !important;
+}

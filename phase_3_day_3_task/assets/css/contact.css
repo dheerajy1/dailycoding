@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Contact MODAL DIALOG AND INTERACTIVE INPUT OVERRIDES
+   ========================================================================== */
+
+.custom-modal-box {
+  border-radius: var(--radius-lg);
+  background-color: var(--white-pure);
+}
+
+.custom-input-field {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--text-muted);
+  transition:
+    border-color var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.custom-input-field:focus {
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 0.25rem var(--focus-ring);
+  outline: 0;
+}

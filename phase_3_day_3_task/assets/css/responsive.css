@@ -1,0 +1,23 @@
+/* ==========================================================================
+   MOBILE VIEWPORT BREAKPOINT ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero-slide-bg {
+    min-height: 50vh;
+  }
+
+  .display-4 {
+    font-size: 2rem !important;
+    line-height: 1.3;
+  }
+
+  .hero-slide-bg p.lead {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .testimonial-inner-height {
+    min-height: 20rem;
+  }
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   INTERACTIVE CAROUSEL COMPONENT MODULATIONS
+   ========================================================================== */
+
+.italic-text {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.testimonial-inner-height {
+  min-height: 15rem;
+}
+
+.testimonial-avatar {
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
+  font-size: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.static-indicators button {
+  text-indent: 0 !important;
+  opacity: 1 !important;
+}
+
+.indicator-dot {
+  width: var(--spacing-md) !important;
+  height: var(--spacing-md) !important;
+  background-color: var(--text-muted) !important;
+  transition: background-color var(--transition-smooth);
+}
+
+.indicator-dot.active {
+  background-color: var(--primary-brand) !important;
+}

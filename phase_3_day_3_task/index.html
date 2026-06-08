@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechNexus SaaS - Performance Platform</title>
+
+    <!-- ==========================================================================
+       CORE CDN FRAMEWORK
+       
+       * Bootstrap 5.3.3 Distribution Styling
+       ========================================================================== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- ==========================================================================
+       CUSTOM LAYER ARCHITECTURE
+       
+       * Advanced architectural design layers
+       ========================================================================== -->
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/featurecards.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/pricing.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/testimonical.css" />
+  </head>
+  <body>
+    <!-- ==========================================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       
+       * Sticky site branding navbar featuring automated responsive toggles
+       ========================================================================== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+    >
+      <div class="container px-4">
+        <a class="navbar-brand fw-bold" href="./index.html">
+          <span class="text-primary">Nexus</span>Flow
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#saasNavbar"
+          aria-controls="saasNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="saasNavbar">
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 align-items-lg-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary btn-sm px-3"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+              >
+                Get Started
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ==========================================================================
+           SECTION 2: HERO BANNER CAROUSEL
+           
+           * Multi-slide interactive display canvas for primary product value statements
+           ========================================================================== -->
+      <section
+        id="hero-carousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div
+              class="hero-slide-bg hero-slide-1 d-flex align-items-center justify-content-center text-center text-white px-4"
+            >
+              <div class="hero-overlay-mask"></div>
+              <div class="position-relative z-1">
+                <h1 class="display-4 fw-bold mb-3">
+                  Accelerate Your Cloud Workflow
+                </h1>
+                <p class="lead mb-4 mx-auto style-hero-text">
+                  Optimize infrastructure pipelines with enterprise deployment
+                  automation.
+                </p>
+                <button
+                  class="btn btn-primary btn-lg px-4"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contactModal"
+                >
+                  Start Free Trial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="hero-slide-bg hero-slide-2 d-flex align-items-center justify-content-center text-center text-white px-4"
+            >
+              <div class="hero-overlay-mask"></div>
+              <div class="position-relative z-1">
+                <h2 class="display-4 fw-bold mb-3">
+                  Real-Time Performance Analytics
+                </h2>
+                <p class="lead mb-4 mx-auto style-hero-text">
+                  Track operations metrics directly down to millisecond
+                  processing states.
+                </p>
+                <a href="#features" class="btn btn-outline-light btn-lg px-4"
+                  >Explore Features</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="hero-slide-bg hero-slide-3 d-flex align-items-center justify-content-center text-center text-white px-4"
+            >
+              <div class="hero-overlay-mask"></div>
+              <div class="position-relative z-1">
+                <h2 class="display-4 fw-bold mb-3">
+                  Secure Identity Governance
+                </h2>
+                <p class="lead mb-4 mx-auto style-hero-text">
+                  Enforce data compliance boundaries with zero-trust network
+                  tooling.
+                </p>
+                <a href="#pricing" class="btn btn-primary btn-lg px-4"
+                  >View Tiered Pricing</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 3: FEATURES CARDS
+           
+           * Responsive product benefit grid utilizing isolated flex structures
+           ========================================================================== -->
+      <section id="features" class="py-5">
+        <div class="container px-4">
+          <div class="text-center mb-5">
+            <h2 class="h3 fw-bold mb-2">Engineered for Modern Teams</h2>
+            <p class="text-muted small mx-auto max-width-p">
+              Everything you need to deploy, monitor, and scale enterprise
+              applications seamlessly.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm border-0 feature-card-item">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon-box bg-primary-subtle text-primary rounded mb-3 d-flex align-items-center justify-content-center fw-bold"
+                  >
+                    01
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Lightning Fast Pipelines</h3>
+                  <p class="text-muted small mb-0">
+                    Automate deployments across global networks in milliseconds
+                    with optimized caching layers.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm border-0 feature-card-item">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon-box bg-primary-subtle text-primary rounded mb-3 d-flex align-items-center justify-content-center fw-bold"
+                  >
+                    02
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Advanced Telemetry</h3>
+                  <p class="text-muted small mb-0">
+                    Deep diagnostic logs and real-time visualization frameworks
+                    directly populated on your system dashboard.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm border-0 feature-card-item">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon-box bg-primary-subtle text-primary rounded mb-3 d-flex align-items-center justify-content-center fw-bold"
+                  >
+                    03
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Zero-Trust Compliance</h3>
+                  <p class="text-muted small mb-0">
+                    Enforce end-to-end data safety boundaries aligned perfectly
+                    with modern corporate guidelines.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 4: PRICING SECTION
+           
+           * Tiered matrix layouts tracking standard conversion parameters
+           ========================================================================== -->
+      <section id="pricing" class="py-5 bg-light">
+        <div class="container px-4">
+          <div class="text-center mb-5">
+            <h2 class="h3 fw-bold mb-2">Predictive, Transparent Pricing</h2>
+            <p class="text-muted small mx-auto max-width-p">
+              Choose the plan that matches your structural computing demands. No
+              hidden operational variables.
+            </p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 pricing-card-wrapper">
+                <div
+                  class="card-body p-4 d-flex flex-column justify-content-between"
+                >
+                  <div>
+                    <h3 class="h5 fw-bold text-dark mb-1">Starter</h3>
+                    <p class="text-muted small mb-4">
+                      Best for core validation setups.
+                    </p>
+                    <div class="mb-4">
+                      <span class="display-5 fw-bold text-dark">$29</span>
+                      <span class="text-muted small">/ month</span>
+                    </div>
+                    <ul
+                      class="list-unstyled mb-0 d-grid gap-2 small text-secondary"
+                    >
+                      <li>✓ 5 Active Automated Pipelines</li>
+                      <li>✓ Real-Time Analytics Dashboard</li>
+                      <li>✓ Standard Data Retention Logs</li>
+                    </ul>
+                  </div>
+                  <div class="pt-4">
+                    <button
+                      class="btn btn-outline-primary w-100"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                    >
+                      Deploy Starter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="card h-100 shadow-lg border-primary pricing-card-wrapper pricing-card-featured"
+              >
+                <div
+                  class="card-body p-4 d-flex flex-column justify-content-between"
+                >
+                  <div>
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-1"
+                    >
+                      <h3 class="h5 fw-bold text-dark mb-0">Professional</h3>
+                      <span class="badge bg-primary small px-2 py-1"
+                        >Popular</span
+                      >
+                    </div>
+                    <p class="text-muted small mb-4">
+                      For fast-growing enterprise teams.
+                    </p>
+                    <div class="mb-4">
+                      <span class="display-5 fw-bold text-dark">$99</span>
+                      <span class="text-muted small">/ month</span>
+                    </div>
+                    <ul
+                      class="list-unstyled mb-0 d-grid gap-2 small text-secondary"
+                    >
+                      <li>✓ Unlimited Automated Pipelines</li>
+                      <li>✓ Millisecond Telemetry Framework</li>
+                      <li>✓ Zero-Trust System Compliance</li>
+                      <li>✓ Priority Technical Support</li>
+                    </ul>
+                  </div>
+                  <div class="pt-4">
+                    <button
+                      class="btn btn-primary w-100"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                    >
+                      Scale with Pro
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 pricing-card-wrapper">
+                <div
+                  class="card-body p-4 d-flex flex-column justify-content-between"
+                >
+                  <div>
+                    <h3 class="h5 fw-bold text-dark mb-1">Enterprise</h3>
+                    <p class="text-muted small mb-4">
+                      Custom setups for deep infrastructure.
+                    </p>
+                    <div class="mb-4">
+                      <span class="display-5 fw-bold text-dark">Custom</span>
+                    </div>
+                    <ul
+                      class="list-unstyled mb-0 d-grid gap-2 small text-secondary"
+                    >
+                      <li>✓ Fully Isolated Private Clouds</li>
+                      <li>✓ Dedicated Support Architect</li>
+                      <li>✓ Custom SLA Compliance Layers</li>
+                      <li>✓ Custom Integration Vectors</li>
+                    </ul>
+                  </div>
+                  <div class="pt-4">
+                    <button
+                      class="btn btn-outline-primary w-100"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                    >
+                      Contact Architecture
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 6: TESTIMONIALS CAROUSEL
+           
+           * Slider system isolating customer social proof blocks
+           ========================================================================== -->
+      <section id="testimonials" class="py-5">
+        <div class="container px-4">
+          <div class="text-center mb-5">
+            <h2 class="h3 fw-bold mb-2">Validated by Industry Leaders</h2>
+            <p class="text-muted small mx-auto max-width-p">
+              See how global infrastructure engineering teams accelerate
+              operations daily.
+            </p>
+          </div>
+          <div
+            id="testimonialSlider"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner testimonial-inner-height">
+              <!-- Testimonial 1 -->
+              <div class="carousel-item active">
+                <div class="row justify-content-center text-center">
+                  <div class="col-12 col-md-8 col-lg-6">
+                    <p class="fs-5 text-secondary mb-4 italic-text">
+                      "NexusFlow cut down our software build and deployment
+                      pipelines by over forty percent within the first two weeks
+                      of our network migration layout."
+                    </p>
+                    <div
+                      class="d-flex align-items-center justify-content-center gap-3"
+                    >
+                      <div
+                        class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                      >
+                        EM
+                      </div>
+                      <div class="text-start">
+                        <h3 class="h6 fw-bold mb-0">Elena Mitchell</h3>
+                        <p class="text-muted small mb-0">
+                          VP of Infrastructure at TechNexus
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial 2 -->
+              <div class="carousel-item">
+                <div class="row justify-content-center text-center">
+                  <div class="col-12 col-md-8 col-lg-6">
+                    <p class="fs-5 text-secondary mb-4 italic-text">
+                      "The millisecond telemetry metric streams changed how our
+                      site ops watch pipeline breaks. The zero-trust framework
+                      integration is top-tier."
+                    </p>
+                    <div
+                      class="d-flex align-items-center justify-content-center gap-3"
+                    >
+                      <div
+                        class="testimonial-avatar bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                      >
+                        MH
+                      </div>
+                      <div class="text-start">
+                        <h3 class="h6 fw-bold mb-0">Marcus Hayes</h3>
+                        <p class="text-muted small mb-0">
+                          Principal SecOps Architect
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slider Indicators -->
+            <div
+              class="carousel-indicators static-indicators position-relative mt-4 mb-0"
+            >
+              <button
+                type="button"
+                data-bs-target="#testimonialSlider"
+                data-bs-slide-to="0"
+                class="active indicator-dot border-0 rounded-circle"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#testimonialSlider"
+                data-bs-slide-to="1"
+                class="indicator-dot border-0 rounded-circle"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         SECTION 5: CONTACT FORM MODAL
+         
+         * Overlay popup interaction layer handling user context input
+         ========================================================================== -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal-box shadow border-0">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h5 fw-bold text-dark" id="contactModalLabel">
+              Initialize Enterprise Setup
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="saasContactForm" class="needs-validation" novalidate>
+            <div class="modal-body py-4">
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-sm-6">
+                  <label
+                    for="contactFirstName"
+                    class="form-label small fw-semibold text-secondary"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control custom-input-field"
+                    id="contactFirstName"
+                    required
+                    autocomplete="given-name"
+                  />
+                  <div class="invalid-feedback small">Required entry.</div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label
+                    for="contactLastName"
+                    class="form-label small fw-semibold text-secondary"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control custom-input-field"
+                    id="contactLastName"
+                    required
+                    autocomplete="family-name"
+                  />
+                  <div class="invalid-feedback small">Required entry.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="contactEmail"
+                  class="form-label small fw-semibold text-secondary"
+                  >Corporate Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control custom-input-field"
+                  id="contactEmail"
+                  placeholder="name@company.com"
+                  required
+                  autocomplete="email"
+                />
+                <div class="invalid-feedback small">
+                  Provide a valid corporate endpoint email.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="contactPhone"
+                  class="form-label small fw-semibold text-secondary"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control custom-input-field"
+                  id="contactPhone"
+                  placeholder="+1 (555) 000-0000"
+                  required
+                  autocomplete="tel"
+                />
+                <div class="invalid-feedback small">
+                  Provide an active operational phone number.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="contactTier"
+                  class="form-label small fw-semibold text-secondary"
+                  >Target Deployment Tier</label
+                >
+                <select
+                  class="form-select custom-input-field"
+                  id="contactTier"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Select an infrastructure option...
+                  </option>
+                  <option value="starter">Starter Architecture — $29/mo</option>
+                  <option value="pro">
+                    Professional Architecture — $99/mo
+                  </option>
+                  <option value="enterprise">
+                    Enterprise Custom Architecture
+                  </option>
+                </select>
+                <div class="invalid-feedback small">
+                  Please isolate your infrastructure scale.
+                </div>
+              </div>
+              <div class="mb-0">
+                <label
+                  for="contactNotes"
+                  class="form-label small fw-semibold text-secondary"
+                  >Deployment Requirements (Optional)</label
+                >
+                <textarea
+                  class="form-control custom-input-field"
+                  id="contactNotes"
+                  rows="3"
+                  placeholder="Tell us about your infrastructure workload parameters..."
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer border-0 pt-0">
+              <button
+                type="button"
+                class="btn btn-light"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary px-4">
+                Provision Environment
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 7: ADVANCED ENTERPRISE FOOTER
+         
+         * Multi-column site directory map, compliance, and legal metadata links
+         ========================================================================== -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container px-4">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <h3 class="h5 fw-bold mb-3">
+              <span class="text-primary">Nexus</span>Flow
+            </h3>
+            <p class="text-secondary small mb-0">
+              Automating global software pipelines and telemetry analytics for
+              modern software engineering teams.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h4 class="h6 fw-bold text-uppercase mb-3 tracking-wider">
+              Product Workspace
+            </h4>
+            <ul class="list-unstyled d-grid gap-2 small">
+              <li>
+                <a
+                  href="#features"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >System Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >Tiered Matrix Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >Customer Social Proof</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <h4 class="h6 fw-bold text-uppercase mb-3 tracking-wider">
+              Security and Compliance
+            </h4>
+            <ul class="list-unstyled d-grid gap-2 small">
+              <li>
+                <a
+                  href="#"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >Zero-Trust Protocol Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >Privacy Infrastructure Boundary</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-secondary text-decoration-none footer-link-item"
+                  >Terms of Environment Provisioning</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary opacity-25" />
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 small text-secondary"
+        >
+          <p class="mb-0">
+            &copy; 2026 NexusFlow Inc. All structural rights reserved.
+          </p>
+          <p class="mb-0">Designed via Bootstrap 5.3.3 Enterprise Core.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================================================
+       EXECUTION SCRIPTS
+       ========================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

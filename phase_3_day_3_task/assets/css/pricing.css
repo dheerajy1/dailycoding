@@ -1,0 +1,22 @@
+/* ==========================================================================
+   TIERED PRICING MATRIX LAYOUTS
+   ========================================================================== */
+
+.pricing-card-wrapper {
+  border-radius: var(--radius-lg);
+  background-color: var(--white-pure);
+  transition: transform var(--transition-smooth);
+}
+
+.pricing-card-wrapper:hover {
+  transform: translateY(-0.125rem);
+}
+
+.pricing-card-featured {
+  border-width: 2px !important;
+}
+
+.pricing-card-wrapper ul li {
+  position: relative;
+  padding-left: var(--spacing-xs);
+}

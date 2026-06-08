@@ -1,0 +1,12 @@
+/* Custom Service Cards */
+.services-card-wrapper {
+  border-radius: var(--border-radius-md) !important;
+  border-width: var(--border-width-thin) !important;
+}
+
+/* Service Badge Padding */
+.services-badge {
+  padding: var(--spacing-xs) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  border-radius: var(--border-radius-sm) !important;
+}

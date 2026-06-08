@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Company Homepage - Bootstrap Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/services.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+          <a
+            class="navbar-brand fw-bold text-uppercase text-primary"
+            href="/phase_3_day_1_task/index.html"
+            >TechNexus Solutions</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-custom-bg py-5 border-bottom">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold hero-title">
+              Accelerating Digital Transformation
+            </h1>
+            <p class="lead my-4 hero-description">
+              We deliver enterprise-grade cloud computing, cybersecurity, and
+              custom software engineering tailored to scale your enterprise
+              business solutions.
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg px-4 fw-semibold"
+              >
+                Get Started
+              </button>
+              <button type="button" class="btn btn-outline-light btn-lg px-4">
+                Our Portfolio
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container my-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="fw-bold text-dark mb-3">Who We Are</h2>
+            <p class="text-muted lead">
+              TechNexus Solutions is a premier global technology consulting and
+              digital solutions engineering agency founded with a distinct
+              mission: bridging modern operational infrastructure with
+              next-generation architectural scaling.
+            </p>
+            <p class="text-muted">
+              For over a decade, we have partnered alongside enterprise business
+              leaders and high-growth innovators to implement robust,
+              future-proof frameworks across international infrastructure
+              networks.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <div class="p-4 border rounded shadow-sm bg-white">
+                  <h3 class="display-6 fw-bold text-primary mb-1">99.9%</h3>
+                  <p class="text-uppercase text-muted small fw-semibold mb-0">
+                    Uptime Reliability
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 border rounded shadow-sm bg-white">
+                  <h3 class="display-6 fw-bold text-primary mb-1">250+</h3>
+                  <p class="text-uppercase text-muted small fw-semibold mb-0">
+                    Engineers Deployed
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 border rounded shadow-sm bg-white">
+                  <h3 class="display-6 fw-bold text-primary mb-1">15+</h3>
+                  <p class="text-uppercase text-muted small fw-semibold mb-0">
+                    Global Offices
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 border rounded shadow-sm bg-white">
+                  <h3 class="display-6 fw-bold text-primary mb-1">500M+</h3>
+                  <p class="text-uppercase text-muted small fw-semibold mb-0">
+                    API Requests Daily
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="bg-light py-5">
+      <div class="container my-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-dark">Enterprise Solutions</h2>
+          <p class="text-muted mx-auto" style="max-width: 600px">
+            We architect, scale, and secure mission-critical business
+            infrastructures with optimized tech stacks.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div
+                  class="bg-primary-subtle text-primary rounded-2 p-3 d-inline-block mb-3 fw-bold"
+                >
+                  Cloud Architecture
+                </div>
+                <h4 class="card-title fw-semibold text-dark mb-2">
+                  Cloud Engineering
+                </h4>
+                <p class="card-text text-muted small">
+                  Scalable global migrations, AWS/Azure hybrid infrastructure
+                  deployments, and native containerized clustering solutions
+                  optimized for high availability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div
+                  class="bg-success-subtle text-success rounded-2 p-3 d-inline-block mb-3 fw-bold"
+                >
+                  Cyber Security
+                </div>
+                <h4 class="card-title fw-semibold text-dark mb-2">
+                  SecOps & Compliance
+                </h4>
+                <p class="card-text text-muted small">
+                  Automated threat matrix profiling, end-to-end zero-trust
+                  perimeter implementations, and continuous industry data
+                  compliance audits.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div
+                  class="bg-warning-subtle text-warning-emphasis rounded-2 p-3 d-inline-block mb-3 fw-bold"
+                >
+                  Data Analytics
+                </div>
+                <h4 class="card-title fw-semibold text-dark mb-2">
+                  Data Operations
+                </h4>
+                <p class="card-text text-muted small">
+                  Real-time processing engines, historical pipeline warehousing
+                  setups, and custom machine learning modules tailored for
+                  internal insights.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="custom-enterprise-footer">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4 col-md-6">
+            <h4 class="fw-bold text-uppercase footer-brand-title">
+              TechNexus Solutions
+            </h4>
+            <p class="small lh-lg">
+              Architecting dependable enterprise IT landscapes, globally
+              optimized container topologies, and intelligent security
+              frameworks built to protect mission-critical operations.
+            </p>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <h6 class="fw-bold text-uppercase footer-section-title text-white">
+              Capabilities
+            </h6>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#services" class="footer-link">Cloud Infrastructure</a>
+              </li>
+              <li class="mb-2">
+                <a href="#services" class="footer-link">DevSecOps Systems</a>
+              </li>
+              <li class="mb-2">
+                <a href="#services" class="footer-link">Automation Services</a>
+              </li>
+              <li class="mb-2">
+                <a href="#services" class="footer-link">Data Warehousing</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <h6 class="fw-bold text-uppercase footer-section-title text-white">
+              Corporate
+            </h6>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#about" class="footer-link">About Resources</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Technical Careers</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Press Announcements</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Executive Council</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h6 class="fw-bold text-uppercase footer-section-title text-white">
+              Global Operations
+            </h6>
+            <ul class="list-unstyled small">
+              <li class="mb-3 d-flex align-items-start">
+                <span class="lh-base">Inquiries: info@technexus.com</span>
+              </li>
+              <li class="mb-3 d-flex align-items-start">
+                <span class="lh-base">Support Desk: +1 (555) 019-2831</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <span class="lh-base"
+                  >HQ Address: 500 Innovation Parkway, Suite 100, Tech
+                  City</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="row small align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; 2026 TechNexus Solutions. All international architecture
+            rights reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="#" class="footer-link me-4">Privacy Standards</a>
+            <a href="#" class="footer-link me-4">Terms of Delivery</a>
+            <a href="#" class="footer-link">Trust & Compliance</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

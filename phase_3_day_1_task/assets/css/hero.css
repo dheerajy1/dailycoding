@@ -1,0 +1,34 @@
+/* Custom Hero Layout */
+.hero-custom-bg {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+    var(--hero-bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Typography Color Contrast */
+.hero-title {
+  color: var(--color-text-light) !important;
+}
+
+.hero-description {
+  color: var(--color-border-light) !important;
+}
+
+/* Tablet Hero Adjustments */
+@media (max-width: 991.98px) {
+  .hero-custom-bg {
+    padding-top: var(--spacing-lg) !important;
+    padding-bottom: var(--spacing-lg) !important;
+  }
+}
+
+/* Mobile Hero Adjustments */
+@media (max-width: 575.98px) {
+  .hero-custom-bg {
+    padding-top: var(--spacing-md) !important;
+    padding-bottom: var(--spacing-md) !important;
+  }
+}

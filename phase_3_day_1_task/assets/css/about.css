@@ -1,0 +1,12 @@
+/* Metric Card Modifiers */
+.about-metric-card {
+  padding: var(--spacing-sm) !important;
+  border: var(--border-width-thin) solid var(--color-border-light) !important;
+  border-radius: var(--border-radius-sm) !important;
+  background-color: var(--color-light-bg) !important;
+}
+
+/* Text Element Spacing */
+.about-header-spacing {
+  margin-bottom: var(--spacing-sm) !important;
+}

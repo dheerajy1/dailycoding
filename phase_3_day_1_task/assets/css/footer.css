@@ -1,0 +1,59 @@
+/* Container Structural Rules */
+footer.custom-enterprise-footer {
+  background-color: var(--color-dark-bg) !important;
+  color: var(--color-text-light) !important;
+  padding-top: var(--spacing-xl) !important;
+  padding-bottom: var(--spacing-xl) !important;
+  border-top: var(--border-width-thin) solid var(--color-border-dark) !important;
+}
+
+/* Typography Brand Styling */
+.footer-brand-title {
+  color: var(--color-primary) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* Interactive Navigation Links */
+.footer-link {
+  color: var(--color-text-muted) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Section Title Spacing */
+.footer-section-title {
+  margin-bottom: var(--spacing-md) !important;
+  font-size: var(--spacing-sm) !important;
+  letter-spacing: var(--border-width-thin);
+}
+
+/* Decorative Section Separator */
+.footer-divider {
+  border-color: var(--color-border-dark) !important;
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+/* Tablet Layout Adjustments */
+@media (max-width: 991.98px) {
+  footer.custom-enterprise-footer {
+    padding-top: var(--spacing-lg) !important;
+    padding-bottom: var(--spacing-lg) !important;
+  }
+}
+
+/* Mobile Layout Adjustments */
+@media (max-width: 575.98px) {
+  footer.custom-enterprise-footer {
+    padding-top: var(--spacing-md) !important;
+    padding-bottom: var(--spacing-md) !important;
+  }
+
+  .footer-brand-title {
+    margin-bottom: var(--spacing-sm) !important;
+  }
+}

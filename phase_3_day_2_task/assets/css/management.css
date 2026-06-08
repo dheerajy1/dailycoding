@@ -1,0 +1,40 @@
+/* ==========================================================================
+   MANAGEMENT GRID & ROSTER STYLES
+   
+   * Custom profile card styling and interactive table variables
+   ========================================================================== */
+
+.card {
+  border-radius: var(--border-radius-lg);
+  transition:
+    border-color var(--spacing-sm) ease,
+    box-shadow var(--spacing-sm) ease;
+}
+
+.card:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.avatar-md {
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
+  flex-shrink: 0;
+}
+
+.table th {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--light-bg);
+}
+
+.fw-mono {
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}

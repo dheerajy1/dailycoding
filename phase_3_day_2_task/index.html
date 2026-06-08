@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechNexus Solutions - Employee Management UI</title>
+
+    <!-- ==========================================================================
+       CORE CDN FRAMEWORK
+       
+       * Bootstrap 5.3.3 Distribution Styling
+       ========================================================================== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- ==========================================================================
+       CUSTOM LAYER ARCHITECTURE
+       
+       * Explicit design systems files
+       ========================================================================== -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/registration.css" />
+    <link rel="stylesheet" href="assets/css/management.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <!-- ==========================================================================
+       GLOBAL NAVIGATION HEADER
+       
+       * Sticky site branding navbar
+       ========================================================================== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="#">
+          <span class="text-primary">TechNexus</span> Hub
+        </a>
+        <span class="navbar-text d-none d-sm-inline-block">
+          Enterprise Admin Panel
+        </span>
+      </div>
+    </nav>
+
+    <!-- ==========================================================================
+       MAIN DASHBOARD CONTROLLER CONTEXT
+       
+       * Encapsulates all page metrics, forms, and grid layouts
+       ========================================================================== -->
+    <main class="container-fluid py-4 px-md-5">
+      <header class="row mb-4 align-items-center">
+        <div class="col">
+          <h1 class="h3 fw-bold mb-1">Employee Management System</h1>
+          <p class="text-muted mb-0 small">
+            Phase 3 Day 2 Workspace: Components, Cards, Forms, and Tables
+          </p>
+        </div>
+      </header>
+
+      <!-- ==========================================================================
+           SECTION 1: CONTROL ACTIONS TOOLBAR
+           
+           * Responsive tool layout utilizing Bootstrap flex grids
+           ========================================================================== -->
+      <section class="mb-5">
+        <h2 class="h5 fw-bold text-secondary mb-3">System Control Actions</h2>
+        <div class="row g-3 align-items-center">
+          <div class="col-12 d-flex justify-content-md-end gap-2">
+            <button class="btn btn-outline-secondary" type="button">
+              Export Excel
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+              Print Report
+            </button>
+            <a href="#registration-form-section" class="btn btn-success">
+              Add New Employee
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 2: EMPLOYEE REGISTRATION FORM
+           
+           * Form component for onboarding new enterprise staff
+           ========================================================================== -->
+      <section
+        id="registration-form-section"
+        class="card shadow-sm border-0 mb-5"
+      >
+        <div class="card-header bg-white py-3 border-bottom-0">
+          <h2 class="h5 fw-bold mb-0 text-dark">Employee Registration Form</h2>
+        </div>
+        <div class="card-body p-4">
+          <form id="employeeForm">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="firstName" class="form-label small fw-semibold"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="lastName" class="form-label small fw-semibold"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="employeeEmail" class="form-label small fw-semibold"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="employeeEmail"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="employeeRole" class="form-label small fw-semibold"
+                  >Department Role</label
+                >
+                <select class="form-select" id="employeeRole" required>
+                  <option value="" selected disabled>
+                    Choose enterprise department...
+                  </option>
+                  <option value="Engineering">
+                    Cloud Architecture & Engineering
+                  </option>
+                  <option value="Cybersecurity">
+                    Cybersecurity Operations
+                  </option>
+                  <option value="DataScience">Data Science & AI</option>
+                  <option value="Management">Project Management</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="termsAgreement"
+                    required
+                  />
+                  <label
+                    class="form-check-label small text-muted"
+                    for="termsAgreement"
+                  >
+                    I confirm this profile adheres strictly to corporate data
+                    compliance and privacy guidelines.
+                  </label>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-end gap-2 mt-4">
+                <button type="reset" class="btn btn-outline-secondary">
+                  Clear Fields
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Save Profile
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 3: EMPLOYEE PROFILE CARDS
+           
+           * Visual grid for high-level employee identification
+           ========================================================================== -->
+      <section class="mb-5">
+        <h2 class="h5 fw-bold text-secondary mb-3">Employee Cards</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-between"
+              >
+                <div>
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <div
+                      class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold avatar-md"
+                    >
+                      AM
+                    </div>
+                    <div>
+                      <h3 class="h6 fw-bold mb-0">Alex Morgan</h3>
+                      <span class="badge bg-primary-subtle text-primary small"
+                        >Engineering</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">
+                    Lead Cloud Architect managing AWS/Azure migration strategies
+                    and automated microservices pipelines.
+                  </p>
+                </div>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-muted small">ID: TN-0241</span>
+                  <button class="btn btn-outline-primary btn-sm" type="button">
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-between"
+              >
+                <div>
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <div
+                      class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center fw-bold avatar-md"
+                    >
+                      SR
+                    </div>
+                    <div>
+                      <h3 class="h6 fw-bold mb-0">Sarah Reza</h3>
+                      <span class="badge bg-danger-subtle text-danger small"
+                        >Cybersecurity</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">
+                    SecOps Analyst specialized in real-time threat intelligence
+                    tracking, vulnerability audits, and IAM governance.
+                  </p>
+                </div>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-muted small">ID: TN-0892</span>
+                  <button class="btn btn-outline-primary btn-sm" type="button">
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-between"
+              >
+                <div>
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <div
+                      class="bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center fw-bold avatar-md"
+                    >
+                      DK
+                    </div>
+                    <div>
+                      <h3 class="h6 fw-bold mb-0">David Kim</h3>
+                      <span class="badge bg-success-subtle text-success small"
+                        >Data Science</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">
+                    AI Engineer focusing on enterprise predictive analytics
+                    engines, large language models, and core data mining.
+                  </p>
+                </div>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-muted small">ID: TN-0511</span>
+                  <button class="btn btn-outline-primary btn-sm" type="button">
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION 4: EMPLOYEE DATA TABLE
+           
+           * Searchable roster for detailed employee operational management
+           ========================================================================== -->
+      <section class="card shadow-sm border-0">
+        <div class="card-header bg-white py-3 border-bottom-0">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="h5 fw-bold mb-0 text-dark">Employee Data Table</h2>
+            <span class="badge bg-secondary-subtle text-secondary rounded-pill"
+              >3 Records Listed</span
+            >
+          </div>
+        </div>
+        <div class="card-body pt-0 px-0 pb-0">
+          <div class="row mx-0 mb-3 px-4">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search employees by name, ID, or role..."
+                  aria-label="Search employees"
+                />
+                <button class="btn btn-primary" type="button">Search</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive px-3 pb-3" id="employeedatatable">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col" class="ps-4">Employee ID</th>
+                  <th scope="col">Full Name</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Email Address</th>
+                  <th scope="col" class="text-end pe-4">Operational Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ps-4 fw-mono text-secondary small">TN-0241</td>
+                  <td class="fw-bold">Alex Morgan</td>
+                  <td>Cloud Architecture</td>
+                  <td>a.morgan@technexus.com</td>
+                  <td class="text-end pe-4">
+                    <span class="badge bg-success">Active Duty</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-mono text-secondary small">TN-0892</td>
+                  <td class="fw-bold">Sarah Reza</td>
+                  <td>Cybersecurity</td>
+                  <td>s.reza@technexus.com</td>
+                  <td class="text-end pe-4">
+                    <span class="badge bg-success">Active Duty</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-mono text-secondary small">TN-0511</td>
+                  <td class="fw-bold">David Kim</td>
+                  <td>Data Science & AI</td>
+                  <td>d.kim@technexus.com</td>
+                  <td class="text-end pe-4">
+                    <span class="badge bg-warning text-dark">On Leave</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+       EXECUTION SCRIPTS
+       
+       * Bootstrap Bundle and Core Page Actions
+       ========================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -73,28 +73,62 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       |       testimonials.css
 |       |       
 |       \---images
-\---phase_2_day_3_task
-    |   day3_task.md
++---phase_2_day_3_task
+|   |   day3_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       dashboard.css
+|       |       header.css
+|       |       notifications.css
+|       |       responsive.css
+|       |       revenue.css
+|       |       settings.css
+|       |       sidebar.css
+|       |       style.css
+|       |       users.css
+|       |       
+|       +---images
+|       +---js
+|       |       script.js
+|       |       
+|       \---pages
+|               revenue.html
+|               settings.html
+|               users.html
+|               
++---phase_3_day_1_task
+|   |   day1_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       about.css
+|       |       footer.css
+|       |       hero.css
+|       |       responsive.css
+|       |       services.css
+|       |       style.css
+|       |       
+|       +---images
+|       |       phase_3_day_1_output_1.png
+|       |       
+|       \---js
+|               script.js
+|               
+\---phase_3_day_2_task
+    |   day2_task.md
     |   index.html
     |   
     \---assets
         +---css
-        |       dashboard.css
-        |       header.css
-        |       notifications.css
+        |       management.css
+        |       registration.css
         |       responsive.css
-        |       revenue.css
-        |       settings.css
-        |       sidebar.css
         |       style.css
-        |       users.css
         |       
         +---images
-        +---js
-        |       script.js
-        |       
-        \---pages
-                revenue.html
-                settings.html
-                users.html
+        \---js
+                script.js
                 

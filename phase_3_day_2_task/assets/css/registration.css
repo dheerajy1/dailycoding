@@ -1,0 +1,26 @@
+/* ==========================================================================
+   REGISTRATION COMPONENT STYLES
+   
+   * Custom form focus variables and interactive input states
+   ========================================================================== */
+
+#registration-form-section {
+  border: var(--spacing-xs) solid var(--card-border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+#registration-form-section .card-header {
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+}
+
+#employeeForm .form-control:focus,
+#employeeForm .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 var(--spacing-xs) var(--primary-focus-ring);
+}
+
+#employeeForm .form-label {
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}

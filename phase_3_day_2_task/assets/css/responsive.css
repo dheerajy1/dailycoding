@@ -1,0 +1,21 @@
+/* ==========================================================================
+   GLOBAL RESPONSIVE BREAKPOINTS
+   
+   * Responsive layout overrides for mobile interface optimization
+   ========================================================================== */
+
+@media (max-width: 576px) {
+  /* Force dashboard action buttons to occupy full screen width on mobile devices */
+  .btn-sm-block,
+  .d-flex.justify-content-md-end > .btn,
+  .d-flex.justify-content-md-end > a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Structural adjustment to spacing gaps on compact mobile grid structures */
+  .d-flex.justify-content-md-end {
+    flex-direction: column;
+    gap: var(--spacing-sm) !important;
+  }
+}

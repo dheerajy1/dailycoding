@@ -10,6 +10,7 @@ import {
   get,
 } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
+import { env } from "../../../../lib/config";
 
 export type Message = {
   id: string;
@@ -28,13 +29,13 @@ export type Contact = {
 
 // ⚠️ REPLACE THIS OBJECT WITH THE ACTUAL KEYS FROM YOUR FIREBASE WEB APP DASHBOARD!
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  apiKey: env.VITE_FIREBASE_API_KEY,
+  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: env.VITE_FIREBASE_APP_ID,
+  measurementId: env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -185,17 +186,19 @@ export const sendRoomMessage = async (
 /**
  * 7. Check if a username is currently taken by an online user
  */
-export const checkUsernameAvailability = async (username: string): Promise<boolean> => {
+export const checkUsernameAvailability = async (
+  username: string,
+): Promise<boolean> => {
   if (!username.trim()) return true;
   const normalizedName = username.trim().toLowerCase();
   const usersRef = ref(db, "chat/users");
-  
+
   const snapshot = await get(usersRef);
   if (snapshot.exists()) {
     const allUsers = snapshot.val();
     // Return true only if NO user has this name active right now
     return !Object.keys(allUsers).some(
-      (uid) => allUsers[uid].name.toLowerCase() === normalizedName
+      (uid) => allUsers[uid].name.toLowerCase() === normalizedName,
     );
   }
   return true; // No users in DB means it's available

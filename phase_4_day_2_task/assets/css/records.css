@@ -1,0 +1,66 @@
+.records-container {
+  background-color: var(--color-surface);
+  padding: var(--spacing-large);
+  border-radius: var(--radius-standard);
+  box-shadow: var(--shadow-subtle);
+}
+
+.records-container h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-large);
+  color: var(--color-text-main);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: var(--spacing-medium);
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+td {
+  color: var(--color-text-main);
+}
+
+.btn-delete {
+  background-color: var(--color-danger);
+  color: var(--color-surface);
+  border: none;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: var(--color-danger-hover);
+}
+
+/* File-specific responsiveness for tabular layouts */
+@media (max-width: 600px) {
+  th,
+  td {
+    padding: var(--spacing-small);
+    font-size: 0.85rem;
+  }
+
+  .btn-delete {
+    padding: var(--spacing-small);
+  }
+}

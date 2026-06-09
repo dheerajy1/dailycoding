@@ -156,21 +156,55 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       \---js
 |               script.js
 |               
-\---phase_4_day_1_task
-    |   day1_task.md
++---phase_4_day_1_task
+|   |   day1_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       dashboard.css
+|       |       form.css
+|       |       records.css
+|       |       responsive.css
+|       |       style.css
+|       |       
+|       +---images
+|       |       ConsoleOutputScreenshot.png
+|       |       
+|       \---js
+|               script.js
+|               
++---phase_4_day_2_task
+|   |   day2_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       dashboard.css
+|       |       form.css
+|       |       records.css
+|       |       responsive.css
+|       |       style.css
+|       |       
+|       +---images
+|       |       ConsoleOutputScreenshot.png
+|       |       
+|       \---js
+|               script.js
+|               
+\---phase_4_day_3_task
+    |   day3_task.md
     |   index.html
     |   
     \---assets
         +---css
-        |       dashboard.css
-        |       form.css
-        |       records.css
-        |       responsive.css
         |       style.css
         |       
         +---images
-        |       ConsoleOutputScreenshot.png
+        |       phase_4_day_3_error_validation_demo.png
+        |       phase_4_day_3_success_demo.png
         |       
         \---js
                 script.js
+                tailwindconfig.js
                 

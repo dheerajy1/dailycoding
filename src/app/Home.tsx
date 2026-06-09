@@ -66,6 +66,27 @@ const Home = () => {
             />
           </div>
         </section>
+
+        {/* Day 2 */}
+        <section>
+          <h2 className="text-2xl font-semibold text-(--text-main) mb-6">
+            Day 2
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card
+              title="E-Commerce Payment Flow"
+              description="E-Commerce Payment Flow"
+              link="/day-3/task-1"
+            />
+
+            <Card
+              title="Online Examination System"
+              description="Online Examination System"
+              link="/day-3/task-2"
+            />
+          </div>
+        </section>
       </div>
     </main>
   );

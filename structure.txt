@@ -78,48 +78,74 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |   |               ProductDetails.tsx
 |   |               Products.tsx
 |   |               
-|   \---day-2
+|   +---day-2
+|   |   |   index.tsx
+|   |   |   
+|   |   +---task-1
+|   |   |   |   index.tsx
+|   |   |   |   
+|   |   |   \---food-delivery-homepage
+|   |   |       |   data.ts
+|   |   |       |   FoodDeliveryContent.tsx
+|   |   |       |   FoodDeliveryHomepage.css
+|   |   |       |   FoodDeliveryNavbar.tsx
+|   |   |       |   FoodDeliverySidebar.tsx
+|   |   |       |   index.tsx
+|   |   |       |   
+|   |   |       +---components
+|   |   |       \---context
+|   |   |               CartContext.tsx
+|   |   |               
+|   |   +---task-2
+|   |   |   |   index.tsx
+|   |   |   |   
+|   |   |   \---real-time-chat-application
+|   |   |           data.ts
+|   |   |           index.tsx
+|   |   |           RealTimeChat.css
+|   |   |           RealTimeChatArea.tsx
+|   |   |           RealTimeChatNavbar.tsx
+|   |   |           RealTimeChatSidebar.tsx
+|   |   |           
+|   |   \---task-3
+|   |       |   index.tsx
+|   |       |   
+|   |       \---admin-dashboard-layout
+|   |               AdminAnalytics.tsx
+|   |               AdminContent.tsx
+|   |               AdminCustomers.tsx
+|   |               AdminDashboardLayout.css
+|   |               AdminNavbar.tsx
+|   |               AdminOrders.tsx
+|   |               AdminSettings.tsx
+|   |               AdminSidebar.tsx
+|   |               data.ts
+|   |               index.tsx
+|   |               
+|   \---day-3
 |       |   index.tsx
 |       |   
 |       +---task-1
 |       |   |   index.tsx
 |       |   |   
-|       |   \---food-delivery-homepage
-|       |       |   data.ts
-|       |       |   FoodDeliveryContent.tsx
-|       |       |   FoodDeliveryHomepage.css
-|       |       |   FoodDeliveryNavbar.tsx
-|       |       |   FoodDeliverySidebar.tsx
+|       |   \---ecommerce-payment
+|       |       |   EcommercePayment.css
+|       |       |   EcommercePaymentHome.tsx
+|       |       |   EcommercePaymentLayout.tsx
 |       |       |   index.tsx
 |       |       |   
 |       |       +---components
-|       |       \---context
-|       |               CartContext.tsx
+|       |       |       HomeProducts.tsx
+|       |       |       Navbar.tsx
+|       |       |       SignIn.tsx
+|       |       |       
+|       |       \---middleware
+|       |               auth.tsx
 |       |               
-|       +---task-2
-|       |   |   index.tsx
-|       |   |   
-|       |   \---real-time-chat-application
-|       |           data.ts
-|       |           index.tsx
-|       |           RealTimeChat.css
-|       |           RealTimeChatArea.tsx
-|       |           RealTimeChatNavbar.tsx
-|       |           RealTimeChatSidebar.tsx
-|       |           
-|       \---task-3
+|       \---task-2
 |           |   index.tsx
 |           |   
-|           \---admin-dashboard-layout
-|                   AdminAnalytics.tsx
-|                   AdminContent.tsx
-|                   AdminCustomers.tsx
-|                   AdminDashboardLayout.css
-|                   AdminNavbar.tsx
-|                   AdminOrders.tsx
-|                   AdminSettings.tsx
-|                   AdminSidebar.tsx
-|                   data.ts
+|           \---online-examination-system
 |                   index.tsx
 |                   
 +---assets
@@ -137,6 +163,7 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |       BaseLayout.tsx
 |       
 +---lib
+|       config.ts
 |       constants.ts
 |       utils.ts
 |       

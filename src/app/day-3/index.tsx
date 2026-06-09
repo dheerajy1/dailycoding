@@ -1,0 +1,39 @@
+import Card from "../../components/Card";
+
+const Day3 = () => {
+  return (
+    <main className="max-w-7xl mx-auto px-6 py-12">
+      <header className="mb-10">
+        <h1 className="text-4xl font-bold text-(--text-main)">
+          ReactJS KT Tasks
+        </h1>
+
+        <p className="text-(--text-muted) mt-3">
+          3-Day ReactJS KT + Project Tasks
+        </p>
+      </header>
+
+      <section>
+        <h2 className="text-2xl font-semibold text-(--text-main) mb-6">
+          Day 3
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card
+            title="E-Commerce Payment Flow"
+            description="E-Commerce Payment Flow"
+            link="/day-3/task-1"
+          />
+
+          <Card
+            title="Online Examination System"
+            description="Online Examination System"
+            link="/day-3/task-2"
+          />
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Day3;

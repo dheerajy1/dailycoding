@@ -1,4 +1,3 @@
-// C:\Users\ADMIN\Downloads\vs-code\reactjs_task\src\App.tsx
 import { Routes, Route } from "react-router-dom";
 import BaseLayout from "./layouts/BaseLayout";
 import { appRoutes } from "./lib/constants";
@@ -12,12 +11,16 @@ export default function App() {
     "/",
     "/day-1",
     "/day-2",
+    "/day-3",
     "/day-1/task-1",
     "/day-1/task-2",
     "/day-1/task-3",
     "/day-2/task-1",
     "/day-2/task-2",
     "/day-2/task-3",
+    "/day-3/task-1",
+    "/day-3/task-2",
+    "/day-3/task-3",
   ];
 
   // 3. Split the routes into two groups based on the list above
@@ -51,8 +54,34 @@ export default function App() {
               path={route.path}
               element={<route.Component />}
             >
-              {route.children.map((child, childIdx) =>
-                child.isIndex ? (
+              {route.children.map((child, childIdx) => {
+                if (child.children) {
+                  return (
+                    <Route
+                      key={childIdx}
+                      path={child.path}
+                      element={<child.Component />}
+                    >
+                      {child.children.map((nestedChild, nestedIdx) =>
+                        nestedChild.isIndex ? (
+                          <Route
+                            key={nestedIdx}
+                            index
+                            element={<nestedChild.Component />}
+                          />
+                        ) : (
+                          <Route
+                            key={nestedIdx}
+                            path={nestedChild.path}
+                            element={<nestedChild.Component />}
+                          />
+                        ),
+                      )}
+                    </Route>
+                  );
+                }
+
+                return child.isIndex ? (
                   <Route key={childIdx} index element={<child.Component />} />
                 ) : (
                   <Route
@@ -60,8 +89,8 @@ export default function App() {
                     path={child.path}
                     element={<child.Component />}
                   />
-                ),
-              )}
+                );
+              })}
             </Route>
           );
         }

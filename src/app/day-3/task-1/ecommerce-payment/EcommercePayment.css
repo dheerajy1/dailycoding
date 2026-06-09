@@ -1,0 +1,11 @@
+/* Custom theme parameters for payment flow module */
+:root {
+  --bg-success-light: #e6f4ea;
+  --text-success: #137333;
+  --accent-alt: #4f46e5;
+  --accent-alt-hover: #4338ca;
+  --accent-alt-light: #e0e7ff;
+  --accent-success: #16a34a;
+  --accent-success-hover: #15803d;
+  --accent-warning: #d97706;
+}

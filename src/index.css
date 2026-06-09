@@ -1,13 +1,20 @@
 @import "tailwindcss";
+
 @import "./styles/App.css";
+
+/* Day 1 CSS Configuration */
 @import "./app/day-1/task-1/real-time-chat-application/RealTimeChat.css";
 @import "./app/day-1/task-1/food-delivery-homepage/FoodDeliveryHomepage.css";
 @import "./app/day-1/task-1/admin-dashboard-layout/AdminDashboardLayout.css";
 @import "./app/day-1/task-3/ecommerce/Ecommerce.css";
 
+/* Day 2 CSS Configuration */
 @import "./app/day-2/task-1/food-delivery-homepage/FoodDeliveryHomepage.css";
 @import "./app/day-2/task-2/real-time-chat-application/RealTimeChat.css";
 @import "./app/day-2/task-3/admin-dashboard-layout/AdminDashboardLayout.css";
+
+/* Day 3 CSS Configuration */
+@import "./app/day-3/task-1/ecommerce-payment/EcommercePayment.css";
 
 :root {
   /* Backgrounds */

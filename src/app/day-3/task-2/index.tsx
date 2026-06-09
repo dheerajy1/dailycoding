@@ -13,7 +13,7 @@ const Day3Task2 = () => {
         <Card
           title="Online Examination System"
           description="Online Examination System"
-          link="/day-3/task-1/online-examination-system"
+          link="/day-3/task-2/online-examination-system"
         />
       </div>
     </main>

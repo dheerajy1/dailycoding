@@ -129,15 +129,23 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |       |   |   index.tsx
 |       |   |   
 |       |   \---ecommerce-payment
+|       |       |   CartPage.tsx
+|       |       |   CheckoutPage.tsx
 |       |       |   EcommercePayment.css
 |       |       |   EcommercePaymentHome.tsx
 |       |       |   EcommercePaymentLayout.tsx
 |       |       |   index.tsx
+|       |       |   OrderConfirmationPage.tsx
+|       |       |   OrdersPage.tsx
+|       |       |   PaymentPage.tsx
+|       |       |   SignInPage.tsx
 |       |       |   
 |       |       +---components
 |       |       |       HomeProducts.tsx
 |       |       |       Navbar.tsx
-|       |       |       SignIn.tsx
+|       |       |       
+|       |       +---context
+|       |       |       CartContext.tsx
 |       |       |       
 |       |       \---middleware
 |       |               auth.tsx
@@ -146,8 +154,12 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\REACTJS_TASK\SRC
 |           |   index.tsx
 |           |   
 |           \---online-examination-system
-|                   index.tsx
-|                   
+|               |   data.ts
+|               |   index.tsx
+|               |   
+|               \---components
+|                       ExamLayout.tsx
+|                       
 +---assets
 |       hero.png
 |       react.svg

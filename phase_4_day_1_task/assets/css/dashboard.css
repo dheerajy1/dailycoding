@@ -1,0 +1,31 @@
+/* Dashboard wrapper layout structural styles */
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+}
+
+/* Dashboard text header component alignment */
+.dashboard-header {
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 var(--spacing-small) 0;
+}
+
+.dashboard-header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Base surface containers layout wrappers */
+.form-section,
+.results-section {
+  background-color: var(--color-surface);
+  padding: var(--spacing-large);
+  border-radius: var(--radius-standard);
+  box-shadow: var(--shadow-subtle);
+}

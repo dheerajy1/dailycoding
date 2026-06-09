@@ -1,0 +1,41 @@
+:root {
+  /* Core brand color palette */
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+
+  /* Status indicators for grades */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Text and typography shades */
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  /* Layout spacing tokens */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 1.5rem;
+
+  /* Component structural details */
+  --radius-standard: 12px;
+  --shadow-subtle: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Base document styling resetting */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  margin: 0;
+  padding: var(--spacing-large);
+}

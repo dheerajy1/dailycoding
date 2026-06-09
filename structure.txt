@@ -134,24 +134,42 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       \---js
 |               script.js
 |               
-\---phase_3_day_3_task
-    |   day3_task.md
++---phase_3_day_3_task
+|   |   day3_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       contact.css
+|       |       featurecards.css
+|       |       footer.css
+|       |       hero.css
+|       |       pricing.css
+|       |       responsive.css
+|       |       style.css
+|       |       testimonical.css
+|       |       
+|       +---images
+|       |       phase_3_day_3_output_1.png
+|       |       phase_3_day_3_output_2.png
+|       |       
+|       \---js
+|               script.js
+|               
+\---phase_4_day_1_task
+    |   day1_task.md
     |   index.html
     |   
     \---assets
         +---css
-        |       contact.css
-        |       featurecards.css
-        |       footer.css
-        |       hero.css
-        |       pricing.css
+        |       dashboard.css
+        |       form.css
+        |       records.css
         |       responsive.css
         |       style.css
-        |       testimonical.css
         |       
         +---images
-        |       phase_3_day_3_output_1.png
-        |       phase_3_day_3_output_2.png
+        |       ConsoleOutputScreenshot.png
         |       
         \---js
                 script.js

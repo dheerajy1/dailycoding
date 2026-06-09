@@ -1,0 +1,15 @@
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  body {
+    padding: var(--spacing-medium);
+  }
+
+  th, td {
+    padding: var(--spacing-small);
+    font-size: 0.9rem;
+  }
+
+  #submitBtn {
+    padding: var(--spacing-medium);
+  }
+}

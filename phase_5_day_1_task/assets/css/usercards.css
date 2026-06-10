@@ -1,0 +1,32 @@
+/* Card container structural classes */
+.user-card {
+    background-color: var(--card-bg);
+    border: var(--border-width-sm) solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: var(--spacing-lg);
+    box-shadow: 0 var(--spacing-xs) var(--spacing-md) var(--shadow-color);
+}
+
+/* User information fields */
+.user-name {
+    color: var(--text-main);
+    margin-bottom: var(--spacing-sm);
+}
+
+.user-detail-item {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-muted);
+}
+
+.user-detail-label {
+    font-weight: bold;
+    color: var(--text-main);
+    margin-right: var(--spacing-xs);
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+    .user-card {
+        padding: var(--spacing-lg);
+    }
+}

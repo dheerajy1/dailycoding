@@ -1,0 +1,49 @@
+/* Color design tokens */
+:root {
+  --bg-primary: #f8f9fa;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --header-bg: #ffffff;
+  --spinner-color: #0d6efd;
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --error-bg: #f8d7da;
+  --error-text: #842029;
+  --error-border: #f5c2c7;
+
+  /* Layout spacing values */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+
+  /* Component layout variables */
+  --card-radius: 0.5rem;
+  --border-width-sm: 1px;
+}
+
+/* Global layout resets */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* Header structural styling */
+.header-section {
+  background-color: var(--header-bg);
+  border-bottom: var(--border-width-sm) solid var(--border-color);
+}
+
+/* Feedback loading indicators */
+.spinner-custom {
+  color: var(--spinner-color);
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
+}
+
+.state-text-loading {
+  color: var(--text-muted);
+  font-size: var(--spacing-md);
+}

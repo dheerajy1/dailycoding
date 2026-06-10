@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Login</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/authentication.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="text-center mb-4">Employee Login</h2>
+
+              <div class="demo-credentials-card">
+                <div class="demo-credentials-header">Demo Credentials</div>
+
+                <div class="credential-row">
+                  <span class="credential-label"> Email </span>
+
+                  <div class="credential-actions">
+                    <span id="demoEmailText"> admin@company.com </span>
+
+                    <button
+                      type="button"
+                      id="copyEmailBtn"
+                      class="btn btn-sm btn-outline-primary"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+
+                <div class="credential-row">
+                  <span class="credential-label"> Password </span>
+
+                  <div class="credential-actions">
+                    <span id="demoPasswordText"> admin123 </span>
+
+                    <button
+                      type="button"
+                      id="copyPasswordBtn"
+                      class="btn btn-sm btn-outline-primary"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label class="form-label"> Email </label>
+
+                  <input type="email" class="form-control" id="email" />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label"> Password </label>
+
+                  <input type="password" class="form-control" id="password" />
+                </div>
+
+                <div id="loginMessage" class="mb-3"></div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/auth.js"></script>
+  </body>
+</html>

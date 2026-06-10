@@ -1,0 +1,42 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.page-title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-xl);
+}
+
+.page-subtitle {
+  margin-bottom: 0;
+  color: var(--color-muted);
+}
+
+.employee-form-card .card {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.employee-form-card .card-body {
+  padding: var(--space-xl);
+}
+
+.employee-form-card .form-label {
+  margin-bottom: var(--space-sm);
+}
+
+.employee-form-card .btn {
+  min-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

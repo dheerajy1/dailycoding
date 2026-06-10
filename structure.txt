@@ -208,16 +208,41 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |               script.js
 |               tailwindconfig.js
 |               
-\---phase_5_day_1_task
++---phase_5_day_1_task
+|   |   day1_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       responsive.css
+|       |       style.css
+|       |       usercards.css
+|       |       
+|       +---images
+|       |       phase_5_day_1_task_output.png
+|       |       
+|       \---js
+|               script.js
+|               
+\---phase_5_day_2_task
+    |   day2_task.md
     |   index.html
     |   
     \---assets
         +---css
+        |       authentication.css
+        |       employee-form.css
+        |       employee-table.css
         |       responsive.css
         |       style.css
-        |       usercards.css
         |       
         +---images
-        \---js
-                script.js
+        +---js
+        |       auth.js
+        |       script.js
+        |       
+        \---pages
+                add-employee.html
+                edit-employee.html
+                employees.html
                 

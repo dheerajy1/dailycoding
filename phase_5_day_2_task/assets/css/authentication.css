@@ -1,0 +1,33 @@
+.demo-credentials-card {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  background-color: var(--color-surface);
+}
+
+.demo-credentials-header {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-md);
+}
+
+.credential-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.credential-row:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+.credential-label {
+  color: var(--color-muted);
+}
+
+.credential-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}

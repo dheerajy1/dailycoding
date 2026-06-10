@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Student Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Global styles (variables + theme) -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Page specific -->
+    <link rel="stylesheet" href="./assets/css/login.css" />
+  </head>
+
+  <body class="login-page">
+    <main class="login-container">
+      <div class="login-card card shadow-sm">
+        <div class="card-body login-card-body">
+          <!-- Title -->
+          <h2 class="login-title">Login</h2>
+
+          <!-- Demo Credentials -->
+          <section class="demo-box">
+            <div class="demo-header">
+              <strong>Demo Credentials</strong>
+            </div>
+
+            <div class="demo-row">
+              <span>Email:</span>
+              <span id="demoEmail">student@dashboard.com</span>
+              <button
+                type="button"
+                id="copyEmailBtn"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Copy
+              </button>
+            </div>
+
+            <div class="demo-row">
+              <span>Password:</span>
+              <span id="demoPassword">student123</span>
+              <button
+                type="button"
+                id="copyPasswordBtn"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Copy
+              </button>
+            </div>
+          </section>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="login-form">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" />
+            </div>
+
+            <div id="loginMessage" class="mb-3"></div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS -->
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

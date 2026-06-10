@@ -224,25 +224,53 @@ C:\USERS\ADMIN\DOWNLOADS\VS-CODE\FRONTEND_WEB_KT_LEARNING_ROADMAP
 |       \---js
 |               script.js
 |               
-\---phase_5_day_2_task
-    |   day2_task.md
++---phase_5_day_2_task
+|   |   day2_task.md
+|   |   index.html
+|   |   
+|   \---assets
+|       +---css
+|       |       authentication.css
+|       |       employee-form.css
+|       |       employee-table.css
+|       |       responsive.css
+|       |       style.css
+|       |       
+|       +---images
+|       |       employeemanagement.png
+|       |       login.png
+|       |       
+|       +---js
+|       |       auth.js
+|       |       script.js
+|       |       
+|       \---pages
+|               add-employee.html
+|               edit-employee.html
+|               employees.html
+|               
+\---phase_5_day_3_task
+    |   day3_task.md
     |   index.html
+    |   login.html
     |   
     \---assets
         +---css
-        |       authentication.css
-        |       employee-form.css
-        |       employee-table.css
-        |       responsive.css
+        |       dashboard.css
+        |       login.css
         |       style.css
         |       
         +---images
         +---js
+        |       auth-ui.js
         |       auth.js
-        |       script.js
+        |       main.js
+        |       storage.js
+        |       students.js
+        |       ui.js
         |       
         \---pages
-                add-employee.html
-                edit-employee.html
-                employees.html
+                add-student.html
+                dashboard.html
+                edit-student.html
                 

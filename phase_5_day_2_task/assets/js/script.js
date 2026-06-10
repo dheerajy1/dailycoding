@@ -242,33 +242,3 @@ function updateEmployee(event) {
   }
 }
 
-const copyEmailButton = document.getElementById("copyEmailBtn");
-
-if (copyEmailButton) {
-  copyEmailButton.addEventListener("click", copyDemoEmail);
-}
-
-function copyDemoEmail() {
-  navigator.clipboard.writeText("admin@company.com");
-
-  copyEmailButton.textContent = "Copied!";
-
-  setTimeout(() => {
-    copyEmailButton.textContent = "Copy";
-  }, 1500);
-}
-const copyPasswordButton = document.getElementById("copyPasswordBtn");
-
-if (copyPasswordButton) {
-  copyPasswordButton.addEventListener("click", copyDemoPassword);
-}
-
-function copyDemoPassword() {
-  navigator.clipboard.writeText("admin123");
-
-  copyPasswordButton.textContent = "Copied!";
-
-  setTimeout(() => {
-    copyPasswordButton.textContent = "Copy";
-  }, 1500);
-}
